@@ -28,58 +28,39 @@ File: Style CSS File
 @plugin "@tailwindcss/forms";
 @plugin "@iconify/tailwind4" { prefixes: solar, tabler; } */
 
-/* Theme tokens */
-
-
-
-
-
-/* Themes Config */
 @theme {
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Cabinet Grotesk", sans-serif;
 
-    /* Body Font */
-    --font-body: "Inter", serif;
+  /* Palette proposée (lavande champ + vert sauge + crème) */
+  --color-primary: #B9A4E6;   /* Lavande douce */
+  --color-body-bg: #FFFDF8;   /* Crème chaude */
+  --color-body-color: #1F2623;/* Anthracite doux */
+  --color-dark: #1F2623;
+  --color-accent: #7EB7A5;    /* Sauge */
 
-    /* Heading Font */
-    --font-heading: "Cabinet Grotesk", sans-serif;
+  --radius-2xl: 1.25rem;
 
-    --color-primary: #b8ff90;
+  --spacing-15: 60px;
+  --spacing-25: 100px;
+  --spacing-35: 140px;
 
-    --color-body-color: #061d19;
-    --color-body-bg: #f3f3e5;
+  --text-1.5xl: 22px;
+  --text-2.5xl: 28px;
+  --text-3.4xl: 34px;
+  --text-4.5xl: 42px;
+  --text-5.5xl: 52px;
 
-    --color-dark: #061d19;
-
-    --radius-2xl: 1.25rem;
-
-    --spacing-15: 60px;
-    --spacing-25: 100px;
-    --spacing-35: 140px;
-
-    --text-1.1xl: 11px;
-    --text-1.3xl: 13px;
-    --text-1.5xl: 22px;
-    --text-2.5xl: 28px;
-    --text-2.6xl: 26px;
-    --text-3.4xl: 34px;
-    --text-4xl:   40px;
-    --text-4.5xl: 42px;
-    --text-4.4xl: 44px;
-    --text-4.6xl: 46px;
-    --text-5.5xl: 52px;
-    --text-5.6xl: 150px;
-    --text-5.7xl: 70px;
-
-    --text-sm--line-height: 1.4em;
-    --text-base--line-height: 1.4em;
-    --text-lg--line-height: 1.4em;
-    --text-xl--line-height: 1.4em;
-    --text-2xl--line-height: 1.4em;
-    --text-3xl--line-height: 1.4em;
-    --text-4xl--line-height: 1.4em;
-    --text-5xl--line-height: 1.4em;
-    --text-6xl--line-height: 1.4em;
+  --text-sm--line-height: 1.5em;
+  --text-base--line-height: 1.6em;
+  --text-lg--line-height: 1.5em;
+  --text-xl--line-height: 1.35em;
+  --text-2xl--line-height: 1.3em;
+  --text-3xl--line-height: 1.25em;
+  --text-4xl--line-height: 1.2em;
+  --text-5xl--line-height: 1.1em;
 }
+
 
 @layer base {
     html {
