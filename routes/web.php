@@ -23,7 +23,13 @@ Route::get('/elevage/males',    [DogController::class, 'males'])->name('dogs.mal
 Route::get('/elevage/portees',  [LitterController::class, 'index'])->name('litters.index');
 Route::get('/elevage/portees/{slug}', [LitterController::class, 'show'])->name('litters.show');
 Route::view('/faq', 'public.faq')->name('faq');
-
+// Pages publiques supplémentaires
+Route::view('/elevage/pomsky', 'public.elevage.pomsky');
+Route::view('/evenements', 'public.evenements');
+Route::view('/temoignages', 'public.temoignages');
+// (Réserver / Prix si tu veux)
+Route::view('/elevage/reserver', 'public.elevage.reserver');
+Route::view('/elevage/prix', 'public.elevage.prix');
 // Zoothérapie
 Route::view('/zootherapie/valeurs', 'public.zootherapie.valeurs');
 Route::view('/zootherapie/services', 'public.zootherapie.services');
