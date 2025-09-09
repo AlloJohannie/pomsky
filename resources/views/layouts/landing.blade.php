@@ -5,7 +5,8 @@
 
     @yield('css')
 
-    @vite(['resources/css/landinger.css'])
+@vite(['resources/css/landinger.css', 'resources/js/landinger.js'])
+
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 
     @include('layouts.partials.footer')
 
-    @vite(['resources/js/landinger.js'])
+
 
     @yield('scripts')
 

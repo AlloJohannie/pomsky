@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="flex justify-between md:gap-5 md:flex-row gap-2.5 flex-col mt-7.5 items-center">
-                    <a href="{{route('any', 'index')}}"> <img src="/images/logo/landinger.svg" alt="" class="h-9 w-38.75"></a>
+                    <a href="{{route('any', 'index')}}"> <img src="/images/logo/logo.svg" alt="" class="h-9 w-38.75"></a>
                     <div class="text-sm">
                         <script>document.write(new Date().getFullYear())</script>.
                         Crafted with ❤️ <a href="#" class="underline text-dark">Coderthemes</a>
