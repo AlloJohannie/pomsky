@@ -8,9 +8,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminDogController;
 use App\Http\Controllers\Admin\AdminLitterController;
 use App\Http\Controllers\Admin\AdminLitterPhotoController;
+use App\Models\Litter;
 
-Route::view('/', 'public.home')->name('home');
-
+Route::view('/', 'index')->name('home');
+// Route::get('/', function () {
+//     $litters = Litter::latest()->take(3)->get();
+//     return view('public.home', compact('litters'));
+// });
 // Élevage
 Route::view('/elevage/presentation', 'public.elevage.presentation');
 Route::view('/elevage/valeurs', 'public.elevage.valeurs');
@@ -30,5 +34,6 @@ Route::view('/zootherapie/partenaires', 'public.zootherapie.partenaires');
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
-    Route::redirect('/dashboard', '/admin');
+    Route::get('/dashboard', fn () => redirect('/admin'))->name('dashboard');
 });
+

@@ -1,0 +1,28 @@
+@extends('layouts.base', ['title' => 'Password Protected'])
+
+@section('content')
+    <!-- password-protected Section  -->
+    <section class="lg:py-25 md:py-22.5 py-17.5 md:h-dvh flex items-center">
+        <div class="container">
+            <div class="lg:w-150 md:w-7/10 mx-auto" data-aos="fade-up" data-aos-delay="150" data-aos-duration="500" data-aos-easing="ease-in-out">
+
+                <div class="bg-white md:p-10 p-5 rounded-2xl">
+                    <form action="" class="mb-3.75">
+                        <!-- Password  -->
+                        <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5">Protected Page </h1>
+
+                        <div class="mb-5">
+                            <label for="name" class="mb-2 block font-normal">Password </label>
+                            <input class="rounded-2xl py-2.5 px-5 border border-neutral-200 w-full h-14 " maxlength="256" name="name" data-name="Name" placeholder="Enter Your Password" type="text" id="name">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="md:h-14 w-full py-3.5 lg:px-7.5 px-6.5 text-center bg-primary  font-medium rounded-2xl text-black  transition-all duration-300 hover:bg-black hover:text-primary">
+                                Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

@@ -6,9 +6,16 @@ export default defineConfig({
   plugins: [
     laravel({
       input: [
+        // Admin / Breeze / app global
         'resources/css/app.css',
         'resources/js/app.js',
-        'resources/css/filament.css',   // ✅ ajoute ceci
+
+        // Thème public Landinger
+        'resources/css/landinger.css',
+        'resources/js/landinger.js',
+
+        // (si tu as un thème Filament perso)
+        // 'resources/css/filament.css',
       ],
       refresh: true,
     }),
