@@ -30,12 +30,5 @@ Route::view('/zootherapie/partenaires', 'public.zootherapie.partenaires');
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
-    Route::view('/dashboard', 'admin.dashboard')->middleware('can:admin')->name('dashboard');
-
-    Route::middleware('can:admin')->prefix('admin')->name('admin.')->group(function () {
-        Route::resource('dogs', AdminDogController::class)->except(['show']);
-        Route::resource('litters', AdminLitterController::class)->except(['show']);
-        Route::post('litters/{litter}/photos', [AdminLitterPhotoController::class, 'store'])->name('litters.photos.store');
-        Route::delete('litters/{litter}/photos/{photo}', [AdminLitterPhotoController::class, 'destroy'])->name('litters.photos.destroy');
-    });
+    Route::redirect('/dashboard', '/admin');
 });
