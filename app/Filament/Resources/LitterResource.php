@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\LitterResource\Pages;
-use App\Filament\Resources\LitterResource\RelationManagers\PhotosRelationManager;
+// use App\Filament\Resources\LitterResource\RelationManagers\PhotosRelationManager;
 use App\Filament\Resources\LitterResource\RelationManagers\PuppiesRelationManager;
 use App\Models\Dog;
 use App\Models\Litter;
@@ -126,7 +126,7 @@ class LitterResource extends Resource
     public static function getRelations(): array
     {
         return [
-            PhotosRelationManager::class,
+            // PhotosRelationManager::class,
             PuppiesRelationManager::class,
         ];
     }

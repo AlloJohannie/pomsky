@@ -10,7 +10,7 @@ use Filament\Support\Exceptions\Halt;
 // Forms
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select as FormSelect;
-use Filament\Forms\Components\FileUpload;
+// use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 
 // Tables
@@ -46,8 +46,8 @@ class PuppiesRelationManager extends RelationManager
                 ->numeric()->minValue(0)->step('0.01'),
             TextInput::make('color')->label('Couleur')->maxLength(100),
             TextInput::make('sort')->label('Ordre')->numeric()->minValue(0)->default(0),
-            FileUpload::make('photo')->label('Photo')
-                ->image()->imageEditor()->disk('public')->directory('puppies')->maxSize(4096),
+            // FileUpload::make('photo')->label('Photo')
+                // ->image()->imageEditor()->disk('public')->directory('puppies')->maxSize(4096),
             Textarea::make('description')->rows(4)->maxLength(5000),
         ])->columns(2);
     }
