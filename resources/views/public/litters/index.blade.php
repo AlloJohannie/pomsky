@@ -1,24 +1,55 @@
-@extends('layouts.app')
-@section('content')
-<div class="max-w-6xl mx-auto p-6">
-  <h1 class="text-3xl font-bold mb-6">Portées</h1>
+@extends('layouts.landing', ['title' => 'Nos portées'])
 
-  <div class="grid md:grid-cols-2 gap-6">
-    @foreach($litters as $l)
-      <a href="{{ route('litters.show', $l->slug) }}" class="block bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
-        <div class="flex items-center justify-between">
-          <h2 class="text-xl font-semibold">{{ $l->code }}</h2>
-          <span class="text-sm px-2 py-1 rounded-full bg-gray-100">{{ ucfirst($l->status) }}</span>
-        </div>
-        <p class="text-gray-600 text-sm mt-1">
-          Parents: {{ $l->sire->name }} × {{ $l->dam->name }}
-          @if($l->born_at) • Nés le {{ \Illuminate\Support\Carbon::parse($l->born_at)->format('d/m/Y') }} @endif
-        </p>
-        @if($cover = optional($l->photos->first())->path)
-          <img src="{{ asset('storage/'.$cover) }}" class="rounded-xl mt-3 w-full h-56 object-cover" alt="Portée {{ $l->code }}">
-        @endif
-      </a>
-    @endforeach
+@section('content')
+<section class="bg-white py-17.5">
+  <div class="container">
+    <h1 class="text-4xl md:text-5.5xl font-bold mb-6">Nos portées</h1>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @forelse($litters as $litter)
+        <a href="{{ route('litters.show', $litter->slug) }}" class="bg-body-bg rounded-2xl p-5 hover:bg-white transition border border-neutral-200">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-2xl font-semibold">{{ $litter->code }}</h2>
+            <span class="rounded-full text-sm px-3 py-1
+              @class([
+                'bg-green-100 text-green-800'  => $litter->status==='available',
+                'bg-yellow-100 text-yellow-800'=> in_array($litter->status,['planned','pregnant','born','reserved']),
+                'bg-neutral-200 text-neutral-800'=> $litter->status==='closed'
+              ])">
+              {{ ucfirst($litter->status) }}
+            </span>
+          </div>
+
+          <div class="text-sm text-slate-600">
+            <div><strong>Père :</strong> {{ $litter->sire->name ?? '—' }}</div>
+            <div><strong>Mère :</strong> {{ $litter->dam->name ?? '—' }}</div>
+            @if($litter->born_at)
+              <div><strong>Nés le :</strong> {{ \Illuminate\Support\Carbon::parse($litter->born_at)->locale('fr_CA')->isoFormat('LL') }}</div>
+            @endif
+          </div>
+
+          @if($litter->photos->first())
+            <img class="rounded-xl mt-3 w-full h-48 object-cover"
+                 src="{{ asset('storage/'.$litter->photos->first()->path) }}" alt="Photo portée">
+          @endif
+
+          @php
+            $avail = $litter->puppies()->where('status','available')->count();
+          @endphp
+          <div class="mt-3 text-slate-700">
+            @if($avail>0)
+              {{ $avail }} chiot(s) disponible(s)
+            @elseif(in_array($litter->status,['planned','pregnant']))
+              Portée à venir
+            @else
+              Aucune disponibilité
+            @endif
+          </div>
+        </a>
+      @empty
+        <p>Aucune portée pour le moment.</p>
+      @endforelse
+    </div>
   </div>
-</div>
+</section>
 @endsection

@@ -28,11 +28,15 @@ class AdminPanelProvider extends PanelProvider
             // ✅ Home URL via closure (route dispo après boot)
             ->homeUrl(fn () => \App\Filament\Pages\CustomDashboard::getUrl())
 
+            
             // Auth Filament
             ->authMiddleware([\Filament\Http\Middleware\Authenticate::class])
 
             ->middleware(['web'])
-
+            // Optionnel : petit polish UX
+            ->brandLogo(asset('images/logo/landinger.svg'))
+            ->favicon(asset('favicon.ico'))
+            ->breadcrumbs(true)
             ->colors(['primary' => Color::Indigo]);
     }
 }

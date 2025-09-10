@@ -4,7 +4,7 @@ namespace App\Filament\Resources\LitterResource\RelationManagers;
 
 use App\Models\LitterPhoto;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema; // v4: form() utilise Schema
+use Filament\Schemas\Schema;                   // ✅ v4
 use Filament\Tables\Table;
 
 // Forms
@@ -14,9 +14,11 @@ use Filament\Forms\Components\TextInput;
 // Tables
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Actions\CreateAction;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\DeleteAction;
+
+// Actions (v4 global)
+use Filament\Actions\CreateAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 
 class PhotosRelationManager extends RelationManager
 {
