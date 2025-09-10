@@ -11,6 +11,7 @@ use Filament\Tables\Table;
 
 // Forms
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;                   // 👈 AJOUT
 use Filament\Forms\Components\Section as ComponentsSection;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select as FormSelect;
@@ -43,8 +44,24 @@ class PuppyResource extends Resource
                 ->schema([
                     FormSelect::make('litter_id')
                         ->label('Portée')
-                        ->options(fn () => Litter::orderByDesc('born_at')->orderBy('code')->pluck('code', 'id'))
-                        ->searchable()->required()->native(false),
+                        // n’affiche que les portées non fermées
+                        ->options(fn () => Litter::query()
+                            ->where('status', '!=', 'closed')
+                            ->orderByDesc('born_at')
+                            ->orderBy('code')
+                            ->pluck('code', 'id'))
+                        ->searchable()
+                        ->required()
+                        ->native(false)
+                        // ✅ remplace la closure par Rule::exists + where
+                        ->rules([
+                            'required',
+                            Rule::exists('litters', 'id')->where(fn ($q) => $q->where('status', '!=', 'closed')),
+                        ])
+                        ->validationMessages([
+                            'required' => 'Veuillez choisir une portée.',
+                            'exists'   => 'La portée sélectionnée est fermée ou introuvable.',
+                        ]),
 
                     TextInput::make('name')
                         ->label('Nom')
@@ -57,10 +74,11 @@ class PuppyResource extends Resource
                         ->unique(ignoreRecord: true)
                         ->helperText('Généré automatiquement à partir du nom')
                         ->dehydrated(true)
-                        ->hidden(), // on peut le cacher si tu ne veux pas l’afficher
+                        ->hidden(),
 
                     FormSelect::make('sex')->label('Sexe')
-                        ->options(['female' => 'Femelle', 'male' => 'Mâle'])->native(false),
+                        ->options(['female' => 'Femelle', 'male' => 'Mâle'])
+                        ->native(false),
 
                     FormSelect::make('status')->label('Statut')->required()
                         ->options([
@@ -69,10 +87,16 @@ class PuppyResource extends Resource
                             'adopted'       => 'Adopté',
                             'hold'          => 'En attente',
                             'not_available' => 'Non disponible',
-                        ])->native(false),
+                        ])
+                        ->native(false)
+                        ->rules(['required', 'in:available,reserved,adopted,hold,not_available'])
+                        ->validationMessages([
+                            'in' => 'Le statut choisi est invalide.',
+                        ]),
 
-                    TextInput::make('price_cents')->label('Prix (CAD)')
-                        ->numeric()->minValue(0)->step('0.01'),
+                    // si c’est un entier en cents, garde step(1)
+                    TextInput::make('price_cents')->label('Prix (¢ CAD)')
+                        ->numeric()->minValue(0)->step(1),
 
                     TextInput::make('color')->label('Couleur')->maxLength(100),
                     TextInput::make('sort')->label('Ordre')->numeric()->minValue(0)->default(0),
@@ -103,7 +127,10 @@ class PuppyResource extends Resource
                         'gray'    => 'not_available',
                         'danger'  => 'adopted',
                     ]),
-                TextColumn::make('price_cents')->label('Prix')->money('cad'),
+                // si price_cents = cents, afficher en dollars :
+                TextColumn::make('price_cents')
+                    ->label('Prix')
+                    ->formatStateUsing(fn ($cents) => $cents !== null ? number_format($cents / 100, 2) . ' $' : '—'),
                 TextColumn::make('litter.code')->label('Portée')->sortable()->searchable(),
                 TextColumn::make('created_at')->since()->label('Créé'),
             ])

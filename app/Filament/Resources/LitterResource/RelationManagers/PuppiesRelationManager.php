@@ -5,7 +5,8 @@ namespace App\Filament\Resources\LitterResource\RelationManagers;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
-
+use Filament\Notifications\Notification;
+use Filament\Support\Exceptions\Halt;
 // Forms
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select as FormSelect;
@@ -66,11 +67,24 @@ class PuppiesRelationManager extends RelationManager
             ->headerActions([
                 CreateAction::make()
                     ->label('Ajouter')
-                    ->mutateFormDataUsing(function (array $data): array {
+                    ->visible(fn (): bool => $this->getOwnerRecord()->status !== 'closed')
+
+                    ->before(function () {
+                        if ($this->getOwnerRecord()->status === 'closed') {
+                            Notification::make()
+                                ->title('Cette portée est fermée.')
+                                ->body('Vous ne pouvez plus y ajouter de chiot.')
+                                ->danger()
+                                ->send();
+
+                            throw new Halt(); // annule proprement l’action
+                        }
+                    })
+                    ->mutateDataUsing(function (array $data): array {
                         // slug auto si manquant
                         if (empty($data['slug'])) {
                             $base = $data['name'] ?? ('chiot-'.uniqid());
-                            $data['slug'] = Str::slug($base);
+                            $data['slug'] = \Illuminate\Support\Str::slug($base);
                         }
                         // ordre auto si manquant
                         if (! isset($data['sort'])) {
