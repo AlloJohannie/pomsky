@@ -21,7 +21,10 @@ use Filament\Schemas\Components\Section as ComponentsSection;
 // Tables
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
-
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\CreateAction;
 use Illuminate\Support\Str;
 
 class LitterResource extends Resource
@@ -40,21 +43,36 @@ class LitterResource extends Resource
         return $schema->schema([
             ComponentsSection::make('Infos portée')->schema([
                 TextInput::make('code')
-                    ->label('Code')->required()->maxLength(50)
+                    ->label('Nom de la portée')                 // 👈 libellé FR
+                    // ->helperText('Ex.: P2025-01')
+                    ->required()->maxLength(50)
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug($state))),
-                FormSelect::make('status')->label('Statut')->options([
-                    'planned'   => 'planned',
-                    'pregnant'  => 'pregnant',
-                    'born'      => 'born',
-                    'available' => 'available',
-                    'reserved'  => 'reserved',
-                    'closed'    => 'closed',
-                ])->required()->native(false),
-                TextInput::make('puppies_count')->label('Nb chiots')->numeric()->minValue(0)->maxValue(20),
+
+                FormSelect::make('status')
+                    ->label('Statut')
+                    ->options([
+                        'planned'   => 'Planifiée',
+                        'pregnant'  => 'Gestante',
+                        'born'      => 'Née',
+                        'available' => 'Disponible',
+                        'reserved'  => 'Réservée',
+                        'closed'    => 'Fermée',
+                    ])
+                    ->required()
+                    ->native(false),
+
+                TextInput::make('puppies_count')
+                    ->label('Nb chiots')->numeric()->minValue(0)->maxValue(20),
+
                 DatePicker::make('born_at')->label('Nés le'),
                 DatePicker::make('ready_at')->label('Prêts à partir'),
-                TextInput::make('slug')->required()->unique(ignoreRecord: true),
+
+                // slug auto & caché
+                TextInput::make('slug')
+                    ->hidden()
+                    ->dehydrated(true)
+                    ->unique(ignoreRecord: true),
             ])->columns(3),
 
             ComponentsSection::make('Parents')->schema([
@@ -77,27 +95,32 @@ class LitterResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('code')
-                    ->label('Code')
+                    ->label('Nom de la portée')
                     ->searchable()
                     ->sortable()
                     ->url(fn ($record) => Pages\EditLitter::getUrl(['record' => $record])),
-                TextColumn::make('status')->badge(),
+                TextColumn::make('status')
+                ->label('Statut')
+    ->formatStateUsing(function (string $state): string {
+        return [
+            'planned'   => 'Planifiée',
+            'pregnant'  => 'Gestante',
+            'born'      => 'Née',
+            'available' => 'Disponible',
+            'reserved'  => 'Réservée',
+            'closed'    => 'Fermée',
+        ][$state] ?? $state;
+    })
+                ->badge(),
                 TextColumn::make('sire.name')->label('Père')->sortable()->searchable(),
                 TextColumn::make('dam.name')->label('Mère')->sortable()->searchable(),
                 TextColumn::make('born_at')->date()->label('Nés le'),
                 TextColumn::make('puppies_count')->label('Chiots'),
                 TextColumn::make('created_at')->since()->label('Créé'),
             ])
-            ->filters([
-                SelectFilter::make('status')->options([
-                    'planned'   => 'planned',
-                    'pregnant'  => 'pregnant',
-                    'born'      => 'born',
-                    'available' => 'available',
-                    'reserved'  => 'reserved',
-                    'closed'    => 'closed',
-                ]),
-            ]);
+            
+        ->emptyStateHeading('Aucune portée');
+
     }
 
     public static function getRelations(): array

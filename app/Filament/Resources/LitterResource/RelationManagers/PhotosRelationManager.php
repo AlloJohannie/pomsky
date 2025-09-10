@@ -50,14 +50,14 @@ class PhotosRelationManager extends RelationManager
             ->headerActions([
                 CreateAction::make()
                     ->label('Ajouter')
-                    ->mutateFormDataUsing(function (array $data): array {
+                    ->mutateDataUsing(function (array $data): array {
                         if (!isset($data['sort'])) {
                             $data['sort'] = (int) LitterPhoto::where('litter_id', $this->getOwnerRecord()->id)->max('sort') + 1;
                         }
                         return $data;
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])

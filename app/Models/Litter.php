@@ -11,8 +11,15 @@ class Litter extends Model
     ];
 
     public function sire()  { return $this->belongsTo(Dog::class, 'sire_id'); }
+    
     public function dam()   { return $this->belongsTo(Dog::class, 'dam_id'); }
+
     public function photos(){ return $this->hasMany(LitterPhoto::class)->orderBy('sort'); }
+
     public function puppies() { return $this->hasMany(Puppy::class)->orderBy('sort'); }
 
+    public function scopePublic($query)
+    {
+        return $query->where('status', '!=', 'closed');
+    }
 }

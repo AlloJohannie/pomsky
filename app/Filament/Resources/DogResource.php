@@ -41,7 +41,7 @@ class DogResource extends Resource
     protected static ?string $pluralModelLabel = 'Chiens';
     protected static ?string $modelLabel = 'Chien';
 
-    public static function form(Schema $schema): Schema   // ✅ v4 signature
+    public static function form(Schema $schema): Schema
     {
         return $schema->schema([
             ComponentsSection::make('Identité')->schema([
@@ -57,7 +57,10 @@ class DogResource extends Resource
                 TextInput::make('color')->label('Couleur')->maxLength(100),
                 TextInput::make('weight_kg')->numeric()->label('Poids (kg)')->minValue(0)->step('0.1'),
                 Toggle::make('is_active')->label('Actif')->default(true),
-                TextInput::make('slug')->required()->unique(ignoreRecord: true),
+                TextInput::make('slug')
+                    ->hidden()
+                    ->dehydrated(true)
+                    ->unique(ignoreRecord: true),
             ])->columns(2),
 
             ComponentsSection::make('Photo & Description')->schema([
