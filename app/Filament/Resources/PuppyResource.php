@@ -95,7 +95,7 @@ class PuppyResource extends Resource
                         ]),
 
                     // si c’est un entier en cents, garde step(1)
-                    TextInput::make('price_cents')->label('Prix (¢ CAD)')
+                    TextInput::make('price_cents')->label('Prix')
                         ->numeric()->minValue(0)->step(1),
 
                     TextInput::make('color')->label('Couleur')->maxLength(100),
