@@ -193,6 +193,45 @@
     </div>
   </div>
 </section>
+{{-- === CTA Gâteries (style Landinger) === --}}
+@php
+  $treatsUrl = 'https://exemple-gateries.com'; // remplace par l’URL réelle
+  $treatsImg = asset('photos/gateries.jpg');   // remplace par ton image ou mets un placeholder
+@endphp
+
+<section id="gateries" class="bg-white lg:py-25 md:py-22.5 py-17.5">
+  <div class="container">
+    <div class="grid md:grid-cols-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
+      
+      {{-- Visuel --}}
+      <div>
+        <img src="{{ $treatsImg }}" alt="Gâteries pour chiens" class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
+      </div>
+
+      {{-- Panneau texte + bouton --}}
+      <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">
+        <h2 class="mb-2.5 md:text-4xl text-2.6xl">Envie de gâter votre compagnon&nbsp;?</h2>
+        <p class="mb-9">
+          Découvrez notre entreprise partenaire de <strong>gâteries saines et naturelles</strong> pour chiens — parfaites pour l’entraînement et les petites récompenses au quotidien.
+        </p>
+
+        <div>
+          <a href="{{ $treatsUrl }}" target="_blank" rel="noopener"
+             class="py-3.5 lg:px-7.5 px-6.5 inline-flex items-center gap-2 text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
+            Visiter la boutique
+            {{-- Icône lien externe (inline SVG, pas besoin d’Iconify) --}}
+            <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <path d="M15 3h6v6"/>
+              <path d="M10 14 21 3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- Contact / Réserver -->
 <section id="contact" class="bg-gradient-to-b from-slate-50 to-white py-16 md:py-20">

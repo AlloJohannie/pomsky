@@ -3,7 +3,7 @@
     <div class="container">
         <div class="flex items-center justify-between py-2.5 lg:py-4.5">
             <div class="text-lg font-bold">
-                <a href="{{ url('index')}}">
+                <a href="{{ route('home') }}">
                     <img src="/images/logo/landinger.svg" alt="Logo" class="h-8.5 lg:h-9">
                 </a>
             </div>
@@ -17,7 +17,7 @@
 
                     <div class="hs-dropdown-menu border border-neutral-200 transition-[opacity,margin] rounded-2xl duration hs-dropdown-open:opacity-100 opacity-0 hidden w-60 bg-white  mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-hover-event">
                         <div class="p-5">
-                            <a href="{{ url('index')}}" class="flex items-center font-medium text-dark rounded-lg text-base py-1.25 hover:underline">
+                            <a href="{{ route('home') }}" class="flex items-center font-medium text-dark rounded-lg text-base py-1.25 hover:underline">
                                 Home 1
                             </a>
 
@@ -253,7 +253,7 @@
 <!-- Mobile Menu (Offcanvas) -->
 <div id="mobileMenuOffcanvas" class="hs-overlay hs-overlay-open:translate-y-0 hidden -translate-y-full fixed top-4 inset-x-4 rounded-lg overflow-hidden transition-all duration-300 transform h-80 z-80 bg-white" role="dialog" tabindex="-1" aria-labelledby="mobileMenuOffcanvas-label">
     <div class="h-16 flex items-center justify-between px-4 border-b border-neutral-200 sticky top-0">
-        <a href="{{ url('index')}}">
+        <a href="{{ route('home') }}">
             <img src="/images/logo/landinger.svg" alt="logo" class="h-8">
         </a>
 
@@ -272,7 +272,7 @@
                 </button>
 
                 <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height]">
-                    <a href="{{ url('index')}}" class="flex items-center font-medium text-dark rounded-lg text-base py-1.25 hover:underline">
+                    <a href="{{ route('home') }}" class="flex items-center font-medium text-dark rounded-lg text-base py-1.25 hover:underline">
                         Home 1
                     </a>
 

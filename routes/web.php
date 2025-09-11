@@ -22,11 +22,15 @@ Route::get('/elevage/femelles', [DogController::class, 'femelles'])->name('dogs.
 Route::get('/elevage/males',    [DogController::class, 'males'])->name('dogs.males');
 Route::get('/elevage/portees',  [LitterController::class, 'index'])->name('litters.index');
 Route::get('/elevage/portees/{slug}', [LitterController::class, 'show'])->name('litters.show');
-Route::view('/faq', 'public.faq')->name('faq');
+
+
 // Pages publiques supplémentaires
 Route::view('/elevage/pomsky', 'public.elevage.pomsky');
 Route::view('/evenements', 'public.evenements');
 Route::view('/temoignages', 'public.temoignages');
+Route::view('/faq', 'public.faq')->name('faq');
+Route::view('/reservation-tarifs', 'public.reservation-tarifs')->name('reservation.tarifs');
+
 // (Réserver / Prix si tu veux)
 Route::view('/elevage/reserver', 'public.elevage.reserver');
 Route::view('/elevage/prix', 'public.elevage.prix');
