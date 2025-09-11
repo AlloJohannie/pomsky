@@ -1,4 +1,10 @@
 @extends('layouts.landing', ['title' => $title ?? 'Chiens'])
+<x-hero
+  chip="Élevage"
+  title="{{ $title ?? 'Chiens' }}"
+  subtitle="Découvrez nos reproducteurs {{ \Illuminate\Support\Str::lower($title ?? '') }} actifs."
+  size="md"
+/>
 
 @section('content')
 <section class="bg-white py-17.5 md:py-22.5">

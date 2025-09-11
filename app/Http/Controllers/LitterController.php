@@ -33,18 +33,19 @@ class LitterController extends Controller
         return view('public.litters.index', compact('availableLitters', 'upcomingLitters'));
     }
 
-// App\Http\Controllers\LitterController.php
-public function show(string $slug)
-{
-    $litter = Litter::public()
-        ->with([
-            'sire','dam',
-            'puppies' => fn ($q) => $q->orderBy('sort'),
-        ])
-        ->where('slug', $slug)
-        ->firstOrFail();
+    public function show(string $slug)
+    {
+        $litter = Litter::public()
+            ->with([
+                'sire:id,name,photo',
+                'dam:id,name,photo',
+                'puppies' => fn ($q) => $q->orderBy('sort')->orderBy('name'),
+            ])
+            ->where('slug', $slug)
+            ->firstOrFail();
 
-    return view('public.litters.show', compact('litter'));
-}
+        $availableCount = $litter->puppies->where('status', 'available')->count();
 
+        return view('public.litters.show', compact('litter', 'availableCount'));
+    }
 }
