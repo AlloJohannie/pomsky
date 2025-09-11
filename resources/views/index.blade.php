@@ -232,27 +232,4 @@
     </div>
   </div>
 </section>
-
-<!-- Contact / Réserver -->
-<section id="contact" class="bg-gradient-to-b from-slate-50 to-white py-16 md:py-20">
-  <div class="container grid lg:grid-cols-2 gap-10 items-center">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-semibold">Prêt à rencontrer votre futur compagnon ?</h2>
-      <p class="mt-3 text-slate-700">Écris-nous pour connaître les prochaines portées ou pour nos services de zoothérapie.</p>
-      <ul class="mt-4 text-slate-700 space-y-1">
-        <li><i class="iconify tabler--mail me-2"></i> <a class="underline" href="mailto:info@petitpomskyduquebec.ca">info@petitpomskyduquebec.ca</a></li>
-        <li><i class="iconify tabler--brand-instagram me-2"></i> <a class="underline" href="#" target="_blank" rel="noopener">Instagram</a></li>
-      </ul>
-    </div>
-    <form class="bg-white border border-neutral-200 rounded-2xl p-6 md:p-8">
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" class="w-full rounded-xl border-neutral-300" placeholder="Nom">
-        <input type="email" class="w-full rounded-xl border-neutral-300" placeholder="Courriel">
-        <input type="tel" class="w-full rounded-xl border-neutral-300 md:col-span-2" placeholder="Téléphone (optionnel)">
-        <textarea class="w-full rounded-xl border-neutral-300 md:col-span-2" rows="4" placeholder="Votre message"></textarea>
-      </div>
-      <button class="mt-5 w-full rounded-xl bg-dark text-white py-3 hover:text-primary transition" type="submit">Envoyer</button>
-    </form>
-  </div>
-</section>
 @endsection

@@ -50,6 +50,6 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         // Autorise uniquement la propriétaire (remplace l'email)
-        return in_array($this->email, ['info@assistancezootherapie.ca']);
+        return in_array($this->email, ['info@petitpomskyduquebec.ca']);
     }
 }

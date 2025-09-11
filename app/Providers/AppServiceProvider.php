@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         // app/Providers/AuthServiceProvider.php -> boot()
         Gate::define('admin', function ($user) {
             return in_array($user->email, [
-                'info@assistancezootherapie.ca', // <-- remplace par l’email réel
+                'info@petitpomskyduquebec.ca', // <-- remplace par l’email réel
             ]);
         });
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminDogController;
 use App\Http\Controllers\Admin\AdminLitterController;
 use App\Http\Controllers\Admin\AdminLitterPhotoController;
 use App\Models\Litter;
+use App\Http\Controllers\ContactController;
 
 Route::view('/', 'index')->name('home');
 // Route::get('/', function () {
@@ -39,7 +40,6 @@ Route::view('/zootherapie/valeurs', 'public.zootherapie.valeurs');
 Route::view('/zootherapie/services', 'public.zootherapie.services');
 Route::view('/zootherapie/tarifs', 'public.zootherapie.tarifs');
 Route::view('/zootherapie/partenaires', 'public.zootherapie.partenaires');
-
 // Auth Breeze
 require __DIR__.'/auth.php';
 
@@ -47,3 +47,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', fn () => redirect('/admin'))->name('dashboard');
 });
 
+Route::view('/contact', 'public.contact')->name('contact');
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');

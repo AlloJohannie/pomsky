@@ -183,7 +183,8 @@
 
       <a href="{{ url('/galerie') }}" class="py-2.5 font-medium text-dark">Galerie</a>
       {{-- <a href="{{ url('/a-propos') }}" class="py-2.5 font-medium text-dark">À propos</a> --}}
-      <a href="{{ url('/#contact') }}" class="py-2.5 font-medium text-dark">Contact</a>
+      <a href="{{ route('contact') }}" class="text-dark font-medium py-2.5 hover:underline">Contact</a>
+
 
       <!-- CTA externe -->
       {{-- <a href="https://exemple-gateries.com" target="_blank" rel="noopener"
