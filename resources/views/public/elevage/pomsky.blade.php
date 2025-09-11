@@ -1,54 +1,131 @@
-@extends('layouts.landing', ['title' => 'Le Pomsky'])
+@extends('layouts.landing', ['title' => 'Présentation du Pomsky'])
 
 @section('content')
-<section class="bg-body-bg py-16 md:py-22.5">
-  <div class="container text-center">
-    <h1 class="text-4xl md:text-5.5xl">Le Pomsky</h1>
-    <p class="mt-2 text-slate-700">Un compagnon vif, affectueux et intelligent.</p>
+{{-- HERO simple --}}
+<section class="bg-body-bg lg:py-25 md:py-22.5 py-17.5">
+  <div class="container text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="500">
+    <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5">Le Pomsky</h1>
+    <p class="mb-2.5">Un compagnon vif, affectueux et intelligent — croisement entre Husky sibérien et Spitz nain (Pomeranian).</p>
   </div>
 </section>
 
-<section class="bg-white py-16">
-  <div class="container grid md:grid-cols-2 gap-10 items-center">
-    <div data-aos="fade-right">
-      <img src="{{ asset('photos/'.(array_values(array_filter(glob(public_path('photos/*')), 'is_file')) ? basename(glob(public_path('photos/*'))[0]) : '')) }}" class="rounded-2xl w-full h-auto object-cover" alt="Pomsky">
+{{-- Caractéristiques principales --}}
+<section class="bg-white lg:py-25 md:py-22.5 py-17.5">
+  <div class="container">
+    <div class="grid md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-duration="500">
+      <div class="bg-body-bg p-6 rounded-2xl">
+        <h3 class="font-semibold text-xl">Taille & poids</h3>
+        <p class="mt-2 text-slate-700">Petit à moyen (variables selon les lignées).</p>
+      </div>
+      <div class="bg-body-bg p-6 rounded-2xl">
+        <h3 class="font-semibold text-xl">Énergie</h3>
+        <p class="mt-2 text-slate-700">Modérée à élevée — besoins quotidiens d’activité.</p>
+      </div>
+      <div class="bg-body-bg p-6 rounded-2xl">
+        <h3 class="font-semibold text-xl">Sociabilité</h3>
+        <p class="mt-2 text-slate-700">Très attaché à sa famille, aime participer.</p>
+      </div>
+      <div class="bg-body-bg p-6 rounded-2xl">
+        <h3 class="font-semibold text-xl">Intelligence</h3>
+        <p class="mt-2 text-slate-700">Apprend vite avec un cadre cohérent & positif.</p>
+      </div>
     </div>
-    <div data-aos="fade-left">
-      <h2 class="text-3xl md:text-4xl">Origines & tempérament</h2>
-      <p class="mt-3 text-slate-700">
-        Issu du Husky sibérien et du Spitz nain, le Pomsky combine curiosité, sociabilité et intelligence.
-        Il crée un lien fort avec sa famille et aime participer à la vie quotidienne.
-      </p>
-      <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700">
-        <li class="flex gap-2"><i class="iconify tabler--heart"></i> Très attaché à l’humain</li>
-        <li class="flex gap-2"><i class="iconify tabler--run"></i> Besoin d’activités quotidiennes</li>
-        <li class="flex gap-2"><i class="iconify tabler--ruler"></i> Taille petite à moyenne (selon lignées)</li>
-        <li class="flex gap-2"><i class="iconify tabler--brush"></i> Entretien du poil régulier</li>
-      </ul>
+
+    {{-- Image + texte --}}
+    <div class="grid lg:grid-cols-2 gap-10 items-center mt-12" data-aos="fade-up" data-aos-duration="500">
+      <div>
+        <img src="{{ asset('photos/pomsky-portrait.jpg') }}" class="rounded-2xl w-full h-auto object-cover" alt="Pomsky">
+      </div>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-semibold">Tempérament & besoins</h2>
+        <p class="mt-4 text-slate-700">
+          Curieux et joueur, le Pomsky s’épanouit avec des activités variées (promenades, jeux de réflexion, socialisation). 
+          La cohérence éducative et l’enrichissement mental sont essentiels.
+        </p>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700">
+          <li class="flex gap-2">
+            <svg class="h-5 w-5 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
+            Exercice quotidien
+          </li>
+          <li class="flex gap-2">
+            <svg class="h-5 w-5 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
+            Socialisation précoce
+          </li>
+          <li class="flex gap-2">
+            <svg class="h-5 w-5 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
+            Éducation positive
+          </li>
+          <li class="flex gap-2">
+            <svg class="h-5 w-5 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
+            Brossage régulier
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="bg-white py-16">
-  <div class="container grid md:grid-cols-3 gap-6">
-    <div class="bg-body-bg p-6 rounded-2xl">
-      <h3 class="font-semibold">Besoins d’exercice</h3>
-      <p class="mt-2 text-slate-700">Jeux, promenades, stimulation mentale quotidienne.</p>
+{{-- FAQ raciale (accordéon Preline compact) --}}
+<section class="bg-white lg:pb-25 md:pb-22.5 pb-17.5">
+  <div class="container-small">
+    <div class="text-center md:mb-12.5 mb-7.5" data-aos="fade-up" data-aos-duration="500">
+      <h2 class="lg:text-4xl md:text-4.6xl text-3.4xl">Questions fréquentes sur la race</h2>
     </div>
-    <div class="bg-body-bg p-6 rounded-2xl">
-      <h3 class="font-semibold">Éducation</h3>
-      <p class="mt-2 text-slate-700">Cohérence, douceur, renforcement positif.</p>
-    </div>
-    <div class="bg-body-bg p-6 rounded-2xl">
-      <h3 class="font-semibold">Vie de famille</h3>
-      <p class="mt-2 text-slate-700">Très sociable, s’épanouit auprès des humains.</p>
+
+    <div class="md:space-y-7.5 space-y-5 hs-accordion-group max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="500">
+      {{-- Q1 --}}
+      <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
+        <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
+          <h3 class="md:text-1.5xl text-xl">Perte de poils & entretien&nbsp;?</h3>
+          <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full inline-flex items-center justify-center">
+            <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
+          <p class="mt-5">Mue saisonnière marquée ; brossage hebdomadaire recommandé (plus fréquent en période de mue).</p>
+        </div>
+      </div>
+
+      {{-- Q2 --}}
+      <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
+        <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
+          <h3 class="md:text-1.5xl text-xl">Compatibilité avec les enfants&nbsp;?</h3>
+          <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full inline-flex items-center justify-center">
+            <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
+          <p class="mt-5">Très bon compagnon familial quand l’énergie est canalisée et que les interactions sont supervisées.</p>
+        </div>
+      </div>
+
+      {{-- Q3 --}}
+      <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
+        <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
+          <h3 class="md:text-1.5xl text-xl">Besoins d’exercice&nbsp;?</h3>
+          <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full inline-flex items-center justify-center">
+            <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
+          <p class="mt-5">Promenades quotidiennes + jeux cognitifs. Il apprécie l’entraînement au rappel et la marche en laisse.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="bg-white pb-16">
-  <div class="container text-center">
-    <a href="{{ route('litters.index') }}" class="inline-flex rounded-xl bg-dark text-white px-6 py-3 hover:text-primary transition">Voir nos portées</a>
+{{-- CTA vers réservation --}}
+<section class="bg-white lg:pb-25 md:pb-22.5 pb-17.5">
+  <div class="container text-center" data-aos="fade-up" data-aos-duration="500">
+    <h2 class="mb-2.5 lg:text-5.5xl md:text-4.6xl text-3.4xl">Prêt pour l’aventure&nbsp;?</h2>
+    <p class="mb-5">Découvrez les étapes et nos conditions de réservation.</p>
+    <a href="{{ url('/reservation-tarifs') }}" class="py-3.5 md:px-7.5 px-6 inline-flex bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
+      Comment réserver
+    </a>
   </div>
 </section>
 @endsection

@@ -6,7 +6,7 @@
         <p class="mt-3 max-w-lg">Passion familiale – Petit « Pomsky » du Québec. Élevage familial et zoothérapie pour des liens durables.</p>
       </div>
       <div>
-        <h4 class="font-semibold mb-3">Navigation</h4>
+        <h4 class="font-semibold mb-3 text-white">Navigation</h4>
         <ul class="space-y-2 text-sm">
           <li><a class="hover:underline" href="{{ url('/#portees') }}">Portées</a></li>
           <li><a class="hover:underline" href="{{ url('/#pomsky') }}">Le Pomsky</a></li>
@@ -16,7 +16,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold mb-3">Contact</h4>
+        <h4 class="font-semibold mb-3 text-white">Contact</h4>
         <p class="text-sm">
           <a class="underline" href="mailto:info@petitpomskyduquebec.ca">info@petitpomskyduquebec.ca</a><br>
           Québec, Canada
