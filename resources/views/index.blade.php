@@ -53,8 +53,8 @@
           Élevage familial passionné et services de zoothérapie professionnels pour créer des liens durables et apporter du bien-être.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="{{ url('/#portees') }}" class="rounded-xl bg-dark text-white px-5 py-3 hover:text-primary transition">Nos portées</a>
-          <a href="{{ url('/#zootherapie') }}" class="rounded-xl ring-1 ring-neutral-300 px-5 py-3 hover:bg-neutral-100 transition">Zoothérapie</a>
+          <a href="{{ url('/elevage/portees') }}" class="rounded-xl bg-dark text-white px-5 py-3 hover:text-primary transition">Nos portées</a>
+          <a href="{{ url('/zootherapie/services') }}" class="rounded-xl ring-1 ring-neutral-300 px-5 py-3 hover:bg-neutral-100 transition">Zoothérapie</a>
         </div>
       </div>
 
