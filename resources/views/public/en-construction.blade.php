@@ -4,9 +4,9 @@
 @php
   // Image de bandeau (choix différent de celles déjà utilisées)
   $candidates = [
-    public_path('photos/pomsky-couverture-bleue-09.jfif'),
-    public_path('photos/pomsky-lavande-06.jfif'),
-    public_path('photos/pomsky-chiot-studio-30.jfif'),
+    public_path('photos/pomsky-couverture-bleue-09.jpg'),
+    public_path('photos/pomsky-lavande-06.jpg'),
+    public_path('photos/pomsky-chiot-studio-30.jpg'),
   ];
   $path = collect($candidates)->first(fn($p) => file_exists($p));
   $bannerUrl = $path ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $path)) : null;

@@ -2,8 +2,8 @@
 
 @section('content')
 @php
-  $banner = file_exists(public_path('photos/pomsky-chiot-lavande-36.jfif'))
-    ? asset('photos/pomsky-chiot-lavande-36.jfif')
+  $banner = file_exists(public_path('photos/pomsky-chiot-lavande-36.jpg'))
+    ? asset('photos/pomsky-chiot-lavande-36.jpg')
     : null;
 @endphp
 

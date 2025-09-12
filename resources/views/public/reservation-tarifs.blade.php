@@ -5,16 +5,16 @@
   // --- BANNIÈRE : candidates + fallback ---
   $bannerCandidates = [
     public_path('photos/proprietaire-portee.jpg'),
-    public_path('photos/pomsky-chiot-lavande-36.jfif'),
-    public_path('photos/pomsky-deux-chiots-02.jfif'),
+    public_path('photos/pomsky-chiot-lavande-36.jpg'),
+    public_path('photos/pomsky-deux-chiots-02.jpg'),
   ];
   $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
   $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
 
   // --- CTA image (évite de répéter exactement la bannière) ---
   $ctaCandidates = [
-    public_path('photos/pomsky-chiot-panier-45.jfif'),
-    public_path('photos/pomsky-chiot-studio-30.jfif'),
+    public_path('photos/pomsky-chiot-panier-45.jpg'),
+    public_path('photos/pomsky-chiot-studio-30.jpg'),
     public_path('photos/proprietaire-portee.jpg'),
   ];
   $ctaPath = collect($ctaCandidates)->first(fn($p) => file_exists($p));

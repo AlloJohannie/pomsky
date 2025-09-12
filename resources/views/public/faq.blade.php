@@ -5,8 +5,8 @@
 @php
   // Choix auto avec fallback
   $bannerCandidates = [
-        public_path('photos/pomsky-lavande-03.jfif'),
-    public_path('photos/pomsky-chiot-studio-30.jfif'),
+        public_path('photos/pomsky-lavande-03.jpg'),
+    public_path('photos/pomsky-chiot-studio-30.jpg'),
     public_path('photos/proprietaire-portee.jpg'),
 
   ];

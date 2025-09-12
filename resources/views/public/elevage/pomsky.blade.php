@@ -4,8 +4,8 @@
 @php
   // --- Pick a banner image (with fallbacks) ---
   $bannerCandidates = [
-    public_path('photos/pomsky-chiot-lavande-36.jfif'),
-    public_path('photos/pomsky-deux-chiots-02.jfif'),
+    public_path('photos/pomsky-chiot-lavande-36.jpg'),
+    public_path('photos/pomsky-deux-chiots-02.jpg'),
     public_path('photos/proprietaire-portee.jpg'),
   ];
   $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
@@ -14,9 +14,9 @@
   // --- Pick the portrait used next to the “Tempérament & besoins” text ---
   $portraitCandidates = [
     public_path('photos/pomsky-portrait.jpg'),
-    public_path('photos/pomsky-gros-plan-11.jfif'),
-    public_path('photos/pomsky-chiot-studio-30.jfif'),
-    public_path('photos/pomsky-chiot-panier-45.jfif'),
+    public_path('photos/pomsky-gros-plan-11.jpg'),
+    public_path('photos/pomsky-chiot-studio-30.jpg'),
+    public_path('photos/pomsky-chiot-panier-45.jpg'),
   ];
   $portraitPath = collect($portraitCandidates)->first(fn($p) => file_exists($p));
   $portraitUrl  = $portraitPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $portraitPath)) : asset('/images/team/5.png');

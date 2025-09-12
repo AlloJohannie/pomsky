@@ -3,7 +3,7 @@
 @section('content')
 @php
     // chemin vers la photo déjà dans public/photos
-    $bannerUrl = asset('photos/pomsky-couverture-bleue-09.jfif');
+    $bannerUrl = asset('photos/pomsky-couverture-bleue-09.jpg');
 @endphp
 
 {{-- Hero / Bandeau avec photo existante --}}
@@ -52,7 +52,7 @@
         {{-- <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="mt-6 inline-flex underline font-medium">Pourquoi nous choisir ?</a> --}}
       </div>
       <div>
-        <img src="{{ asset('photos/pomsky-chiot-studio-55.jfif') }}" alt="Séance de zoothérapie"
+        <img src="{{ asset('photos/pomsky-chiot-studio-55.jpg') }}" alt="Séance de zoothérapie"
              class="rounded-2xl w-full h-auto object-cover">
       </div>
     </div>

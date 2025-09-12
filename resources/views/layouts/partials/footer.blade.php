@@ -1,6 +1,6 @@
 @php
   $footerLogoCandidates = [
-    public_path('images/logo/carte_affaire.jfif'), // carte d’affaire
+    public_path('images/logo/carte_affaire.jpg'), // carte d’affaire
   ];
   $footerLogoSrc = collect($footerLogoCandidates)->first(fn($p) => file_exists($p));
   $footerLogoUrl = $footerLogoSrc ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $footerLogoSrc)) : null;

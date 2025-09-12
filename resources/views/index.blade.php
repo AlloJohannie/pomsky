@@ -19,16 +19,16 @@
   $gallery = $gallery ?? array_map('basename', $files);
 
   // Sélections d’images par section (avec fallback propre)
-  $imgElevage = file_exists(public_path('photos/pomsky-deux-chiots-02.jfif'))
-    ? asset('photos/pomsky-deux-chiots-02.jfif')
+  $imgElevage = file_exists(public_path('photos/pomsky-deux-chiots-02.jpg'))
+    ? asset('photos/pomsky-deux-chiots-02.jpg')
     : (isset($gallery[0]) ? asset('photos/'.$gallery[0]) : null);
 
-  $imgZt = file_exists(public_path('photos/pomsky-adulte_proprietaire-portrait-32.jfif'))
-    ? asset('photos/pomsky-adulte_proprietaire-portrait-32.jfif')
+  $imgZt = file_exists(public_path('photos/pomsky-adulte_proprietaire-portrait-32.jpg'))
+    ? asset('photos/pomsky-adulte_proprietaire-portrait-32.jpg')
     : (isset($gallery[1]) ? asset('photos/'.$gallery[1]) : (isset($gallery[0]) ? asset('photos/'.$gallery[0]) : null));
 
-  $imgTreats = file_exists(public_path('photos/pomsky-puppy-fleurs-20.jfif'))
-    ? asset('photos/pomsky-puppy-fleurs-20.jfif')
+  $imgTreats = file_exists(public_path('photos/pomsky-puppy-fleurs-20.jpg'))
+    ? asset('photos/pomsky-puppy-fleurs-20.jpg')
     : (isset($gallery[2]) ? asset('photos/'.$gallery[2]) : (isset($gallery[0]) ? asset('photos/'.$gallery[0]) : null));
 @endphp
 

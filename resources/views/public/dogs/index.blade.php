@@ -7,16 +7,16 @@
   // --- BANNIÈRE : choisit une image selon l'onglet ---
   $bannerCandidates = match(($title ?? '')) {
     'Femelles' => [
-      public_path('photos/pomsky-chiot-fleurs-31.jfif'),
-      public_path('photos/pomsky-fleur-printemps-01.jfif'),
+      public_path('photos/pomsky-chiot-fleurs-31.jpg'),
+      public_path('photos/pomsky-fleur-printemps-01.jpg'),
     ],
     'Mâles' => [
-      public_path('photos/pomsky-chiot-lavande-49.jfif'),
-      public_path('photos/pomsky-gros-plan-11.jfif'),
+      public_path('photos/pomsky-chiot-lavande-49.jpg'),
+      public_path('photos/pomsky-gros-plan-11.jpg'),
     ],
     default => [
       public_path('photos/proprietaire-portee.jpg'),
-      public_path('photos/pomsky-deux-chiots-02.jfif'),
+      public_path('photos/pomsky-deux-chiots-02.jpg'),
     ],
   };
   $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
@@ -29,11 +29,11 @@
         return asset('storage/'.$dog->photo);
       }
       $candidates = [
-        'pomsky-chiot-studio-30.jfif',
-        'pomsky-chiot-panier-45.jfif',
-        'pomsky-chiot-fleurs-31.jfif',
-        'pomsky-deux-chiots-02.jfif',
-        'pomsky-gros-plan-11.jfif',
+        'pomsky-chiot-studio-30.jpg',
+        'pomsky-chiot-panier-45.jpg',
+        'pomsky-chiot-fleurs-31.jpg',
+        'pomsky-deux-chiots-02.jpg',
+        'pomsky-gros-plan-11.jpg',
       ];
       foreach ($candidates as $c) {
         if (file_exists(public_path('photos/'.$c))) {

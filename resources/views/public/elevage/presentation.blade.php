@@ -5,14 +5,14 @@
   // Candidats pour "Propriétaire" (gauche du hero)
   $ownerLeftCandidates = [
     public_path('photos/proprietaire-portee.jpg'), // existe chez toi
-    public_path('photos/pomsky-adulte-proprietaire-portrait-32.jfif'),
+    public_path('photos/pomsky-adulte-proprietaire-portrait-32.jpg'),
   ];
   $ownerLeftPath = collect($ownerLeftCandidates)->first(fn($p) => file_exists($p));
   $ownerLeft = $ownerLeftPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $ownerLeftPath)) : null;
 
   // Candidats pour "Avec les chiens" (droite du hero)
   $ownerRightCandidates = [
-    public_path('photos/pomsky-puppy-fleurs-39.jfif'),
+    public_path('photos/pomsky-puppy-fleurs-39.jpg'),
     public_path('photos/proprietaire-portee.jpg'),
   ];
   $ownerRightPath = collect($ownerRightCandidates)->first(fn($p) => file_exists($p));
@@ -20,8 +20,8 @@
 
   // Image du CTA (évite de répéter la même photo que le hero)
   $ctaCandidates = [
-    public_path('photos/pomsky-chiot-panier-45.jfif'),
-    public_path('photos/pomsky-deux-chiots-02.jfif'),
+    public_path('photos/pomsky-chiot-panier-45.jpg'),
+    public_path('photos/pomsky-deux-chiots-02.jpg'),
     public_path('photos/proprietaire-portee.jpg'),
   ];
   $ctaPath = collect($ctaCandidates)->first(fn($p) => file_exists($p));

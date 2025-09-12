@@ -33,8 +33,8 @@
   // --- Bannière (mêmes règles que Femelles/Mâles) ---
   $bannerCandidates = [
     public_path('photos/proprietaire-portee.jpg'),
-    public_path('photos/pomsky-deux-chiots-02.jfif'),
-    public_path('photos/pomsky-chiot-lavande-36.jfif'),
+    public_path('photos/pomsky-deux-chiots-02.jpg'),
+    public_path('photos/pomsky-chiot-lavande-36.jpg'),
   ];
   $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
   $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
@@ -49,10 +49,10 @@
       }
       // fallbacks globaux
       foreach ([
-        'pomsky-deux-chiots-02.jfif',
-        'pomsky-chiot-studio-30.jfif',
-        'pomsky-chiot-panier-45.jfif',
-        'pomsky-chiot-fleurs-31.jfif',
+        'pomsky-deux-chiots-02.jpg',
+        'pomsky-chiot-studio-30.jpg',
+        'pomsky-chiot-panier-45.jpg',
+        'pomsky-chiot-fleurs-31.jpg',
       ] as $c) {
         if (file_exists(public_path('photos/'.$c))) {
           return asset('photos/'.$c);
@@ -69,10 +69,10 @@
         return asset('storage/'.$puppy->photo);
       }
       foreach ([
-        'pomsky-chiot-studio-30.jfif',
-        'pomsky-chiot-panier-45.jfif',
-        'pomsky-chiot-fleurs-31.jfif',
-        'pomsky-gros-plan-11.jfif',
+        'pomsky-chiot-studio-30.jpg',
+        'pomsky-chiot-panier-45.jpg',
+        'pomsky-chiot-fleurs-31.jpg',
+        'pomsky-gros-plan-11.jpg',
       ] as $c) {
         if (file_exists(public_path('photos/'.$c))) {
           return asset('photos/'.$c);

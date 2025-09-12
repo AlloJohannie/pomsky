@@ -3,7 +3,7 @@
 @section('content')
 @php
     // Photo de bandeau déjà dans public/photos
-    $bannerUrl = asset('photos/pomsky-chiot-fleurs-38.jfif');
+    $bannerUrl = asset('photos/pomsky-chiot-fleurs-38.jpg');
 @endphp
 
 {{-- Hero / Bandeau avec image --}}

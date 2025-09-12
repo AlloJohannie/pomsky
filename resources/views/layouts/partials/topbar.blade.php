@@ -7,10 +7,10 @@
         $logoCandidates = [
           public_path('images/logo_blanc.png'),
           public_path('images/logo/logo.svg'),
-          public_path('images/logo/logo_noir.jfif'),
+          public_path('images/logo/logo_noir.jpg'),
           public_path('images/logo/logo_noir.jpg'),
           public_path('images/logo/logo_noir.png'),
-          public_path('images/logo/logo_large.jfif'),
+          public_path('images/logo/logo_large.jpg'),
         ];
         $logoSrc = collect($logoCandidates)->first(fn($p) => file_exists($p));
         $logoUrl = $logoSrc ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $logoSrc)) : null;
