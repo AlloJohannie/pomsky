@@ -1,11 +1,21 @@
 @extends('layouts.landing', ['title' => 'Zoothérapie – Valeurs'])
 
 @section('content')
-<section class="bg-body-bg lg:py-25 md:py-22.5 py-17.5">
-  <div class="container md:text-center" data-aos="fade-up" data-aos-duration="500">
-    <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5">Nos valeurs</h1>
-    <p class="text-slate-700">Bienveillance, professionnalisme et impact réel pour la personne.</p>
-  </div>
+@php
+    // chemin vers la photo déjà dans public/photos
+    $bannerUrl = asset('photos/pomsky-couverture-bleue-09.jfif');
+@endphp
+
+{{-- Hero / Bandeau avec photo existante --}}
+<section class="relative lg:py-25 md:py-22.5 py-17.5">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('{{ $bannerUrl }}');"></div>
+    <div class="absolute inset-0 -z-0 bg-black/35"></div>
+
+    <div class="container relative z-10 md:text-center" data-aos="fade-up" data-aos-duration="500">
+        <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5 text-white drop-shadow">Nos valeurs</h1>
+        <p class="text-white/90 drop-shadow">Bienveillance, professionnalisme et impact réel pour la personne.</p>
+    </div>
 </section>
 
 <section class="bg-white lg:py-25 md:py-22.5 py-17.5">
@@ -17,7 +27,8 @@
         ['Impact mesurable','Objectifs définis, suivis et ajustés.'],
       ] as [$t,$p])
       <div class="bg-white border border-neutral-200 p-6 rounded-2xl">
-        <h3 class="font-semibold">{{ $t }}</h3><p class="mt-2 text-slate-700">{{ $p }}</p>
+        <h3 class="font-semibold">{{ $t }}</h3>
+        <p class="mt-2 text-slate-700">{{ $p }}</p>
       </div>
       @endforeach
     </div>
@@ -38,10 +49,11 @@
           </li>
           @endforeach
         </ol>
-        <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="mt-6 inline-flex underline font-medium">Pourquoi nous choisir ?</a>
+        {{-- <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="mt-6 inline-flex underline font-medium">Pourquoi nous choisir ?</a> --}}
       </div>
       <div>
-        <img src="{{ asset('photos/zootherapie-portrait.jpg') }}" alt="" class="rounded-2xl w-full h-auto object-cover">
+        <img src="{{ asset('photos/pomsky-chiot-studio-55.jfif') }}" alt="Séance de zoothérapie"
+             class="rounded-2xl w-full h-auto object-cover">
       </div>
     </div>
   </div>

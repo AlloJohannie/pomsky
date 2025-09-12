@@ -3,14 +3,28 @@
 <header class="bg-white sticky top-0 inset-x-0 z-20 transition-all duration-300">
   <div class="container">
     <div class="flex items-center justify-between py-2.5 lg:py-4.5">
+      @php
+        $logoCandidates = [
+          public_path('images/logo_blanc.png'),
+          public_path('images/logo/logo.svg'),
+          public_path('images/logo/logo_noir.jfif'),
+          public_path('images/logo/logo_noir.jpg'),
+          public_path('images/logo/logo_noir.png'),
+          public_path('images/logo/logo_large.jfif'),
+        ];
+        $logoSrc = collect($logoCandidates)->first(fn($p) => file_exists($p));
+        $logoUrl = $logoSrc ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $logoSrc)) : null;
+      @endphp
+
       <!-- Brand -->
       <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0">
-        <img src="{{ asset('images/logo/logo.svg') }}" alt="Logo" class="hidden lg:block h-8 w-8 object-contain">
+        @if($logoUrl)
+          <img src="{{ $logoUrl }}" alt="Logo" class="hidden lg:block h-8 w-8 object-contain">
+        @endif
         <span class="text-dark font-bold tracking-tight text-base sm:text-lg lg:text-xl">
           Les Petits Pomsky du Québec
         </span>
       </a>
-
       <!-- Desktop nav (id=navbar pour l'état actif via landinger.js) -->
       <nav id="navbar" class="hidden lg:flex items-center justify-center gap-5">
         <!-- Accueil -->
@@ -52,7 +66,7 @@
                       after:absolute after:-bottom-4 after:start-0 after:w-full after:h-4"
                role="menu">
             <div class="p-5">
-              <a href="{{ url('/elevage/presentation') }}#pomsky" class="block font-medium text-dark py-1.25 hover:underline">Présentation de la race</a>
+              <a href="{{ url('/elevage/pomsky') }}" class="block font-medium text-dark py-1.25 hover:underline">Présentation de la race</a>
               <a href="{{ route('faq') }}" class="block font-medium text-dark py-1.25 hover:underline">FAQ</a>
             </div>
           </div>
@@ -75,7 +89,7 @@
               <a href="{{ url('/zootherapie/services') }}" class="block font-medium text-dark py-1.25 hover:underline">Nos services</a>
               <a href="{{ url('/zootherapie/tarifs') }}" class="block font-medium text-dark py-1.25 hover:underline">Nos tarifs</a>
               <a href="{{ url('/zootherapie/partenaires') }}" class="block font-medium text-dark py-1.25 hover:underline">Partenaires</a>
-              <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="block font-medium text-dark py-1.25 hover:underline">Pourquoi nous choisir</a>
+              {{-- <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="block font-medium text-dark py-1.25 hover:underline">Pourquoi nous choisir</a> --}}
             </div>
           </div>
         </div>
@@ -83,7 +97,7 @@
         <!-- Liens directs -->
         <a href="{{ url('/galerie') }}" class="text-dark font-medium py-2.5 hover:underline">Galerie</a>
         {{-- <a href="{{ url('/a-propos') }}" class="text-dark font-medium py-2.5 hover:underline">À propos</a> --}}
-        <a href="{{ url('/#contact') }}" class="text-dark font-medium py-2.5 hover:underline">Contact</a>
+        <a href="{{ url('/contact') }}" class="text-dark font-medium py-2.5 hover:underline">Contact</a>
       </nav>
 
       <!-- Droite: CTA + burger mobile -->
@@ -161,7 +175,7 @@
           <i class="iconify tabler--chevron-down size-4 hs-accordion-active:rotate-180 transition-all"></i>
         </button>
         <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height]">
-          <a href="{{ url('/elevage/presentation') }}#pomsky" class="block py-1.5">Présentation de la race</a>
+          <a href="{{ url('/elevage/pomsky') }}" class="block py-1.5">Présentation de la race</a>
           <a href="{{ route('faq') }}" class="block py-1.5">FAQ</a>
         </div>
       </div>
@@ -177,7 +191,7 @@
           <a href="{{ url('/zootherapie/services') }}" class="block py-1.5">Nos services</a>
           <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5">Nos tarifs</a>
           <a href="{{ url('/zootherapie/partenaires') }}" class="block py-1.5">Partenaires</a>
-          <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="block py-1.5">Pourquoi nous choisir</a>
+          {{-- <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="block py-1.5">Pourquoi nous choisir</a> --}}
         </div>
       </div>
 

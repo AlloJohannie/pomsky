@@ -1,13 +1,41 @@
 @extends('layouts.landing', ['title' => 'Présentation de la propriétaire'])
 
 @section('content')
+@php
+  // Candidats pour "Propriétaire" (gauche du hero)
+  $ownerLeftCandidates = [
+    public_path('photos/proprietaire-portee.jpg'), // existe chez toi
+    public_path('photos/pomsky-adulte-proprietaire-portrait-32.jfif'),
+  ];
+  $ownerLeftPath = collect($ownerLeftCandidates)->first(fn($p) => file_exists($p));
+  $ownerLeft = $ownerLeftPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $ownerLeftPath)) : null;
+
+  // Candidats pour "Avec les chiens" (droite du hero)
+  $ownerRightCandidates = [
+    public_path('photos/pomsky-puppy-fleurs-39.jfif'),
+    public_path('photos/proprietaire-portee.jpg'),
+  ];
+  $ownerRightPath = collect($ownerRightCandidates)->first(fn($p) => file_exists($p));
+  $ownerRight = $ownerRightPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $ownerRightPath)) : null;
+
+  // Image du CTA (évite de répéter la même photo que le hero)
+  $ctaCandidates = [
+    public_path('photos/pomsky-chiot-panier-45.jfif'),
+    public_path('photos/pomsky-deux-chiots-02.jfif'),
+    public_path('photos/proprietaire-portee.jpg'),
+  ];
+  $ctaPath = collect($ctaCandidates)->first(fn($p) => file_exists($p));
+  $ctaImg = $ctaPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $ctaPath)) : null;
+@endphp
+
 {{-- HERO en triptyque (inspiré de careers) --}}
 <section class="bg-body-bg lg:py-25 md:py-22.5 py-17.5">
   <div class="container">
     <div class="grid lg:grid-cols-3 lg:gap-5 gap-10 items-center">
-      <div data-aos="fade-right" data-aos-duration="600">
-        <img src="{{ asset('photos/proprietaire-portrait-1.jpg') }}" alt="Propriétaire" class="lg:w-67.5 lg:h-75 w-full md:h-117.5 h-70 rounded-2xl object-cover">
-      </div>
+@if($ownerLeft)
+  <img src="{{ $ownerLeft }}" alt="Propriétaire" class="lg:w-67.5 lg:h-75 w-full md:h-117.5 h-70 rounded-2xl object-cover">
+@endif
+
 
       <div class="text-center" data-aos="fade-up" data-aos-duration="600">
         <div class="bg-primary py-0.5 px-3.5 rounded-full font-medium text-sm inline-flex mb-2.5 text-dark">Notre histoire</div>
@@ -15,14 +43,14 @@
         <p class="mb-7.5 max-w-2xl mx-auto">
           Amoureuse des chiens depuis l’enfance, j’ai fondé <strong>Les Petits Pomsky du Québec</strong> pour offrir des compagnons bien dans leurs pattes et bien accompagnés.
         </p>
-        <a href="{{ url('/#contact') }}" class="py-3.5 md:px-7.5 px-6 inline-flex bg-white font-medium rounded-2xl text-dark transition-all duration-300 hover:bg-primary">
+        <a href="{{ url('/contact') }}" class="py-3.5 md:px-7.5 px-6 inline-flex bg-white font-medium rounded-2xl text-dark transition-all duration-300 hover:bg-primary">
           Me contacter
         </a>
       </div>
 
-      <div class="flex lg:justify-self-end" data-aos="fade-left" data-aos-duration="600">
-        <img src="{{ asset('photos/proprietaire-portrait-2.jpg') }}" alt="Avec les chiens" class="lg:w-57.5 lg:h-60 w-full md:h-102.5 h-70 rounded-2xl object-cover">
-      </div>
+@if($ownerRight)
+  <img src="{{ $ownerRight }}" alt="Avec les chiens" class="lg:w-57.5 lg:h-60 w-full md:h-102.5 h-70 rounded-2xl object-cover">
+@endif
     </div>
   </div>
 </section>
@@ -99,12 +127,13 @@
   <div class="container">
     <div class="grid md:grid-cols-2" data-aos="fade-up" data-aos-duration="500">
       <div>
-        <img src="{{ asset('photos/proprietaire-portee.jpg') }}" alt="" class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
-      </div>
+@if($ctaImg)
+  <img src="{{ $ctaImg }}" alt="Chiots Pomsky" class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
+@endif      </div>
       <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">
         <h2 class="mb-2.5 md:text-4xl text-2.6xl">Envie d’en savoir plus&nbsp;?</h2>
         <p class="mb-9">Parlez-moi de votre quotidien et de vos attentes — je vous oriente vers le chiot qui vous correspond.</p>
-        <a href="{{ url('/#contact') }}" class="py-3.5 lg:px-7.5 px-6.5 inline-flex bg-dark text-white font-medium rounded-2xl transition-all duration-300 hover:text-primary">Nous écrire</a>
+        <a href="{{ url('/contact') }}" class="py-3.5 lg:px-7.5 px-6.5 inline-flex bg-dark text-white font-medium rounded-2xl transition-all duration-300 hover:text-primary">Nous écrire</a>
       </div>
     </div>
   </div>

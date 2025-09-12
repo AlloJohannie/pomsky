@@ -1,18 +1,44 @@
 @extends('layouts.landing', ['title' => 'Réservation & tarifs'])
 
 @section('content')
+@php
+  // --- BANNIÈRE : candidates + fallback ---
+  $bannerCandidates = [
+    public_path('photos/proprietaire-portee.jpg'),
+    public_path('photos/pomsky-chiot-lavande-36.jfif'),
+    public_path('photos/pomsky-deux-chiots-02.jfif'),
+  ];
+  $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
+  $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
 
-{{-- HERO --}}
-<section class="lg:py-25 md:py-22.5 py-17.5 bg-body-bg">
-  <div class="container">
-    <div class="text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="500">
-      <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5">Comment réserver votre Pomsky</h1>
-      <p class="mb-2.5">Toutes les étapes, le budget et ce qui est inclus — en toute transparence.</p>
+  // --- CTA image (évite de répéter exactement la bannière) ---
+  $ctaCandidates = [
+    public_path('photos/pomsky-chiot-panier-45.jfif'),
+    public_path('photos/pomsky-chiot-studio-30.jfif'),
+    public_path('photos/proprietaire-portee.jpg'),
+  ];
+  $ctaPath = collect($ctaCandidates)->first(fn($p) => file_exists($p));
+  $ctaImg  = $ctaPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $ctaPath)) : null;
+@endphp
+
+{{-- HERO (avec image de fond si dispo) --}}
+<section class="relative lg:py-25 md:py-22.5 py-17.5">
+  @if($bannerUrl)
+    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('{{ $bannerUrl }}');"></div>
+    <div class="absolute inset-0 -z-0 bg-black/35"></div>
+  @else
+    <div class="absolute inset-0 -z-10 bg-body-bg"></div>
+  @endif
+
+  <div class="container relative z-10">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5 text-white drop-shadow">Comment réserver votre Pomsky</h1>
+      <p class="mb-2.5 text-white/90 drop-shadow">Toutes les étapes, le budget et ce qui est inclus — en toute transparence.</p>
     </div>
   </div>
 </section>
 
-{{-- ETAPES (simple, clair) --}}
+{{-- ÉTAPES --}}
 <section class="bg-white lg:py-25 md:py-22.5 py-17.5">
   <div class="container-small">
     <div class="grid md:grid-cols-2 gap-7.5 items-start" data-aos="fade-up" data-aos-duration="500">
@@ -61,7 +87,7 @@
         </ol>
 
         <div class="mt-7">
-          <a href="{{ url('/#contact') }}" class="py-3.5 px-7.5 inline-flex bg-dark text-white rounded-2xl font-medium transition-all duration-300 hover:text-primary">
+          <a href="{{ url('/contact') }}" class="py-3.5 px-7.5 inline-flex bg-dark text-white rounded-2xl font-medium transition-all duration-300 hover:text-primary">
             Poser une question / Réserver
           </a>
         </div>
@@ -159,18 +185,22 @@
   </div>
 </section>
 
-{{-- CTA image + panneau (style Landinger) --}}
+{{-- CTA image + panneau --}}
 <section class="bg-white lg:pb-25 md:pb-22.5 pb-17.5">
   <div class="container">
     <div class="grid md:grid-cols-2" data-aos="fade-up" data-aos-duration="500">
       <div>
-        <img src="{{ asset('photos/proprietaire-portee.jpg') }}" alt="" class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
+        @if($ctaImg)
+          <img src="{{ $ctaImg }}" alt="Chiot Pomsky — réservation"
+               loading="lazy"
+               class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
+        @endif
       </div>
       <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">
         <h2 class="mb-2.5 md:text-4xl text-2.6xl">Prêt à réserver&nbsp;?</h2>
-        <p class="mb-9">Écrivons-nous vos attentes, votre contexte familial et le type de compagnon souhaité — on vous guide pas à pas.</p>
+        <p class="mb-9">Écrivez-nous vos attentes, votre contexte familial et le type de compagnon souhaité — on vous guide pas à pas.</p>
         <div>
-          <a href="{{ url('/#contact') }}" class="py-3.5 lg:px-7.5 px-6.5 inline-flex text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
+          <a href="{{ url('/contact') }}" class="py-3.5 lg:px-7.5 px-6.5 inline-flex text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
             Nous contacter
           </a>
         </div>
@@ -178,5 +208,4 @@
     </div>
   </div>
 </section>
-
 @endsection

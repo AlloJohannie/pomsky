@@ -30,6 +30,7 @@ Route::view('/elevage/pomsky', 'public.elevage.pomsky');
 Route::view('/evenements', 'public.evenements');
 Route::view('/temoignages', 'public.temoignages');
 Route::view('/faq', 'public.faq')->name('faq');
+Route::view('/galerie', 'public.galerie')->name('galerie');
 Route::view('/reservation-tarifs', 'public.reservation-tarifs')->name('reservation.tarifs');
 
 // (Réserver / Prix si tu veux)
@@ -49,3 +50,4 @@ Route::middleware(['auth'])->group(function () {
 
 Route::view('/contact', 'public.contact')->name('contact');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+Route::view('/en-construction', 'public.en-construction')->name('wip');

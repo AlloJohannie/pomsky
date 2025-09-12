@@ -2,15 +2,37 @@
 
 @section('content')
 
-{{-- Hero / Titre --}}
-<section class="bg-body-bg lg:py-25 md:py-12.5 py-7.5">
-  <div class="container">
+@php
+  // Choix auto avec fallback
+  $bannerCandidates = [
+        public_path('photos/pomsky-lavande-03.jfif'),
+    public_path('photos/pomsky-chiot-studio-30.jfif'),
+    public_path('photos/proprietaire-portee.jpg'),
+
+  ];
+  $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
+  $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
+@endphp
+
+{{-- Hero / Titre avec image de fond --}}
+<section class="relative lg:py-25 md:py-12.5 py-7.5">
+  @if($bannerUrl)
+    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('{{ $bannerUrl }}');"></div>
+    <div class="absolute inset-0 -z-0 bg-black/35"></div>
+  @else
+    <div class="absolute inset-0 -z-10 bg-body-bg"></div>
+  @endif
+
+  <div class="container relative z-10">
     <div class="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-easing="ease-in-out">
-      <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5">Foire aux questions</h1>
-      <p class="mb-2.5">Réponses claires sur nos Pomskys, l’adoption et nos services de zoothérapie.</p>
+      <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5 text-white drop-shadow">Foire aux questions</h1>
+      <p class="mb-2.5 text-white/90 drop-shadow">
+        Réponses claires sur nos Pomskys, l’adoption et nos services de zoothérapie.
+      </p>
     </div>
   </div>
 </section>
+
 
 {{-- FAQ bloc 1 : Pomsky & Adoption --}}
 <section class="bg-white lg:py-25 md:py-22.5 py-17.5">
@@ -69,7 +91,7 @@
           </button>
           <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
             <p class="mt-5">
-              Écris-nous via la section <a class="underline" href="{{ url('/#contact') }}">Contact</a>. Nous confirmons les disponibilités, les étapes et le dépôt de réservation.
+              Écris-nous via la section <a class="underline" href="{{ url('/contact') }}">Contact</a>. Nous confirmons les disponibilités, les étapes et le dépôt de réservation.
             </p>
           </div>
         </div>
@@ -183,7 +205,7 @@
   <div class="container text-center" data-aos="fade-up" data-aos-delay="220" data-aos-duration="500">
     <h2 class="mb-2.5 lg:text-5.5xl md:text-4.6xl text-3.4xl">Vous avez une autre question&nbsp;?</h2>
     <p class="text-base mb-5">Écrivez-nous, on vous répond rapidement.</p>
-    <a href="{{ url('/#contact') }}" class="py-3.5 md:px-7.5 px-6 inline-flex bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
+    <a href="{{ url('/contact') }}" class="py-3.5 md:px-7.5 px-6 inline-flex bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
       Nous contacter
     </a>
   </div>

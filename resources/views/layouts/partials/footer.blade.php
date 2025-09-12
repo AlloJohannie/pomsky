@@ -1,10 +1,24 @@
+@php
+  $footerLogoCandidates = [
+    public_path('images/logo/carte_affaire.jfif'), // carte d’affaire
+  ];
+  $footerLogoSrc = collect($footerLogoCandidates)->first(fn($p) => file_exists($p));
+  $footerLogoUrl = $footerLogoSrc ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $footerLogoSrc)) : null;
+@endphp
+
 <footer class="bg-dark text-white pt-14 pb-10">
   <div class="container">
-    <div class="grid lg:grid-cols-4 gap-10">
-      <div class="col-span-2">
-        <img src="{{ asset('images/logo/logo.svg') }}" alt="" class="h-10">
-        <p class="mt-3 max-w-lg">Passion familiale – Petit « Pomsky » du Québec. Élevage familial et zoothérapie pour des liens durables.</p>
+    <div class="grid lg:grid-cols-4 gap-10 items-start">
+      {{-- Colonne logo (plus grand, sans texte) --}}
+      <div class="col-span-2 flex justify-center lg:justify-start">
+        @if($footerLogoUrl)
+          <img src="{{ $footerLogoUrl }}"
+               alt="Carte d'affaire"
+               class="max-h-32 w-auto rounded-xl shadow-lg"> {{-- ↑ hauteur augmentée (max-h-32 ≈ 8rem) --}}
+        @endif
       </div>
+
+      {{-- Navigation --}}
       <div>
         <h4 class="font-semibold mb-3 text-white">Navigation</h4>
         <ul class="space-y-2 text-sm">
@@ -15,6 +29,8 @@
           <li><a class="hover:underline" href="{{ url('/#faq') }}">FAQ</a></li>
         </ul>
       </div>
+
+      {{-- Contact --}}
       <div>
         <h4 class="font-semibold mb-3 text-white">Contact</h4>
         <p class="text-sm">
@@ -25,6 +41,7 @@
     </div>
 
     <hr class="border-neutral-700 my-8">
+
     <div class="text-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
       <div>© <script>document.write(new Date().getFullYear())</script> Petit « Pomsky » du Québec.</div>
       <div>Fait avec ❤️ pour les chiens & le bien-être.</div>

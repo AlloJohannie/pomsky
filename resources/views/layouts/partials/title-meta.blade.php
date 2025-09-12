@@ -7,4 +7,4 @@
 <meta content="Coderthemes" name="author" />
 
 <!-- Theme favicon -->
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="shortcut icon" href="/images/logo_blanc.png">

@@ -1,10 +1,29 @@
 @extends('layouts.landing', ['title' => 'Zoothérapie – Services'])
 
 @section('content')
+@php
+    // Photo de bandeau déjà dans public/photos
+    $bannerUrl = asset('photos/pomsky-chiot-fleurs-38.jfif');
+@endphp
+
+{{-- Hero / Bandeau avec image --}}
+<section class="relative lg:py-25 md:py-22.5 py-17.5">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('{{ $bannerUrl }}');"></div>
+    <div class="absolute inset-0 -z-0 bg-black/35"></div>
+
+    <div class="container relative z-10 text-center">
+        <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5 text-white drop-shadow">
+            Nos services de zoothérapie
+        </h1>
+        <p class="text-white/90 drop-shadow">
+            Séances individuelles, en groupe ou en milieu spécialisé.
+        </p>
+    </div>
+</section>
+
 <section class="bg-white lg:py-25 md:py-22.5 py-17.5">
   <div class="container">
-    <h1 class="text-4xl md:text-5xl">Nos services de zoothérapie</h1>
-
     <div class="grid md:grid-cols-3 gap-6 mt-6" data-aos="fade-up">
       @foreach ([
         ['Individuel','Objectifs personnalisés, rythme adapté, soutien émotionnel.'],
@@ -18,7 +37,7 @@
       @endforeach
     </div>
 
-    {{-- Cas d’usage en accordéons (Preline) --}}
+    {{-- Cas d’usage en accordéons --}}
     <div class="mt-10 md:space-y-5 space-y-3 hs-accordion-group" data-aos="fade-up">
       @foreach ([
         ['Gestion du stress & anxiété','Respiration, ancrage, mise en confiance par l’animal.'],

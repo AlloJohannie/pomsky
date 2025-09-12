@@ -3,8 +3,38 @@
 @section('content')
 
 @php
-  // Liste auto des images pour la galerie (jpg, jpeg, png, webp)
-  $gallery = $gallery ?? array_map('basename', glob(public_path('photos/*.{jpg,jpeg,png,webp}'), GLOB_BRACE) ?: []);
+  // Extensions supportées (inclut JFIF)
+  $patterns = [
+    public_path('photos/*.jpg'),
+    public_path('photos/*.jpeg'),
+    public_path('photos/*.png'),
+    public_path('photos/*.webp'),
+    public_path('photos/*.jfif'),
+  ];
+  $files = [];
+  foreach ($patterns as $p) { $files = array_merge($files, glob($p) ?: []); }
+
+  // Tri "naturel" par nom de fichier
+  natsort($files);
+  $gallery = $gallery ?? array_map('basename', $files);
+
+  // Sélections d’images par section (avec fallback propre)
+  $imgElevage = file_exists(public_path('photos/pomsky-deux-chiots-02.jfif'))
+    ? asset('photos/pomsky-deux-chiots-02.jfif')
+    : (isset($gallery[0]) ? asset('photos/'.$gallery[0]) : null);
+
+  $imgZt = file_exists(public_path('photos/pomsky-adulte_proprietaire-portrait-32.jfif'))
+    ? asset('photos/pomsky-adulte_proprietaire-portrait-32.jfif')
+    : (isset($gallery[1]) ? asset('photos/'.$gallery[1]) : (isset($gallery[0]) ? asset('photos/'.$gallery[0]) : null));
+
+  $imgTreats = file_exists(public_path('photos/pomsky-puppy-fleurs-20.jfif'))
+    ? asset('photos/pomsky-puppy-fleurs-20.jfif')
+    : (isset($gallery[2]) ? asset('photos/'.$gallery[2]) : (isset($gallery[0]) ? asset('photos/'.$gallery[0]) : null));
+@endphp
+
+@php
+  // Cherche une image qui contient "chiot" sinon prend la 1ère
+  $pomskyImg = collect($gallery)->first(fn($f) => str_contains(Str::lower($f), 'pomsky-duo-panier-13')) ?? ($gallery[0] ?? null);
 @endphp
 
 <!-- Hero -->
@@ -44,6 +74,10 @@
     <h2 class="text-3xl md:text-4xl font-semibold text-center">Deux passions réunies pour votre bien-être</h2>
     <div class="grid md:grid-cols-2 gap-6 mt-10">
       <div class="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200">
+        @if($imgElevage)
+          <img src="{{ $imgElevage }}" alt="Chiots de notre élevage Pomsky"
+              loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
+        @endif
         <h3 class="text-2xl font-semibold">Élevage Pomsky</h3>
         <p class="mt-2 text-slate-700">Nous élevons avec passion des Pomsky de qualité exceptionnelle dans un environnement familial aimant.</p>
         <ul class="mt-4 space-y-2 text-slate-700">
@@ -55,6 +89,10 @@
       </div>
 
       <div id="zootherapie" class="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200">
+        @if($imgZt)
+          <img src="{{ $imgZt }}" alt="Interventions de zoothérapie avec Pomsky"
+              loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
+        @endif
         <h3 class="text-2xl font-semibold">Zoothérapie</h3>
         <p class="mt-2 text-slate-700">Nous utilisons le lien humain-animal pour soutenir le mieux-être, la confiance et l’expression des émotions.</p>
         <ul class="mt-4 space-y-2 text-slate-700">
@@ -62,7 +100,7 @@
           <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Séances de groupe</li>
           <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Suivi personnalisé</li>
         </ul>
-        <a href="{{ url('/#contact') }}" class="mt-6 inline-flex items-center gap-2 underline font-medium">Découvrir nos services <i class="iconify tabler--arrow-right"></i></a>
+        <a href="{{ url('/contact') }}" class="mt-6 inline-flex items-center gap-2 underline font-medium">Découvrir nos services <i class="iconify tabler--arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -85,7 +123,9 @@
       </ul>
     </div>
     <div data-aos="fade-left">
-      <img src="{{ asset('photos/' . ($gallery[1] ?? ($gallery[0] ?? ''))) }}" class="rounded-2xl w-full h-auto object-cover" alt="Chiots Pomsky">
+      @if($pomskyImg)
+        <img src="{{ asset('photos/'.$pomskyImg) }}" class="rounded-2xl w-full h-auto object-cover" alt="Chiots Pomsky">
+      @endif
     </div>
   </div>
 </section>
@@ -115,31 +155,9 @@
   </div>
 </section>
 
-<!-- Portées -->
-<section id="portees" class="bg-white py-16 md:py-20">
-  <div class="container">
-    <div class="flex items-end justify-between gap-4">
-      <h2 class="text-3xl md:text-4xl font-semibold">Nos portées</h2>
-      <a href="{{ url('/#contact') }}" class="text-sm underline font-medium">Comment réserver</a>
-    </div>
-    <p class="mt-3 text-slate-700">Section à mettre à jour à chaque nouvelle portée (photos, parents, date d’adoption, inclusions).</p>
-
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      @foreach(array_slice($gallery, 0, 3) as $g)
-        <div class="bg-white border border-neutral-200 rounded-2xl overflow-hidden">
-          <img class="w-full h-56 object-cover" src="{{ asset('photos/'.$g) }}" alt="Portée">
-          <div class="p-4">
-            <h3 class="font-semibold">Portée récente</h3>
-            <p class="text-sm text-slate-700 mt-1">Socialisés, suivis vétérinaires, départ avec contrat et conseils.</p>
-          </div>
-        </div>
-      @endforeach
-    </div>
-  </div>
-</section>
 
 <!-- Pourquoi nous choisir -->
-<section class="py-16 md:py-20">
+{{-- <section class="py-16 md:py-20">
   <div class="container">
     <h2 class="text-3xl md:text-4xl font-semibold text-center">Pourquoi nous choisir ?</h2>
     <div class="grid md:grid-cols-4 gap-6 mt-10">
@@ -161,52 +179,45 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 <!-- Galerie -->
-<section id="galerie" class="bg-white py-16 md:py-20">
+{{-- <section id="galerie" class="bg-white py-16 md:py-20">
   <div class="container">
     <h2 class="text-3xl md:text-4xl font-semibold text-center">Galerie photos</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-      @forelse($gallery as $file)
-        <img src="{{ asset('photos/'.$file) }}" alt="Pomsky" class="w-full h-48 object-cover rounded-xl">
-      @empty
-        <p class="col-span-full text-center text-slate-600">Ajoute tes photos dans <code>public/photos</code>.</p>
-      @endforelse
-    </div>
-  </div>
-</section>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        @forelse($gallery as $file)
+          <img
+            src="{{ asset('photos/'.$file) }}"
+            alt="Pomsky"
+            loading="lazy"
+            class="w-full aspect-[4/3] object-cover rounded-xl"
+          >
+        @empty
+          <p class="col-span-full text-center text-slate-600">
+            Ajoute tes photos dans <code>public/photos</code>.
+          </p>
+        @endforelse
+      </div>
 
-<!-- FAQ (aperçu) -->
-<section id="faq" class="py-16 md:py-20">
-  <div class="container">
-    <h2 class="text-3xl md:text-4xl font-semibold text-center">FAQ</h2>
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-2xl border border-neutral-200">
-        <h3 class="font-semibold">Le Pomsky perd-il beaucoup de poils ?</h3>
-        <p class="mt-2 text-slate-700">Oui, surtout aux périodes de mue. Un brossage régulier limite la perte et garde le poil sain.</p>
-      </div>
-      <div class="bg-white p-6 rounded-2xl border border-neutral-200">
-        <h3 class="font-semibold">À partir de quel âge un chiot peut partir ?</h3>
-        <p class="mt-2 text-slate-700">Jamais avant 8 semaines et après la première visite vétérinaire.</p>
-      </div>
-    </div>
   </div>
-</section>
-{{-- === CTA Gâteries (style Landinger) === --}}
+</section> --}}
+
 @php
-  $treatsUrl = 'https://exemple-gateries.com'; // remplace par l’URL réelle
-  $treatsImg = asset('photos/gateries.jpg');   // remplace par ton image ou mets un placeholder
+  $treatsUrl = 'https://exemple-gateries.com';
+  $treatsImg = $imgTreats; // utilise notre sélection
 @endphp
-
 <section id="gateries" class="bg-white lg:py-25 md:py-22.5 py-17.5">
   <div class="container">
     <div class="grid md:grid-cols-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
       
       {{-- Visuel --}}
-      <div>
-        <img src="{{ $treatsImg }}" alt="Gâteries pour chiens" class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
-      </div>
+<div>
+  @if($treatsImg)
+    <img src="{{ $treatsImg }}" alt="Gâteries saines pour chiens"
+         class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
+  @endif
+</div>
 
       {{-- Panneau texte + bouton --}}
       <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">

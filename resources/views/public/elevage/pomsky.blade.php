@@ -1,11 +1,49 @@
 @extends('layouts.landing', ['title' => 'Présentation du Pomsky'])
 
 @section('content')
-{{-- HERO simple --}}
-<section class="bg-body-bg lg:py-25 md:py-22.5 py-17.5">
-  <div class="container text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="500">
-    <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5">Le Pomsky</h1>
-    <p class="mb-2.5">Un compagnon vif, affectueux et intelligent — croisement entre Husky sibérien et Spitz nain (Pomeranian).</p>
+@php
+  // --- Pick a banner image (with fallbacks) ---
+  $bannerCandidates = [
+    public_path('photos/pomsky-chiot-lavande-36.jfif'),
+    public_path('photos/pomsky-deux-chiots-02.jfif'),
+    public_path('photos/proprietaire-portee.jpg'),
+  ];
+  $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
+  $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
+
+  // --- Pick the portrait used next to the “Tempérament & besoins” text ---
+  $portraitCandidates = [
+    public_path('photos/pomsky-portrait.jpg'),
+    public_path('photos/pomsky-gros-plan-11.jfif'),
+    public_path('photos/pomsky-chiot-studio-30.jfif'),
+    public_path('photos/pomsky-chiot-panier-45.jfif'),
+  ];
+  $portraitPath = collect($portraitCandidates)->first(fn($p) => file_exists($p));
+  $portraitUrl  = $portraitPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $portraitPath)) : asset('/images/team/5.png');
+
+  // --- Build a small gallery (6–8 photos) from /public/photos ---
+  $all = glob(public_path('photos/*.{jpg,jpeg,png,webp,jfif}'), GLOB_BRACE) ?: [];
+  // Sort newest first (roughly) then keep diverse first picks
+  rsort($all);
+  $gallery = array_slice(array_map(function($p){
+    return str_replace(public_path().DIRECTORY_SEPARATOR, '', $p);
+  }, $all), 0, 8);
+@endphp
+
+{{-- HERO with background image (coherent with other pages) --}}
+<section class="relative lg:py-25 md:py-22.5 py-17.5">
+  @if($bannerUrl)
+    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('{{ $bannerUrl }}');"></div>
+    <div class="absolute inset-0 -z-0 bg-black/35"></div>
+  @else
+    <div class="absolute inset-0 -z-10 bg-body-bg"></div>
+  @endif
+
+  <div class="container relative z-10 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="500">
+    <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5 text-white drop-shadow">Le Pomsky</h1>
+    <p class="mb-2.5 text-white/90 drop-shadow">
+      Un compagnon vif, affectueux et intelligent — croisement entre Husky sibérien et Spitz nain (Pomeranian).
+    </p>
   </div>
 </section>
 
@@ -34,12 +72,14 @@
     {{-- Image + texte --}}
     <div class="grid lg:grid-cols-2 gap-10 items-center mt-12" data-aos="fade-up" data-aos-duration="500">
       <div>
-        <img src="{{ asset('photos/pomsky-portrait.jpg') }}" class="rounded-2xl w-full h-auto object-cover" alt="Pomsky">
+        <img src="{{ $portraitUrl }}" alt="Pomsky"
+             loading="lazy"
+             class="rounded-2xl w-full h-auto object-cover">
       </div>
       <div>
         <h2 class="text-3xl md:text-4xl font-semibold">Tempérament & besoins</h2>
         <p class="mt-4 text-slate-700">
-          Curieux et joueur, le Pomsky s’épanouit avec des activités variées (promenades, jeux de réflexion, socialisation). 
+          Curieux et joueur, le Pomsky s’épanouit avec des activités variées (promenades, jeux de réflexion, socialisation).
           La cohérence éducative et l’enrichissement mental sont essentiels.
         </p>
         <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700">
@@ -65,7 +105,28 @@
   </div>
 </section>
 
-{{-- FAQ raciale (accordéon Preline compact) --}}
+{{-- Mini-galerie (cohérente avec le site) --}}
+<section class="bg-white py-12">
+  <div class="container">
+    <h2 class="text-3xl md:text-4xl font-semibold text-center">Quelques photos</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+      @forelse($gallery as $g)
+        <img
+          src="{{ asset($g) }}"
+          alt="Pomsky"
+          loading="lazy"
+          class="w-full h-48 object-cover rounded-xl"
+        >
+      @empty
+        <p class="col-span-full text-center text-slate-600">
+          Ajoutez des photos dans <code>public/photos</code> pour alimenter cette section.
+        </p>
+      @endforelse
+    </div>
+  </div>
+</section>
+
+{{-- FAQ raciale --}}
 <section class="bg-white lg:pb-25 md:pb-22.5 pb-17.5">
   <div class="container-small">
     <div class="text-center md:mb-12.5 mb-7.5" data-aos="fade-up" data-aos-duration="500">

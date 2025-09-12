@@ -1,12 +1,26 @@
 @extends('layouts.landing', ['title' => 'Valeurs & mission'])
 
 @section('content')
-<section class="bg-body-bg py-16 md:py-22.5">
-  <div class="container text-center">
-    <h1 class="text-4xl md:text-5.5xl">Nos valeurs & mission</h1>
-    <p class="mt-2 text-slate-700">Philosophie de l’élevage et de la zoothérapie.</p>
+@php
+  $banner = file_exists(public_path('photos/pomsky-chiot-lavande-36.jfif'))
+    ? asset('photos/pomsky-chiot-lavande-36.jfif')
+    : null;
+@endphp
+
+<section
+  @if($banner)
+    style="background-image:url('{{ $banner }}'); background-size:cover; background-position:center;"
+  @endif
+  class="relative py-16 md:py-22.5 text-center text-white">
+  <div class="container relative z-10">
+    <h1 class="text-4xl md:text-5.5xl drop-shadow-lg">Nos valeurs & mission</h1>
+    <p class="mt-2 text-lg md:text-xl drop-shadow">Philosophie de l’élevage et de la zoothérapie.</p>
   </div>
+  @if($banner)
+    <div class="absolute inset-0 bg-black/40"></div> {{-- voile sombre pour lisibilité --}}
+  @endif
 </section>
+
 
 <section class="bg-white py-16">
   <div class="container grid md:grid-cols-3 gap-6">
