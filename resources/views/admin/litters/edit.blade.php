@@ -8,7 +8,7 @@
   <form method="post" action="{{ route('admin.litters.update', $litter) }}" class="space-y-4">
     @csrf @method('PUT')
     <div class="grid md:grid-cols-2 gap-4">
-      <x-input label="Code" name="code" :value="$litter->code" />
+      <x-text-input label="Code" name="code" :value="$litter->code" />
       <div>
         <label class="block text-sm font-medium">Statut</label>
         <select name="status" class="mt-1 w-full rounded border-gray-300">
@@ -17,9 +17,9 @@
           @endforeach
         </select>
       </div>
-      <x-input type="date" label="Date de naissance" name="born_at" :value="$litter->born_at" />
-      <x-input type="date" label="Prêt à partir" name="ready_at" :value="$litter->ready_at" />
-      <x-input type="number" label="Nb chiots" name="puppies_count" :value="$litter->puppies_count" />
+      <x-text-input type="date" label="Date de naissance" name="born_at" :value="$litter->born_at" />
+      <x-text-input type="date" label="Prêt à partir" name="ready_at" :value="$litter->ready_at" />
+      <x-text-input type="number" label="Nb chiots" name="puppies_count" :value="$litter->puppies_count" />
       <div>
         <label class="block text-sm font-medium">Père</label>
         <select name="sire_id" class="mt-1 w-full rounded border-gray-300">
