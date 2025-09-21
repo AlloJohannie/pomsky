@@ -22,7 +22,7 @@
           <img src="{{ $logoUrl }}" alt="Logo" class="hidden lg:block h-8 w-8 object-contain">
         @endif
         <span class="text-dark font-bold tracking-tight text-base sm:text-lg lg:text-xl">
-          Les Petits Pomsky du Québec
+          Passion familiale : Petit Pomsky du Québec
         </span>
       </a>
       <!-- Desktop nav (id=navbar pour l'état actif via landinger.js) -->
@@ -66,7 +66,7 @@
                       after:absolute after:-bottom-4 after:start-0 after:w-full after:h-4"
                role="menu">
             <div class="p-5">
-              <a href="{{ url('/elevage/pomsky') }}" class="block font-medium text-dark py-1.25 hover:underline">Présentation de la race</a>
+              <a href="{{ url('/elevage/pomsky') }}" class="block font-medium text-dark py-1.25 hover:underline">Le Pomsky – Né d’un rêve</a>
               <a href="{{ route('faq') }}" class="block font-medium text-dark py-1.25 hover:underline">FAQ</a>
             </div>
           </div>
@@ -85,7 +85,7 @@
                       after:absolute after:-bottom-4 after:start-0 after:w-full after:h-4"
                role="menu">
             <div class="p-5">
-              <a href="{{ url('/zootherapie/valeurs') }}" class="block font-medium text-dark py-1.25 hover:underline">Valeurs</a>
+              <a href="{{ url('/zootherapie/valeurs') }}" class="block font-medium text-dark py-1.25 hover:underline">Mission & Valeur</a>
               <a href="{{ url('/zootherapie/services') }}" class="block font-medium text-dark py-1.25 hover:underline">Nos services</a>
               <a href="{{ url('/zootherapie/tarifs') }}" class="block font-medium text-dark py-1.25 hover:underline">Nos tarifs</a>
               <a href="{{ url('/zootherapie/partenaires') }}" class="block font-medium text-dark py-1.25 hover:underline">Partenaires</a>
@@ -175,7 +175,7 @@
           <i class="iconify tabler--chevron-down size-4 hs-accordion-active:rotate-180 transition-all"></i>
         </button>
         <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height]">
-          <a href="{{ url('/elevage/pomsky') }}" class="block py-1.5">Présentation de la race</a>
+          <a href="{{ url('/elevage/pomsky') }}" class="block py-1.5">Le Pomsky – Né d’un rêve</a>
           <a href="{{ route('faq') }}" class="block py-1.5">FAQ</a>
         </div>
       </div>

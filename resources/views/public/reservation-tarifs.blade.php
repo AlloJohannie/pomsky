@@ -13,7 +13,7 @@
 
   // --- CTA image (évite de répéter exactement la bannière) ---
   $ctaCandidates = [
-    public_path('photos/pomsky-chiot-panier-45.jpg'),
+    public_path('photos/pomsky-chiot-panier-45_coupe.jpg'),
     public_path('photos/pomsky-chiot-studio-30.jpg'),
     public_path('photos/proprietaire-portee.jpg'),
   ];
@@ -21,7 +21,7 @@
   $ctaImg  = $ctaPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $ctaPath)) : null;
 @endphp
 
-{{-- HERO (avec image de fond si dispo) --}}
+{{-- HERO --}}
 <section class="relative lg:py-25 md:py-22.5 py-17.5">
   @if($bannerUrl)
     <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('{{ $bannerUrl }}');"></div>
@@ -32,155 +32,234 @@
 
   <div class="container relative z-10">
     <div class="text-center max-w-3xl mx-auto">
-      <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5 text-white drop-shadow">Comment réserver votre Pomsky</h1>
-      <p class="mb-2.5 text-white/90 drop-shadow">Toutes les étapes, le budget et ce qui est inclus — en toute transparence.</p>
+      <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5 text-white drop-shadow">Processus d’adoption</h1>
+      <p class="mb-2.5 text-white/90 drop-shadow">Réservation, contrats, modalités et inclusions — tout est expliqué ici.</p>
     </div>
   </div>
 </section>
 
-{{-- ÉTAPES --}}
+{{-- 1) SÉLECTION RIGOUREUSE DES ADOPTANTS --}}
 <section class="bg-white lg:py-25 md:py-22.5 py-17.5">
   <div class="container-small">
-    <div class="grid md:grid-cols-2 gap-7.5 items-start" data-aos="fade-up" data-aos-duration="500">
-      <div>
-        <h2 class="md:text-4xl text-3.4xl mb-5">Étapes de réservation</h2>
-        <ol class="space-y-4">
-          <li class="bg-body-bg p-5 rounded-2xl">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 bg-primary text-black rounded-full size-8 inline-flex items-center justify-center font-semibold">1</div>
-              <div>
-                <h3 class="text-xl font-semibold">Prise de contact</h3>
-                <p class="mt-1 text-slate-700">Écrivez-nous pour connaître les portées à venir et voir si notre élevage correspond à votre famille.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="bg-body-bg p-5 rounded-2xl">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 bg-primary text-black rounded-full size-8 inline-flex items-center justify-center font-semibold">2</div>
-              <div>
-                <h3 class="text-xl font-semibold">Réservation (acompte)</h3>
-                <p class="mt-1 text-slate-700">Un <strong>acompte</strong> confirme votre place sur la liste. Il est déduit du prix final et n’est pas remboursable si vous vous désistez.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="bg-body-bg p-5 rounded-2xl">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 bg-primary text-black rounded-full size-8 inline-flex items-center justify-center font-semibold">3</div>
-              <div>
-                <h3 class="text-xl font-semibold">Choix du chiot</h3>
-                <p class="mt-1 text-slate-700">Le choix s’effectue selon l’ordre des réservations, le tempérament du chiot et l’adéquation avec votre mode de vie.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="bg-body-bg p-5 rounded-2xl">
-            <div class="flex items-start gap-3">
-              <div class="shrink-0 bg-primary text-black rounded-full size-8 inline-flex items-center justify-center font-semibold">4</div>
-              <div>
-                <h3 class="text-xl font-semibold">Départ & contrat</h3>
-                <p class="mt-1 text-slate-700">Départ <strong>après 8 semaines</strong> (visite vétérinaire faite) avec contrat, carnet de santé et conseils personnalisés.</p>
-              </div>
-            </div>
-          </li>
-        </ol>
-
-        <div class="mt-7">
-          <a href="{{ url('/contact') }}" class="py-3.5 px-7.5 inline-flex bg-dark text-white rounded-2xl font-medium transition-all duration-300 hover:text-primary">
-            Poser une question / Réserver
-          </a>
-        </div>
-      </div>
-
-      {{-- Carte "Tarifs & inclusions" --}}
-      <div class="bg-primary rounded-2xl p-6 md:p-8">
-        <h2 class="md:text-4xl text-3xl mb-5">Tarifs & inclusions</h2>
-
-        <div class="space-y-3">
-          <div class="flex gap-3">
-            <svg class="h-6 w-6 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
-            <p><strong>Vaccins de base & vermifuges</strong> réalisés selon l’âge du chiot.</p>
-          </div>
-          <div class="flex gap-3">
-            <svg class="h-6 w-6 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
-            <p><strong>Contrat d’adoption</strong>, carnet de santé et guide d’intégration.</p>
-          </div>
-          <div class="flex gap-3">
-            <svg class="h-6 w-6 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"/></svg>
-            <p><strong>Socialisation</strong> en milieu familial et support post-adoption.</p>
-          </div>
-        </div>
-
-        <div class="mt-6 p-4 bg-white rounded-xl">
-          <p class="text-slate-800">
-            <strong>Prix</strong> : varie selon la portée, la couleur et le type de pelage.  
-            Contactez-nous pour le montant exact et les disponibilités.
+    <div class="md:mb-10 mb-7.5" data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-2.5">1. Sélection rigoureuse des adoptants</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-body-bg p-5 rounded-2xl">
+          <h3 class="text-xl font-semibold">Discussion préalable</h3>
+          <p class="mt-2 text-slate-700">
+            Mode de vie, expérience canine, environnement, disponibilité : nous validons les motivations et
+            l’adéquation du Pomsky avec votre foyer.
           </p>
         </div>
+        <div class="bg-body-bg p-5 rounded-2xl">
+          <h3 class="text-xl font-semibold">Vérification des conditions de vie</h3>
+          <p class="mt-2 text-slate-700">
+            Espace disponible, clôture, temps consacré à l’animal — la base d’une adoption réussie.
+          </p>
+        </div>
+      </div>
+    </div>
 
-        <div class="mt-6 p-4 bg-white/70 rounded-xl">
-          <h3 class="font-semibold mb-1.5">Acompte</h3>
-          <p class="text-slate-800">L’acompte confirme la réservation. Il est non remboursable en cas de désistement mais transférable sur une future portée si aucune correspondance n’est possible.</p>
+    {{-- 2) INFORMATIONS POMSKY --}}
+    <div class="md:mb-10 mb-7.5" data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-2.5">2. Informations sur la race & les besoins</h2>
+      <p class="text-slate-700">
+        Tempérament du Pomsky, taille estimée, besoins d’exercice et de stimulation mentale sont présentés clairement.
+      </p>
+    </div>
+
+    {{-- 3) EXPLICATION DES INCLUSIONS --}}
+    <div class="md:mb-10 mb-7.5" data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-2.5">3. Inclusions</h2>
+      <p class="text-slate-700">
+        <strong>Dossier de santé</strong> : vaccins, vermifuges, micropuces, tests génétiques, suivi vétérinaire, kit de départ.
+      </p>
+    </div>
+
+    {{-- 4) ENGAGEMENT CONTRACTUEL --}}
+    <div data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-5">4. Engagement contractuel</h2>
+      <div class="bg-primary p-6 rounded-2xl text-slate-900">
+        <h3 class="text-2xl font-semibold">Une adoption encadrée et responsable</h3>
+        <p class="mt-3">
+          Chez <strong>Passion Familiale – Petit Pomsky du Québec</strong>, chaque adoption est encadrée par
+          <strong>trois contrats officiels</strong>, rédigés pour assurer le bien-être du chiot et la tranquillité d’esprit de l’adoptant.
+          L’éleveur et l’adoptant conservent les originaux qui officialisent la transaction.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-6">
+          <div class="bg-white rounded-xl p-5">
+            <h4 class="font-semibold">Clause de stérilisation</h4>
+            <p class="mt-2 text-slate-800">
+              Stérilisation dans les délais convenus. Toute reproduction non autorisée viole le contrat et peut mener à des poursuites.
+              Cette mesure protège la race et garantit un élevage responsable.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-5">
+            <h4 class="font-semibold">Clause de non-revente & retour</h4>
+            <p class="mt-2 text-slate-800">
+              En cas d’impossibilité de garder le chien, aucune revente/cession sans accord de l’éleveur.
+              L’éleveur accompagne la recherche d’une nouvelle famille ; traçabilité et vérifications incluses.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-5">
+            <h4 class="font-semibold">Bien-être du Pomsky</h4>
+            <p class="mt-2 text-slate-800">
+              Exercice, stimulation, socialisation, soins vétérinaires et affection constante sont requis.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white/80 rounded-xl p-5 mt-6">
+          <h4 class="font-semibold">Cadre légal (NEQ)</h4>
+          <p class="mt-2 text-slate-800">
+            Passion Familiale est enregistrée au <strong>Registre des entreprises du Québec (NEQ)</strong> :
+            crédibilité, contrats en bonne et due forme, transparence. Être un éleveur éthique, c’est aussi
+            assurer un suivi post-adoption, offrir des garanties claires, être disponible et agir en toute légalité.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-{{-- PETIT FAQ (accordéon Preline) --}}
-<section class="bg-white lg:py-25 md:py-22.5 py-17.5">
+{{-- EXPLICATION DU PROCESSUS (DÉPÔTS) --}}
+<section class="bg-body-bg lg:py-25 md:py-22.5 py-17.5">
   <div class="container-small">
-    <div class="text-center md:mb-12.5 mb-7.5" data-aos="fade-up" data-aos-duration="500">
-      <h2 class="lg:text-4xl md:text-4.6xl text-3.4xl">Questions fréquentes</h2>
-    </div>
-
-    <div class="md:space-y-7.5 space-y-5 hs-accordion-group max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="500">
-      {{-- Q1 --}}
-      <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
-        <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
-          <h3 class="md:text-1.5xl text-xl">Peut-on visiter avant la réservation&nbsp;?</h3>
-          <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full inline-flex items-center justify-center">
-            <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-            <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
-          </div>
-        </button>
-        <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
-          <p class="mt-5">Oui, sur rendez-vous et dans le respect des mesures d’hygiène pour les chiots.</p>
+    <div class="md:mb-10 mb-7.5" data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-2.5">Étape 1 – Dépôt pour la liste d’attente</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-5">
+          <h3 class="text-xl font-semibold">Montants</h3>
+          <ul class="mt-2 space-y-1 text-slate-700">
+            <li>250&nbsp;$ — portées <strong>standard & miniature</strong></li>
+            <li>350&nbsp;$ — portées <strong>micro/toy</strong></li>
+          </ul>
+          <p class="mt-2 text-slate-700">
+            Dépôt <strong>non remboursable</strong> mais <strong>transférable</strong> à une autre portée (selon disponibilité).
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-5">
+          <h3 class="text-xl font-semibold">Priorité & liste</h3>
+          <p class="mt-2 text-slate-700">
+            L’ordre est fixé par la date de paiement. Sans dépôt, aucune place n’est réservée.
+            En général, <strong>4 dépôts</strong> par portée ; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-5">
+          <h3 class="text-xl font-semibold">Important</h3>
+          <p class="mt-2 text-slate-700">
+            Le dépôt bloque une place sur la portée, pas un chiot précis. Votre rang est garanti,
+            mais le choix se fait plus tard, selon la disponibilité et l’adéquation tempérament/foyer.
+          </p>
         </div>
       </div>
 
-      {{-- Q2 --}}
-      <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
-        <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
-          <h3 class="md:text-1.5xl text-xl">Âge de départ et suivi vétérinaire</h3>
-          <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full inline-flex items-center justify-center">
-            <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-            <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
-          </div>
-        </button>
-        <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
-          <p class="mt-5">Départ à partir de <strong>8 semaines</strong>, avec premiers vaccins et vermifuges effectués.</p>
-        </div>
-      </div>
-
-      {{-- Q3 --}}
-      <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
-        <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
-          <h3 class="md:text-1.5xl text-xl">Puis-je être prioritaire sur une couleur/type précis&nbsp;?</h3>
-          <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full inline-flex items-center justify-center">
-            <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-            <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
-          </div>
-        </button>
-        <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
-          <p class="mt-5">Nous ferons de notre mieux, mais le <strong>bien-être et l’adéquation du tempérament</strong> priment sur l’apparence.</p>
-        </div>
+      <div class="bg-white rounded-2xl p-5 mt-6">
+        <h3 class="text-xl font-semibold">Pourquoi le dépôt est non remboursable ?</h3>
+        <p class="mt-2 text-slate-700">
+          Parce qu’une place officielle vous est réservée et que d’autres familles sont refusées.
+          Changement d’idée, déménagement ou adoption ailleurs : le dépôt demeure acquis.
+          Il peut toutefois être transféré à une autre portée (sans devancer les réservations existantes).
+        </p>
       </div>
     </div>
 
-    <div class="text-center mt-10">
-      <a href="{{ route('faq') }}" class="underline font-medium">Voir toutes les questions fréquentes</a>
+    <div class="md:mb-10 mb-7.5" data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-2.5">Dépôt de confirmation (chiot spécifique)</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-5">
+          <p class="text-slate-700">
+            Dès la <strong>5<sup>e</sup> semaine</strong>, les chiots révèlent leurs traits physiques et leur tempérament.
+            Pour confirmer votre choix, un <strong>dépôt de 500&nbsp;$</strong> est requis ; le chiot est alors retiré des choix.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-5">
+          <h3 class="text-xl font-semibold">Rencontre essentielle</h3>
+          <ul class="mt-2 space-y-1 text-slate-700 list-disc ms-5">
+            <li>Observer le chiot, sa maman et sa fratrie ; voir les installations et le protocole d’hygiène.</li>
+            <li>Poser toutes vos questions ; valider l’adéquation tempérament/mode de vie.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 mt-6">
+        <h3 class="text-xl font-semibold">Présentation virtuelle (familles éloignées)</h3>
+        <p class="mt-2 text-slate-700">
+          Possibilité de rencontre <strong>Teams</strong> avec l’éleveur : présentation des chiots, réponses aux questions,
+          vision des installations et du protocole. Idéal pour un choix éclairé à distance.
+        </p>
+      </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="500">
+      <h2 class="md:text-4xl text-3.4xl mb-2.5">Étape 3 – Paiement final</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-5">
+          <p class="text-slate-700">
+            Les dépôts (liste d’attente et réservation officielle) sont déduits du montant total.
+            Le <strong>solde complet</strong> doit être payé <strong>avant le départ</strong> (généralement entre la 8<sup>e</sup> et la 10<sup>e</sup> semaine).
+          </p>
+          <ul class="mt-3 space-y-1 text-slate-700">
+            <li>✅ Virement Interac</li>
+            <li>✅ Paiement comptant</li>
+            <li>❌ Cartes de crédit non acceptées</li>
+            <li>❌ Paiements mensuels non acceptés</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5">
+          <h3 class="text-xl font-semibold">Condition de remise</h3>
+          <p class="mt-2 text-slate-700">
+            Aucun chiot ne quitte le domicile sans paiement total. En cas d’impossibilité de paiement dans les délais,
+            le chiot est proposé à une autre famille et votre dépôt est reporté sur une future portée
+            (aucun chiot gardé au-delà de 10 semaines).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{-- INCLUSIONS --}}
+<section class="bg-white lg:py-25 md:py-22.5 py-17.5">
+  <div class="container-small" data-aos="fade-up" data-aos-duration="500">
+    <h2 class="md:text-4xl text-3.4xl mb-5">Ce qui est inclus avec votre chiot Pomsky</h2>
+    <p class="text-slate-700">
+      Vous repartez avec tout le nécessaire pour bien démarrer votre vie ensemble, dans le respect du bien-être et de la sécurité de votre chiot.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      {{-- Santé / conformité --}}
+      <div class="bg-body-bg rounded-2xl p-6">
+        <h3 class="text-xl font-semibold">🩺 Santé, traçabilité et conformité</h3>
+        <ul class="mt-3 space-y-2 text-slate-700 list-disc ms-5">
+          <li>Vaccin de base selon l’âge</li>
+          <li>Micropuce pour l’identification</li>
+          <li>3 vermifuges avant le départ</li>
+          <li>Carnet de santé à jour</li>
+          <li>Test <strong>Embark</strong> des parents (preuve génétique d’une lignée Pomsky saine et reconnue)</li>
+          <li><strong>Certification de conformité vétérinaire</strong> : dents, palais, hanches, organes génitaux, absence d’anomalies visibles</li>
+        </ul>
+        <div class="mt-4 p-4 bg-white rounded-xl">
+          <p class="text-slate-800">
+            <strong>Bonus Rive-Sud</strong> : si vous poursuivez les soins chez notre vétérinaire partenaire,
+            le <strong>vaccin de rappel</strong> est offert.
+          </p>
+        </div>
+      </div>
+
+      {{-- Kit de départ --}}
+      <div class="bg-body-bg rounded-2xl p-6">
+        <h3 class="text-xl font-semibold">🎁 Kit de départ très généreux</h3>
+        <ul class="mt-3 space-y-2 text-slate-700 list-disc ms-5">
+          <li>Collier, laisse et harnais</li>
+          <li>Couverture avec l’odeur de la fratrie</li>
+          <li>Jouets pour l’éveil et le jeu</li>
+          <li>Gâteries pour le renforcement positif</li>
+          <li>Nourriture pour les premiers jours</li>
+          <li>Ceinture de sécurité pour la voiture</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -197,8 +276,10 @@
         @endif
       </div>
       <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">
-        <h2 class="mb-2.5 md:text-4xl text-2.6xl">Prêt à réserver&nbsp;?</h2>
-        <p class="mb-9">Écrivez-nous vos attentes, votre contexte familial et le type de compagnon souhaité — on vous guide pas à pas.</p>
+        <h2 class="mb-2.5 md:text-4xl text-2.6xl">Prêt·e à réserver&nbsp;?</h2>
+        <p class="mb-9">
+          Planifiez une rencontre à domicile ou une présentation virtuelle Teams. On vous accompagne, pas à pas.
+        </p>
         <div>
           <a href="{{ url('/contact') }}" class="py-3.5 lg:px-7.5 px-6.5 inline-flex text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
             Nous contacter

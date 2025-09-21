@@ -47,11 +47,12 @@
       <div data-aos="fade-right" class="lg:col-span-7">
         <p class="inline-flex bg-primary text-dark px-3 py-1 rounded-full text-sm font-medium">Passion familiale</p>
         <h1 class="mt-4 text-4xl md:text-5.5xl font-bold">
-          Petit « Pomsky » du Québec
+          Bienvenue chez Passion familiale : Petit Pomsky du Québec
         </h1>
         <p class="mt-4 text-slate-700 max-w-2xl">
-          Élevage familial passionné et services de zoothérapie professionnels pour créer des liens durables et apporter du bien-être.
-        </p>
+Éleveur éthique situé à Saint-Philippe de La Prairie, en Montérégie, nous élevons nos Pomskys avec
+amour et respect, directement dans notre maison. Les chiots y naissent, y sont sevrés, et grandissent
+dans un environnement familial propice à leur équilibre et à leur socialisation.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="{{ url('/elevage/portees') }}" class="rounded-xl bg-dark text-white px-5 py-3 hover:text-primary transition">Nos portées</a>
           <a href="{{ url('/zootherapie/services') }}" class="rounded-xl ring-1 ring-neutral-300 px-5 py-3 hover:bg-neutral-100 transition">Zoothérapie</a>
@@ -71,43 +72,63 @@
 <!-- Services (Élevage / Zoothérapie) -->
 <section class="py-16 md:py-20">
   <div class="container">
-    <h2 class="text-3xl md:text-4xl font-semibold text-center">Deux passions réunies pour votre bien-être</h2>
-    <div class="grid md:grid-cols-2 gap-6 mt-10">
-      <div class="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200">
+    <h2 class="text-3xl md:text-4xl font-semibold text-center">
+      Notre entreprise repose sur deux pôles d’activité complémentaires
+    </h2>
+
+    {{-- Intro courte au-dessus des cartes (voir #2 pour version détaillée) --}}
+    <p class="mt-4 max-w-4xl mx-auto text-center text-slate-700">
+      Nous élevons des Pomskys avec bienveillance et offrons des services de zoothérapie professionnels afin de
+      créer des liens authentiques entre humains et animaux.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-10 items-stretch">
+      {{-- Carte 1 : Élevage --}}
+      <div class="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200 flex flex-col">
         @if($imgElevage)
           <img src="{{ $imgElevage }}" alt="Chiots de notre élevage Pomsky"
-              loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
+               loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
         @endif
-        <h3 class="text-2xl font-semibold">Élevage Pomsky</h3>
-        <p class="mt-2 text-slate-700">Nous élevons avec passion des Pomsky de qualité exceptionnelle dans un environnement familial aimant.</p>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Lignées sélectionnées</li>
-          <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Socialisation précoce</li>
-          <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Suivi vétérinaire</li>
-        </ul>
-        <a href="{{ url('/#portees') }}" class="mt-6 inline-flex items-center gap-2 underline font-medium">Découvrir nos portées <i class="iconify tabler--arrow-right"></i></a>
+
+        <h3 class="text-2xl font-semibold">Élevage éthique de Pomsky</h3>
+        <p class="mt-2 text-slate-700">
+          L’élevage éthique de Pomsky, accessible partout au Québec, en Ontario, en Nouvelle-Écosse et au
+          Nouveau-Brunswick. Peu importe la distance, nous accompagnons chaque famille dans l’adoption d’un
+          compagnon bien dans ses pattes.
+        </p>
+
+        <a href="{{ url('/#portees') }}"
+           class="mt-auto inline-flex items-center gap-2 underline font-medium">
+          Découvrir nos portées <i class="iconify tabler--arrow-right"></i>
+        </a>
       </div>
 
-      <div id="zootherapie" class="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200">
+      {{-- Carte 2 : Zoothérapie --}}
+      <div id="zootherapie" class="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200 flex flex-col">
         @if($imgZt)
           <img src="{{ $imgZt }}" alt="Interventions de zoothérapie avec Pomsky"
-              loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
+               loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
         @endif
-        <h3 class="text-2xl font-semibold">Zoothérapie</h3>
-        <p class="mt-2 text-slate-700">Nous utilisons le lien humain-animal pour soutenir le mieux-être, la confiance et l’expression des émotions.</p>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Thérapie individuelle</li>
-          <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Séances de groupe</li>
-          <li class="flex gap-2"><i class="iconify tabler--check text-primary mt-1"></i> Suivi personnalisé</li>
-        </ul>
-        <a href="{{ url('/contact') }}" class="mt-6 inline-flex items-center gap-2 underline font-medium">Découvrir nos services <i class="iconify tabler--arrow-right"></i></a>
+
+        <h3 class="text-2xl font-semibold">Services de zoothérapie</h3>
+        <p class="mt-2 text-slate-700">
+          Les services de zoothérapie, exclusivement offerts en Montérégie, dans les milieux scolaires,
+          organisationnels et en pratique privée, pour favoriser le mieux-être émotionnel grâce à la présence
+          apaisante de nos chiens.
+        </p>
+
+        <a href="{{ url('/contact') }}"
+           class="mt-auto inline-flex items-center gap-2 underline font-medium">
+          Découvrir nos services <i class="iconify tabler--arrow-right"></i>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- Le Pomsky -->
-<section id="pomsky" class="bg-white py-16 md:py-20">
+{{-- <section id="pomsky" class="bg-white py-16 md:py-20">
   <div class="container grid lg:grid-cols-2 gap-10 items-center">
     <div data-aos="fade-right">
       <h2 class="text-3xl md:text-4xl font-semibold">Présentation du Pomsky</h2>
@@ -128,10 +149,10 @@
       @endif
     </div>
   </div>
-</section>
+</section> --}}
 
 <!-- Valeurs & mission -->
-<section id="valeurs" class="py-16 md:py-20">
+{{-- <section id="valeurs" class="py-16 md:py-20">
   <div class="container">
     <h2 class="text-3xl md:text-4xl font-semibold text-center">Nos valeurs & mission</h2>
     <div class="grid md:grid-cols-4 gap-6 mt-10">
@@ -153,7 +174,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 
 <!-- Pourquoi nous choisir -->
@@ -207,19 +228,15 @@
   $treatsUrl = 'https://exemple-gateries.com';
   $treatsImg = $imgTreats; // utilise notre sélection
 @endphp
-<section id="gateries" class="bg-white lg:py-25 md:py-22.5 py-17.5">
+{{-- <section id="gateries" class="bg-white lg:py-25 md:py-22.5 py-17.5">
   <div class="container">
     <div class="grid md:grid-cols-2" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
-      
-      {{-- Visuel --}}
-<div>
-  @if($treatsImg)
-    <img src="{{ $treatsImg }}" alt="Gâteries saines pour chiens"
-         class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
-  @endif
-</div>
-
-      {{-- Panneau texte + bouton --}}
+      <div>
+        @if($treatsImg)
+          <img src="{{ $treatsImg }}" alt="Gâteries saines pour chiens"
+              class="rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none rounded-tr-2xl w-full h-auto object-cover">
+        @endif
+      </div>
       <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">
         <h2 class="mb-2.5 md:text-4xl text-2.6xl">Envie de gâter votre compagnon&nbsp;?</h2>
         <p class="mb-9">
@@ -230,7 +247,6 @@
           <a href="{{ $treatsUrl }}" target="_blank" rel="noopener"
              class="py-3.5 lg:px-7.5 px-6.5 inline-flex items-center gap-2 text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
             Visiter la boutique
-            {{-- Icône lien externe (inline SVG, pas besoin d’Iconify) --}}
             <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
               <path d="M15 3h6v6"/>
@@ -239,8 +255,7 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
-</section>
+</section> --}}
 @endsection

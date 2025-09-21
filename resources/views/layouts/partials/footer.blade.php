@@ -43,7 +43,7 @@
     <hr class="border-neutral-700 my-8">
 
     <div class="text-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-      <div>© <script>document.write(new Date().getFullYear())</script> Petit « Pomsky » du Québec.</div>
+      <div>© <script>document.write(new Date().getFullYear())</script> Passion familiale : Petit Pomsky du Québec.</div>
       <div>Fait avec ❤️ pour les chiens & le bien-être.</div>
     </div>
   </div>
