@@ -38,7 +38,6 @@
       <!-- 1. Fondatrice & Histoire -->
       <article class="prose prose-neutral max-w-none md:mt-10 mt-7.5">
         <h2 class="mb-2.5 md:text-2.5xl text-1.5xl">Fondatrice & Histoire</h2>
-        Je m'appelle Tyna, fondatrice de Passion familiale, petit pomsky du Québec, un élevage éthique situé à Saint-Philippe de La Prairie, en Montérégie. Depuis mon plus jeune âge, les chiens occupent une place centrale dans ma vie. Enfant, je rêvais de devenir vétérinaire — une vocation du cœur — mais mes résultats en mathématiques m’ont orientée vers une autre carrière. Pourtant, l’amour des chiens ne m’a jamais quittée. Il est resté ancré en moi, guidant chaque étape de mon parcours.
         <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé à Saint-Philippe de La Prairie, en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quittée.</p>
         <br>
         <p>Créer Passion familiale a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien.</p>
