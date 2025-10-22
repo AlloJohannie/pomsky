@@ -136,12 +136,25 @@
         Bébé, aspect d’ourson en peluche ; adulte, élégance du Husky en format réduit, regard captivant.
         Rare au Québec, le Pomsky est un <strong>designer dog à haut risque de vol</strong> : vigilance recommandée.
       </p>
-@if($eyesChart)
-  <div class="mt-6 max-w-4xl mx-auto">
-    <img src="{{ $eyesChart }}" alt="Standard des yeux (APKC)"
-         class="rounded-2xl w-full h-auto object-contain md:max-h-[520px]">
-  </div>
-@endif
+      @php
+        $earsChartPath = public_path('images/element/pomskylookears.jpg');
+        $earsChart = file_exists($earsChartPath)
+          ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $earsChartPath))
+          : null;
+      @endphp
+
+      @if($eyesChart || $earsChart)
+        <div class="mt-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-4">
+          @if($eyesChart)
+            <img src="{{ $eyesChart }}" alt="Standard des yeux (APKC)"
+                class="rounded-2xl w-full h-auto object-contain md:max-h-[520px]">
+          @endif
+          @if($earsChart)
+            <img src="{{ $earsChart }}" alt="Standard des oreilles (APKC)"
+                class="rounded-2xl w-full h-auto object-contain md:max-h-[520px]">
+          @endif
+        </div>
+      @endif
 
     </div>
   </div>
