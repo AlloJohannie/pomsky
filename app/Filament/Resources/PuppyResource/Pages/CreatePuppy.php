@@ -4,6 +4,8 @@ namespace App\Filament\Resources\PuppyResource\Pages;
 
 use App\Filament\Resources\PuppyResource;
 use App\Models\Puppy;
+use App\Models\PuppyPhoto;
+use Carbon\Carbon;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Str;
 use Filament\Notifications\Notification;
@@ -68,6 +70,52 @@ class CreatePuppy extends CreateRecord
                 ->send();
 
             throw $e; // pour que Filament affiche aussi le détail si APP_DEBUG=true
+        }
+    }
+
+        protected function afterCreate(): void
+    {
+        $this->syncWeeklyPhotos($this->record, $this->form->getState());
+    }
+
+    private function syncWeeklyPhotos(\App\Models\Puppy $puppy, array $state): void
+    {
+        // Récupère les chemins fournis par FileUpload pour week0..week12
+        $uploads = [];
+        for ($w = 0; $w <= 12; $w++) {
+            $key = 'week'.$w;
+            if (!empty($state[$key])) {
+                // FileUpload (single) renvoie le chemin relatif sur le disque 'public'
+                $uploads[$w] = $state[$key];
+            }
+        }
+
+        if (empty($uploads)) {
+            return;
+        }
+
+        // Déterminer la date estimée de prise de vue à partir de born_at de la portée si possible
+        $bornAt = optional($puppy->litter)->born_at ? Carbon::parse($puppy->litter->born_at) : null;
+
+        // On marque "primary" la photo la plus récente (plus grande semaine)
+        $maxWeek = max(array_keys($uploads));
+
+        foreach ($uploads as $week => $path) {
+            PuppyPhoto::create([
+                'puppy_id'   => $puppy->id,
+                'path'       => $path,
+                'week'       => $week,
+                'taken_at'   => $bornAt ? $bornAt->copy()->addDays($week * 7)->toDateString() : null,
+                'is_primary' => $week === $maxWeek,
+                'sort'       => $week, // tri simple par semaine
+            ]);
+        }
+
+        // Si on vient d’ajouter une primary, on peut déclasser les autres
+        if (!empty($uploads)) {
+            PuppyPhoto::where('puppy_id', $puppy->id)
+                ->where('week', '!=', $maxWeek)
+                ->update(['is_primary' => false]);
         }
     }
 }

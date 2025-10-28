@@ -53,9 +53,24 @@ class DogResource extends Resource
                     ->label('Sexe')
                     ->options(['female' => 'Femelle', 'male' => 'Mâle'])
                     ->required(),
+                FormSelect::make('size')
+                    ->label('Format')
+                    ->options([
+                        'standard'  => 'Standard',
+                        'miniature' => 'Miniature',
+                        'toy'       => 'Toy',
+                    ])
+                    ->native(false)
+                    ->required()
+                    ->rules(['in:standard,miniature,toy']),
                 DatePicker::make('dob')->label('Date de naissance'),
                 TextInput::make('color')->label('Couleur')->maxLength(100),
-                TextInput::make('weight_kg')->numeric()->label('Poids (kg)')->minValue(0)->step('0.1'),
+                TextInput::make('weight_lb')
+                    ->label('Poids (lb)')
+                    ->numeric()
+                    ->minValue(0)
+                    ->step('0.1'),
+
                 Toggle::make('is_active')->label('Actif')->default(true),
                 TextInput::make('slug')
                     ->hidden()
@@ -66,8 +81,14 @@ class DogResource extends Resource
             ComponentsSection::make('Photo & Description')->schema([
                 FileUpload::make('photo')
                     ->label('Photo')
-                    ->image()->imageEditor()
-                    ->directory('dogs')->disk('public')->maxSize(4096),
+                    ->image()
+                    ->imageEditor()
+                    ->imageResizeMode('contain')
+                    ->imageResizeTargetWidth(1600)
+                    ->imageResizeTargetHeight(1600)
+                    ->directory('dogs')
+                    ->disk('public')
+                    ->maxSize(51200),
                 Textarea::make('description')->rows(6)->maxLength(5000),
             ]),
         ]);
@@ -77,23 +98,63 @@ class DogResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('photo')->label('Photo')->disk('public')->circular(),
+                ImageColumn::make('photo')
+                    ->label('Photo')
+                    ->disk('public')
+                    ->square()
+                    ->imageSize(64)
+                    ->defaultImageUrl(asset('images/logo/logo_large.jpg')),
                 TextColumn::make('name')
                     ->label('Nom')
                     ->searchable()
                     ->sortable()
                     ->url(fn ($record) => Pages\EditDog::getUrl(['record' => $record])),
                 TextColumn::make('sex')->label('Sexe')->badge(),
+                TextColumn::make('size')
+                    ->label('Format')
+                    // 1) force la valeur depuis l’enregistrement (évite tout état null)
+                    ->state(fn (Dog $record) => $record->getAttribute('size'))
+                    // 2) rendu badge + libellés lisibles
+                    ->badge()
+                    ->formatStateUsing(fn (?string $state) => match ($state) {
+                        'standard'  => 'Standard',
+                        'miniature' => 'Miniature',
+                        'toy'       => 'Toy',
+                        default     => '—',
+                    })
+                    ->color(fn (?string $state) => match ($state) {
+                        'standard'  => 'success',
+                        'miniature' => 'info',
+                        'toy'       => 'warning',
+                        default     => 'gray',
+                    })
+                    ->sortable()
+                    ->searchable(),
                 IconColumn::make('is_active')->label('Actif')->boolean(),
                 TextColumn::make('created_at')->since()->label('Créé'),
             ])
             ->filters([
+                SelectFilter::make('size')->label('Format')->options([
+                    'standard'  => 'Standard',
+                    'miniature' => 'Miniature',
+                    'toy'       => 'Toy',
+                ]),
                 SelectFilter::make('sex')->options(['female' => 'Femelle', 'male' => 'Mâle']),
                 TernaryFilter::make('is_active')->label('Actif'),
             ])
+            ->recordActionsColumnLabel('Actions')
             ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
+                EditAction::make()
+                    ->icon('heroicon-m-pencil-square')
+                    ->label('')
+                    ->tooltip('Modifier')
+                    ->color('gray'),
+                DeleteAction::make()
+                    ->icon('heroicon-m-trash')
+                    ->label('')
+                    ->tooltip('Supprimer')
+                    ->color('danger')
+                    ->requiresConfirmation(),
             ])
             ->toolbarActions([
                 DeleteBulkAction::make(),

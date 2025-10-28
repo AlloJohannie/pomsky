@@ -45,9 +45,6 @@ class PuppiesRelationManager extends RelationManager
             TextInput::make('price_cents')->label('Prix (CAD)')
                 ->numeric()->minValue(0)->step('0.01'),
             TextInput::make('color')->label('Couleur')->maxLength(100),
-            TextInput::make('sort')->label('Ordre')->numeric()->minValue(0)->default(0),
-            // FileUpload::make('photo')->label('Photo')
-                // ->image()->imageEditor()->disk('public')->directory('puppies')->maxSize(4096),
             Textarea::make('description')->rows(4)->maxLength(5000),
         ])->columns(2);
     }
@@ -57,12 +54,16 @@ class PuppiesRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                ImageColumn::make('photo')->label('Photo')->disk('public')->square(),
+                ImageColumn::make('photo')
+                    ->label('Photo')
+                    ->disk('public')
+                    ->square()
+                    ->imageSize(64)
+                    ->defaultImageUrl(asset('images/logo/logo_large.jpg')),
                 TextColumn::make('name')->label('Nom'),
                 TextColumn::make('sex')->label('Sexe')->badge(),
                 TextColumn::make('status')->label('Statut')->badge(),
                 TextColumn::make('price_cents')->label('Prix')->money('cad'),
-                TextColumn::make('sort')->label('Ordre')->sortable(),
             ])
             ->headerActions([
                 CreateAction::make()
@@ -85,10 +86,6 @@ class PuppiesRelationManager extends RelationManager
                         if (empty($data['slug'])) {
                             $base = $data['name'] ?? ('chiot-'.uniqid());
                             $data['slug'] = \Illuminate\Support\Str::slug($base);
-                        }
-                        // ordre auto si manquant
-                        if (! isset($data['sort'])) {
-                            $data['sort'] = (int) $this->getOwnerRecord()->puppies()->max('sort') + 1;
                         }
                         return $data;
                     }),

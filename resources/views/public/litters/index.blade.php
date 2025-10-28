@@ -1,6 +1,7 @@
 @extends('layouts.landing', ['title' => 'Nos portées'])
 
 @section('content')
+
 @php
   // Libellés / classes
   $lStatusLabel = [
@@ -39,51 +40,52 @@
   $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
   $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
 
-  // --- Helper couverture de portée : 1ère photo chiot existante ---
-  if (!function_exists('litterCoverUrl')) {
-    function litterCoverUrl($litter) {
-      foreach ($litter->puppies ?? [] as $puppy) {
-        if ($puppy->photo && file_exists(public_path('storage/'.$puppy->photo))) {
-          return asset('storage/'.$puppy->photo);
-        }
-      }
-      // fallbacks globaux
-      foreach ([
-        'pomsky-deux-chiots-02.jpg',
-        'pomsky-chiot-studio-30.jpg',
-        'pomsky-chiot-panier-45.jpg',
-        'pomsky-chiot-fleurs-31.jpg',
-      ] as $c) {
-        if (file_exists(public_path('photos/'.$c))) {
-          return asset('photos/'.$c);
-        }
-      }
-      return asset('/images/team/5.png');
+  // --- Helpers images (utilisent maintenant cover_photo_url des chiots) ---
+  if (!function_exists('puppyImageUrl')) {
+    function puppyImageUrl($puppy) {
+      return $puppy?->cover_photo_url ?? asset('images/logo/logo_large.jpg');
     }
   }
 
-  // --- Helper vignette chiot ---
-  if (!function_exists('puppyImageUrl')) {
-    function puppyImageUrl($puppy) {
-      if ($puppy->photo && file_exists(public_path('storage/'.$puppy->photo))) {
-        return asset('storage/'.$puppy->photo);
-      }
-      foreach ([
-        'pomsky-chiot-studio-30.jpg',
-        'pomsky-chiot-panier-45.jpg',
-        'pomsky-chiot-fleurs-31.jpg',
-        'pomsky-gros-plan-11.jpg',
-      ] as $c) {
-        if (file_exists(public_path('photos/'.$c))) {
-          return asset('photos/'.$c);
+  if (!function_exists('litterCoverFromPuppies')) {
+    function litterCoverFromPuppies($litter) {
+      foreach (($litter->puppies ?? []) as $puppy) {
+        $url = $puppy?->cover_photo_url;
+        if ($url && !str_contains($url, 'images/logo/logo_large.jpg')) {
+          return $url;
         }
       }
-      return asset('/images/team/5.png');
+      // Fallback (si aucune photo de chiot)
+      return asset('images/logo/logo_large.jpg');
+    }
+  }
+
+  if (!function_exists('dogPhotoOrLogo')) {
+    function dogPhotoOrLogo($dog) {
+      if ($dog?->photo && file_exists(public_path('storage/'.$dog->photo))) {
+        return asset('storage/'.$dog->photo);
+      }
+      return asset('images/logo/logo_large.jpg');
+    }
+  }
+
+  // Affichage d’un badge "Format" si dispo (champ `format`/`format_label` sur Litter)
+  if (!function_exists('litterFormatLabel')) {
+    function litterFormatLabel($litter) {
+      // Essaie d’abord un accessor/attribut déjà prévu
+      $label = $litter->format_label ?? $litter->format ?? null;
+      // Normalise quelques valeurs communes
+      return match($label) {
+        'standard', 'Standard'   => 'Standard',
+        'miniature','Miniature'  => 'Miniature',
+        'toy','Toy'              => 'Toy',
+        default => null,
+      };
     }
   }
 @endphp
 
-{{-- HERO / BANDEAU (cohérent avec Chiens) --}}
+{{-- HERO / BANDEAU --}}
 <section class="relative lg:py-25 md:py-22.5 py-17.5">
   @if($bannerUrl)
     <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('{{ $bannerUrl }}');"></div>
@@ -117,74 +119,77 @@
       @else
         <div class="grid md:grid-cols-2 gap-7.5">
           @foreach($availableLitters as $litter)
-            <div class="bg-body-bg rounded-2xl overflow-hidden border border-neutral-200 hover:bg-white transition">
-              {{-- Couverture de portée (même ratio que Chiens) --}}
-              <img src="{{ litterCoverUrl($litter) }}" alt="Portée {{ $litter->code }}"
-                   loading="lazy" class="w-full aspect-[16/9] object-cover">
+            <a href="{{ route('litters.show', $litter->slug) }}" class="group block">
+<div class="bg-body-bg rounded-2xl overflow-hidden border border-neutral-200 group-hover:bg-white transition">
 
-              <div class="p-5">
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                    <a href="{{ route('litters.show', $litter->slug) }}" class="text-2xl font-semibold hover:underline">
-                      {{ $litter->code }}
-                    </a>
-                    <div class="mt-1 text-sm text-slate-600">
-                      <div><strong>Père :</strong> {{ $litter->sire->name ?? '—' }}</div>
-                      <div><strong>Mère :</strong> {{ $litter->dam->name ?? '—' }}</div>
-                    </div>
-                  </div>
-                  <span class="shrink-0 rounded-full text-sm px-3 py-1 {{ $lStatusClass[$litter->status] ?? 'bg-neutral-200 text-neutral-800' }}">
-                    {{ $lStatusLabel[$litter->status] ?? ucfirst($litter->status) }}
-                  </span>
-                </div>
+  {{-- Bande parents (comme "À venir") --}}
+  <div class="p-2 bg-white">
+    <div class="grid grid-cols-2 gap-2">
+      <div class="relative">
+        <img src="{{ dogPhotoOrLogo($litter->sire) }}"
+             alt="Père: {{ $litter->sire->name ?? '-' }}"
+             class="w-full aspect-square object-cover rounded-xl">
+        <span class="absolute bottom-2 left-2 text-xs px-2 py-1 rounded-full bg-black/60 text-white">Père</span>
+      </div>
+      <div class="relative">
+        <img src="{{ dogPhotoOrLogo($litter->dam) }}"
+             alt="Mère: {{ $litter->dam->name ?? '-' }}"
+             class="w-full aspect-square object-cover rounded-xl">
+        <span class="absolute bottom-2 left-2 text-xs px-2 py-1 rounded-full bg-black/60 text-white">Mère</span>
+      </div>
+    </div>
+  </div>
 
-                {{-- Chiots (mini-vignettes) --}}
-                @php $maxPreview = 6; @endphp
-                @if($litter->puppies->count())
-                  <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    @foreach($litter->puppies->take($maxPreview) as $puppy)
-                      <div class="bg-white border border-neutral-200 rounded-xl p-3">
-                        <div class="flex items-start gap-3">
-                          <div class="w-12 aspect-square rounded-lg overflow-hidden shrink-0 bg-neutral-100">
-                            <img src="{{ puppyImageUrl($puppy) }}" alt="{{ $puppy->name ?: 'Chiot' }}"
-                                 loading="lazy" class="w-full h-full object-cover">
-                          </div>
-                          <div class="min-w-0">
-                            <div class="flex items-center gap-2">
-                              <div class="font-medium truncate">{{ $puppy->name ?: 'Chiot' }}</div>
-                              @if($puppy->sex)
-                                <span class="text-xs px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-700">
-                                  {{ $puppy->sex === 'male' ? 'Mâle' : 'Femelle' }}
-                                </span>
-                              @endif
-                              <span class="text-xs px-2 py-0.5 rounded-full {{ $pStatusClass[$puppy->status] ?? 'bg-neutral-100 text-neutral-700' }}">
-                                {{ $pStatusLabel[$puppy->status] ?? $puppy->status }}
-                              </span>
-                            </div>
-                            @if($puppy->description)
-                              <div class="text-xs text-slate-600 mt-0.5 line-clamp-2">{{ $puppy->description }}</div>
-                            @endif
-                          </div>
-                        </div>
-                      </div>
-                    @endforeach
+  <div class="p-5">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <div class="text-2xl font-semibold group-hover:underline">{{ $litter->code }}</div>
+        <div class="mt-1 text-sm text-slate-600">
+          <div><strong>Père :</strong> {{ $litter->sire->name ?? '—' }}</div>
+          <div><strong>Mère :</strong> {{ $litter->dam->name ?? '—' }}</div>
+        </div>
+        @php $fmt = litterFormatLabel($litter); @endphp
+        @if($fmt)
+          <div class="mt-2 inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700">
+            Format&nbsp;: {{ $fmt }}
+          </div>
+        @endif
+      </div>
+      <span class="shrink-0 rounded-full text-sm px-3 py-1 {{ $lStatusClass[$litter->status] ?? 'bg-neutral-200 text-neutral-800' }}">
+        {{ $lStatusLabel[$litter->status] ?? ucfirst($litter->status) }}
+      </span>
+    </div>
 
-                    @if($litter->puppies->count() > $maxPreview)
-                      <div class="bg-white border border-dashed border-neutral-300 rounded-xl p-3 flex items-center justify-center text-sm text-slate-600">
-                        + {{ $litter->puppies->count() - $maxPreview }} autres
-                      </div>
-                    @endif
-                  </div>
-                @endif
+    {{-- Mini-galerie : dernières photos des chiots (vignettes seules) --}}
+    @php $maxPreview = 6; @endphp
+    @if(($litter->puppies?->count() ?? 0) > 0)
+      <div class="mt-4 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+        @foreach($litter->puppies->take($maxPreview) as $puppy)
+          <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+            <img src="{{ puppyImageUrl($puppy) }}"
+                 alt="{{ $puppy->name ?: 'Chiot' }}"
+                 loading="lazy"
+                 class="w-full h-full object-cover">
+          </div>
+        @endforeach
 
-                <div class="mt-5">
-                  <a href="{{ route('litters.show', $litter->slug) }}"
-                     class="inline-block rounded-2xl bg-dark text-white px-5 py-3 hover:text-primary transition">
-                    Voir la portée
-                  </a>
-                </div>
-              </div>
-            </div>
+        @if($litter->puppies->count() > $maxPreview)
+          <div class="w-full aspect-square rounded-xl border border-dashed border-neutral-300 flex items-center justify-center text-sm text-slate-600 bg-white">
+            + {{ $litter->puppies->count() - $maxPreview }}
+          </div>
+        @endif
+      </div>
+    @endif
+
+    <div class="mt-5">
+      <span class="inline-block rounded-2xl bg-dark text-white px-5 py-3 group-hover:text-primary transition">
+        Voir la portée
+      </span>
+    </div>
+  </div>
+</div>
+
+            </a>
           @endforeach
         </div>
       @endif
@@ -200,8 +205,23 @@
         <div class="grid md:grid-cols-2 gap-7.5">
           @foreach($upcomingLitters as $litter)
             <div class="bg-body-bg rounded-2xl overflow-hidden border border-neutral-200">
-              <img src="{{ litterCoverUrl($litter) }}" alt="Portée {{ $litter->code }}"
-                   loading="lazy" class="w-full aspect-[16/9] object-cover">
+              {{-- Deux grandes images : Père + Mère --}}
+              <div class="p-2 bg-white">
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="relative">
+                    <img src="{{ dogPhotoOrLogo($litter->sire) }}"
+                         alt="Père: {{ $litter->sire->name ?? '-' }}"
+                         class="w-full aspect-square object-cover rounded-xl">
+                    <span class="absolute bottom-2 left-2 text-xs px-2 py-1 rounded-full bg-black/60 text-white">Père</span>
+                  </div>
+                  <div class="relative">
+                    <img src="{{ dogPhotoOrLogo($litter->dam) }}"
+                         alt="Mère: {{ $litter->dam->name ?? '-' }}"
+                         class="w-full aspect-square object-cover rounded-xl">
+                    <span class="absolute bottom-2 left-2 text-xs px-2 py-1 rounded-full bg-black/60 text-white">Mère</span>
+                  </div>
+                </div>
+              </div>
 
               <div class="p-5">
                 <div class="flex items-start justify-between gap-4">
@@ -211,6 +231,12 @@
                       <div><strong>Père :</strong> {{ $litter->sire->name ?? '—' }}</div>
                       <div><strong>Mère :</strong> {{ $litter->dam->name ?? '—' }}</div>
                     </div>
+                    @php $fmt = litterFormatLabel($litter); @endphp
+                    @if($fmt)
+                      <div class="mt-2 inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700">
+                        Format&nbsp;: {{ $fmt }}
+                      </div>
+                    @endif
                   </div>
                   <span class="shrink-0 rounded-full text-sm px-3 py-1 {{ $lStatusClass[$litter->status] ?? 'bg-neutral-200 text-neutral-800' }}">
                     {{ $lStatusLabel[$litter->status] ?? ucfirst($litter->status) }}

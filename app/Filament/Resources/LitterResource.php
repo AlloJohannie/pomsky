@@ -48,7 +48,14 @@ class LitterResource extends Resource
                     ->required()->maxLength(50)
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug($state))),
-
+                FormSelect::make('size')
+                    ->label('Format')
+                    ->options([
+                        'standard'  => 'Standard',
+                        'miniature' => 'Miniature',
+                        'toy'       => 'Toy',
+                    ])
+                    ->native(false),
                 FormSelect::make('status')
                     ->label('Statut')
                     ->options([
@@ -99,19 +106,36 @@ class LitterResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->url(fn ($record) => Pages\EditLitter::getUrl(['record' => $record])),
+                TextColumn::make('size')
+                    ->label('Format')
+                    ->badge()
+                    ->formatStateUsing(fn (?string $v) => match ($v) {
+                        'standard'  => 'Standard',
+                        'miniature' => 'Miniature',
+                        'toy'       => 'Toy',
+                        default     => '—',
+                    })
+                    ->color(fn (?string $v) => match ($v) {
+                        'standard'  => 'success',
+                        'miniature' => 'info',
+                        'toy'       => 'warning',
+                        default     => 'gray',
+                    })
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('status')
-                ->label('Statut')
-    ->formatStateUsing(function (string $state): string {
-        return [
-            'planned'   => 'Planifiée',
-            'pregnant'  => 'Gestante',
-            'born'      => 'Née',
-            'available' => 'Disponible',
-            'reserved'  => 'Réservée',
-            'closed'    => 'Fermée',
-        ][$state] ?? $state;
-    })
-                ->badge(),
+                    ->label('Statut')
+                    ->formatStateUsing(function (string $state): string {
+                        return [
+                            'planned'   => 'Planifiée',
+                            'pregnant'  => 'Gestante',
+                            'born'      => 'Née',
+                            'available' => 'Disponible',
+                            'reserved'  => 'Réservée',
+                            'closed'    => 'Fermée',
+                        ][$state] ?? $state;
+                    })
+                    ->badge(),
                 TextColumn::make('sire.name')->label('Père')->sortable()->searchable(),
                 TextColumn::make('dam.name')->label('Mère')->sortable()->searchable(),
                 TextColumn::make('born_at')->date()->label('Nés le'),

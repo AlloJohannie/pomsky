@@ -34,7 +34,7 @@
       <div>
         <h4 class="font-semibold mb-3 text-white">Contact</h4>
         <p class="text-sm">
-          <a class="underline" href="mailto:info@petitpomskyduquebec.ca">info@petitpomskyduquebec.ca</a><br>
+          <a class="underline" href="mailto:pomskyduquebec@hotmail.com">pomskyduquebec@hotmail.com</a><br>
           Québec, Canada
         </p>
       </div>

@@ -1,7 +1,9 @@
 @props(['dog'])
 
 @php
-  $img = $dog->photo ? asset('storage/'.$dog->photo) : '/images/team/5.png';
+  $img = $dog->photo && file_exists(public_path('storage/'.$dog->photo))
+      ? asset('storage/'.$dog->photo)
+      : asset('images/logo/logo_large.jpg');   // 👈 fallback
   $dob = $dog->dob ? \Illuminate\Support\Carbon::parse($dog->dob) : null;
   $age = $dob ? $dob->age : null;
 @endphp
@@ -26,8 +28,10 @@
         @if(!is_null($age)) ({{ $age }} an{{ $age > 1 ? 's' : '' }}) @endif
       </li>
     @endif
-    @if(!is_null($dog->weight_kg))
-      <li><strong>Poids :</strong> {{ rtrim(rtrim(number_format($dog->weight_kg,2,'.',' '),'0'),'.') }} kg</li>
+    @if(!is_null($dog->weight_lb))
+      <li><strong>Poids :</strong>
+        {{ rtrim(rtrim(number_format((float)$dog->weight_lb, 1, '.', ''), '0'), '.') }} lb
+      </li>
     @endif
     <li>
       <strong>Statut :</strong>

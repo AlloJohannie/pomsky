@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminLitterController;
 use App\Http\Controllers\Admin\AdminLitterPhotoController;
 use App\Models\Litter;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Public\DogController as PublicDogController;
 
 Route::view('/', 'index')->name('home');
 // Route::get('/', function () {
@@ -19,10 +20,14 @@ Route::view('/', 'index')->name('home');
 // Élevage
 Route::view('/elevage/presentation', 'public.elevage.presentation');
 Route::view('/elevage/valeurs', 'public.elevage.valeurs');
-Route::get('/elevage/femelles', [DogController::class, 'femelles'])->name('dogs.femelles');
-Route::get('/elevage/males',    [DogController::class, 'males'])->name('dogs.males');
 Route::get('/elevage/portees',  [LitterController::class, 'index'])->name('litters.index');
 Route::get('/elevage/portees/{slug}', [LitterController::class, 'show'])->name('litters.show');
+
+
+Route::get('/chiens',            [DogController::class, 'index'])->name('dogs.index');
+Route::get('/chiens/femelles',   [DogController::class, 'femelles'])->name('dogs.femelles');
+Route::get('/chiens/males',      [DogController::class, 'males'])->name('dogs.males');
+Route::get('/chiens/{dog:slug}', [DogController::class, 'show'])->name('dogs.show');
 
 
 // Pages publiques supplémentaires

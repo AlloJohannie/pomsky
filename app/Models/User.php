@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use Illuminate\Support\Facades\Gate;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -47,9 +48,9 @@ class User extends Authenticatable implements FilamentUser
             'password' => 'hashed',
         ];
     }
+    
     public function canAccessPanel(Panel $panel): bool
     {
-        // Autorise uniquement la propriétaire (remplace l'email)
-        return in_array($this->email, ['info@petitpomskyduquebec.ca']);
+        return Gate::forUser($this)->allows('admin');
     }
 }

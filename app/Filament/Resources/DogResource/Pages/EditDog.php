@@ -32,4 +32,19 @@ class EditDog extends EditRecord
 
         return $data;
     }
+
+    protected function afterSave(): void
+    {
+        $this->redirect(static::getResource()::getUrl('index'));
+    }
+
+    protected function getCancelRedirectUrl(): ?string
+    {
+        return static::getResource()::getUrl('index');
+    }
+
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'Chien mis à jour';
+    }
 }

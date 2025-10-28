@@ -97,7 +97,7 @@ return [
             'retry_after' => 60,
         ],
 
-        'contact_to' => env('CONTACT_TO', 'info@petitpomskyduquebec.ca'),
+        'contact_to' => env('CONTACT_TO', 'pomskyduquebec@hotmail.com'),
 
 
     ],
@@ -119,6 +119,6 @@ return [
     ],
 
     // 👇 ajoute ceci :
-    'contact_to' => env('CONTACT_TO', 'info@petitpomskyduquebec.ca'),
+    'contact_to' => env('CONTACT_TO', 'pomskyduquebec@hotmail.com'),
 
 ];

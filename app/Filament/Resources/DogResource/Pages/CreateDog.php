@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 class CreateDog extends CreateRecord
 {
     protected static string $resource = DogResource::class;
+    protected static bool $canCreateAnother = false;
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
@@ -17,7 +18,6 @@ class CreateDog extends CreateRecord
             $data['slug'] = Str::slug($data['name']);
         }
 
-        // unicité
         $base = $data['slug'];
         $slug = $base;
         $i = 2;
@@ -34,12 +34,15 @@ class CreateDog extends CreateRecord
     {
         return static::getResource()::getUrl('index');
     }
-protected function getFormActions(): array
-{
-    return [
-        $this->getCreateFormAction(),
-        $this->getCancelFormAction(),
-    ];
-}
 
+    protected function getCancelRedirectUrl(): ?string
+    {
+        return static::getResource()::getUrl('index');
+    }
+
+    // (Optionnel) message de confirmation
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'Chien créé';
+    }
 }

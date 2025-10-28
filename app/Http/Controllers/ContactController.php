@@ -35,7 +35,7 @@ class ContactController extends Controller
         // app/Http/Controllers/ContactController.php
 
         // ...
-        $to = config('mail.contact_to') ?: config('mail.from.address') ?: 'info@petitpomskyduquebec.ca';
+        $to = config('mail.contact_to') ?: config('mail.from.address') ?: 'pomskyduquebec@hotmail.com';
 
         Mail::to($to)->send(new ContactMessage($data));
 

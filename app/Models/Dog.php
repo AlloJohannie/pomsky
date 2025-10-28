@@ -8,7 +8,13 @@ use Illuminate\Support\Str;
 class Dog extends Model
 {
     protected $fillable = [
-        'name','sex','dob','color','weight_kg','photo','description','is_active','slug'
+        'name','sex','size','dob','color','weight_lb','photo','description','is_active','slug',
+    ];
+    
+    protected $casts = [
+        'weight_lb' => 'decimal:2',
+        'dob'       => 'date',
+        'is_active' => 'boolean',
     ];
 
     public function sireLitters() { return $this->hasMany(Litter::class, 'sire_id'); }
@@ -44,5 +50,10 @@ class Dog extends Model
 
             $dog->slug = $slug;
         }
+    }
+    
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

@@ -29,7 +29,7 @@
       Merci pour votre patience 🐾
     </p>
     <div class="mt-6 flex justify-center gap-3">
-      <a href="mailto:info@petitpomskyduquebec.ca"
+      <a href="mailto:pomskyduquebec@hotmail.com"
          class="rounded-2xl bg-white/90 text-dark px-6 py-3 hover:bg-white transition">Nous contacter</a>
     </div>
   </div>

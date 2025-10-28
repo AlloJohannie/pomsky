@@ -22,29 +22,24 @@
   $bannerPath = collect($bannerCandidates)->first(fn($p) => file_exists($p));
   $bannerUrl  = $bannerPath ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $bannerPath)) : null;
 
-  // --- Image d'une carte chien ---
   if (!function_exists('dogImageUrl')) {
     function dogImageUrl($dog) {
-      if ($dog->photo && file_exists(public_path('storage/'.$dog->photo))) {
-        return asset('storage/'.$dog->photo);
-      }
-      $candidates = [
-        'pomsky-chiot-studio-30.jpg',
-        'pomsky-chiot-panier-45.jpg',
-        'pomsky-chiot-fleurs-31.jpg',
-        'pomsky-deux-chiots-02.jpg',
-        'pomsky-gros-plan-11.jpg',
-      ];
-      foreach ($candidates as $c) {
-        if (file_exists(public_path('photos/'.$c))) {
-          return asset('photos/'.$c);
-        }
-      }
-      return asset('/images/team/5.png');
+      return ($dog->photo && file_exists(public_path('storage/'.$dog->photo)))
+        ? asset('storage/'.$dog->photo)
+        : asset('images/logo/logo_large.jpg'); // fallback
     }
   }
-@endphp
 
+  // Group dogs by size
+  $groups = [
+    'standard'  => $dogs->where('size', 'standard'),
+    'miniature' => $dogs->where('size', 'miniature'),
+    'toy'       => $dogs->where('size', 'toy'),
+  ];
+
+  // Optional: dogs without size
+  $unsized = $dogs->whereNotIn('size', ['standard','miniature','toy'])->filter();
+@endphp
 {{-- HERO / BANDEAU --}}
 <section class="relative lg:py-25 md:py-22.5 py-17.5">
   @if($bannerUrl)
@@ -82,78 +77,170 @@
     </div>
   </div>
 </section>
-
-{{-- CONTENU --}}
 <section class="bg-white py-17.5 md:py-22.5">
   <div class="container">
+    @php
+      $hasAny = $groups['standard']->count() || $groups['miniature']->count() || $groups['toy']->count() || $unsized->count();
+    @endphp
 
-    @if($dogs->isEmpty())
+    @unless($hasAny)
       <div class="bg-body-bg rounded-2xl p-10 text-center">
         Aucun chien à afficher pour le moment.
       </div>
     @else
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5">
-        @foreach ($dogs as $dog)
-          @php
-            $dob = $dog->dob ? \Illuminate\Support\Carbon::parse($dog->dob) : null;
-            $age = $dob ? $dob->age : null;
-          @endphp
+      {{-- SECTION: Standard --}}
+      @if($groups['standard']->count())
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Format Standard</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
+          @foreach ($groups['standard'] as $dog)
+            <a href="{{ route('dogs.show', $dog) }}"
+               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              <img src="{{ dogImageUrl($dog) }}"
+                   alt="Photo de {{ $dog->name }}"
+                   loading="lazy"
+                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4"> {{-- carré --}}
 
-          <div class="bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
-            <img
-              src="{{ dogImageUrl($dog) }}"
-              alt="Photo de {{ $dog->name }} ({{ $dog->sex === 'female' ? 'femelle' : 'mâle' }})"
-              loading="lazy"
-              class="w-full aspect-[16/9] object-cover rounded-xl mb-4"
-            />
-
-            <div class="flex items-center justify-between">
-              <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
-              <span class="px-2 py-1 rounded-full text-xs
-                @class([
-                  'bg-pink-100 text-pink-800' => $dog->sex === 'female',
-                  'bg-blue-100 text-blue-800' => $dog->sex === 'male',
-                ])">
-                {{ $dog->sex === 'female' ? 'Femelle' : 'Mâle' }}
-              </span>
-            </div>
-
-            <ul class="mt-3 text-slate-700 text-sm space-y-1">
-              @if($dog->color)
-                <li><strong>Couleur :</strong> {{ $dog->color }}</li>
-              @endif
-              @if($dob)
-                <li>
-                  <strong>Naissance :</strong>
-                  {{ $dob->translatedFormat('d F Y') }}
-                  @if(!is_null($age)) ({{ $age }} an{{ $age > 1 ? 's' : '' }}) @endif
-                </li>
-              @endif
-              @if(!is_null($dog->weight_kg))
-                <li><strong>Poids :</strong> {{ (float)$dog->weight_kg }} kg</li>
-              @endif
-              <li>
-                <strong>Statut :</strong>
-                <span class="@class(['text-green-700'=> $dog->is_active, 'text-slate-500'=>!$dog->is_active])">
-                  {{ $dog->is_active ? 'Actif' : 'Retiré' }}
+              <div class="flex items-center justify-between">
+                <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
+                <span class="px-2 py-1 rounded-full text-xs
+                  @class([
+                    'bg-pink-100 text-pink-800' => $dog->sex === 'female',
+                    'bg-blue-100 text-blue-800' => $dog->sex === 'male',
+                  ])">
+                  {{ $dog->sex === 'female' ? 'Femelle' : 'Mâle' }}
                 </span>
-              </li>
-            </ul>
+              </div>
 
-            @if($dog->description)
-              <p class="mt-3 text-slate-700 line-clamp-2">{{ $dog->description }}</p>
-            @endif
-          </div>
-        @endforeach
-      </div>
+              <ul class="mt-3 text-slate-700 text-sm space-y-1">
+                @if($dog->color) <li><strong>Couleur :</strong> {{ $dog->color }}</li> @endif
+                @if(!is_null($dog->weight_lb))
+                  <li><strong>Poids :</strong> {{ rtrim(rtrim(number_format((float)$dog->weight_lb,1,'.',''),'0'),'.') }} lb</li>
+                @endif
+              </ul>
 
-      {{-- Pagination si utilisée côté contrôleur --}}
-      @if(method_exists($dogs, 'links'))
-        <div class="mt-10">
-          {{ $dogs->withQueryString()->links() }}
+              @if($dog->description)
+                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+              @endif
+            </a>
+          @endforeach
         </div>
       @endif
-    @endif
+
+      {{-- SECTION: Miniature --}}
+      @if($groups['miniature']->count())
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Format Miniature</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
+          @foreach ($groups['miniature'] as $dog)
+            <a href="{{ route('dogs.show', $dog) }}"
+               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              <img src="{{ dogImageUrl($dog) }}"
+                   alt="Photo de {{ $dog->name }}"
+                   loading="lazy"
+                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+
+              <div class="flex items-center justify-between">
+                <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
+                <span class="px-2 py-1 rounded-full text-xs
+                  @class([
+                    'bg-pink-100 text-pink-800' => $dog->sex === 'female',
+                    'bg-blue-100 text-blue-800' => $dog->sex === 'male',
+                  ])">
+                  {{ $dog->sex === 'female' ? 'Femelle' : 'Mâle' }}
+                </span>
+              </div>
+
+              <ul class="mt-3 text-slate-700 text-sm space-y-1">
+                @if($dog->color) <li><strong>Couleur :</strong> {{ $dog->color }}</li> @endif
+                @if(!is_null($dog->weight_lb))
+                  <li><strong>Poids :</strong> {{ rtrim(rtrim(number_format((float)$dog->weight_lb,1,'.',''),'0'),'.') }} lb</li>
+                @endif
+              </ul>
+
+              @if($dog->description)
+                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+              @endif
+            </a>
+          @endforeach
+        </div>
+      @endif
+
+      {{-- SECTION: Toy --}}
+      @if($groups['toy']->count())
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Format Toy</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
+          @foreach ($groups['toy'] as $dog)
+            <a href="{{ route('dogs.show', $dog) }}"
+               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              <img src="{{ dogImageUrl($dog) }}"
+                   alt="Photo de {{ $dog->name }}"
+                   loading="lazy"
+                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+
+              <div class="flex items-center justify-between">
+                <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
+                <span class="px-2 py-1 rounded-full text-xs
+                  @class([
+                    'bg-pink-100 text-pink-800' => $dog->sex === 'female',
+                    'bg-blue-100 text-blue-800' => $dog->sex === 'male',
+                  ])">
+                  {{ $dog->sex === 'female' ? 'Femelle' : 'Mâle' }}
+                </span>
+              </div>
+
+              <ul class="mt-3 text-slate-700 text-sm space-y-1">
+                @if($dog->color) <li><strong>Couleur :</strong> {{ $dog->color }}</li> @endif
+                @if(!is_null($dog->weight_lb))
+                  <li><strong>Poids :</strong> {{ rtrim(rtrim(number_format((float)$dog->weight_lb,1,'.',''),'0'),'.') }} lb</li>
+                @endif
+              </ul>
+
+              @if($dog->description)
+                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+              @endif
+            </a>
+          @endforeach
+        </div>
+      @endif
+
+      {{-- (Optionnel) Non précisé --}}
+      @if($unsized->count())
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Format non précisé</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
+          @foreach ($unsized as $dog)
+            <a href="{{ route('dogs.show', $dog) }}"
+               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              <img src="{{ dogImageUrl($dog) }}"
+                   alt="Photo de {{ $dog->name }}"
+                   loading="lazy"
+                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+
+              <div class="flex items-center justify-between">
+                <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
+                <span class="px-2 py-1 rounded-full text-xs
+                  @class([
+                    'bg-pink-100 text-pink-800' => $dog->sex === 'female',
+                    'bg-blue-100 text-blue-800' => $dog->sex === 'male',
+                  ])">
+                  {{ $dog->sex === 'female' ? 'Femelle' : 'Mâle' }}
+                </span>
+              </div>
+
+              <ul class="mt-3 text-slate-700 text-sm space-y-1">
+                @if($dog->color) <li><strong>Couleur :</strong> {{ $dog->color }}</li> @endif
+                @if(!is_null($dog->weight_lb))
+                  <li><strong>Poids :</strong> {{ rtrim(rtrim(number_format((float)$dog->weight_lb,1,'.',''),'0'),'.') }} lb</li>
+                @endif
+              </ul>
+
+              @if($dog->description)
+                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+              @endif
+            </a>
+          @endforeach
+        </div>
+      @endif
+
+    @endunless
   </div>
 </section>
 @endsection

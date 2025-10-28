@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -20,8 +21,12 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('admin', fn($user) =>
-            in_array($user->email, ['info@petitpomskyduquebec.ca']) // <-- remplace par l’email autorisée
-        );
+        Gate::define('admin', function (User $user) {
+            return in_array($user->email, [
+                'info@petitpomskyduquebec.ca',
+                'pomskyduquebec@hotmail.com',
+                'johanniestyves@gmail.com',
+            ]);
+        });
     }
 }

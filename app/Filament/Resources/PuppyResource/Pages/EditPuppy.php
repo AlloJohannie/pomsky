@@ -6,6 +6,8 @@ use App\Filament\Resources\PuppyResource;
 use App\Models\Puppy;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Str;
+use App\Models\PuppyPhoto;
+use Illuminate\Support\Carbon;
 
 class EditPuppy extends EditRecord
 {
@@ -39,4 +41,42 @@ class EditPuppy extends EditRecord
 
         return $data;
     }
+        protected function afterSave(): void
+    {
+        $this->syncWeeklyPhotos($this->record, $this->form->getState());
+    }
+
+    private function syncWeeklyPhotos(\App\Models\Puppy $puppy, array $state): void
+    {
+        $uploads = [];
+        for ($w = 0; $w <= 12; $w++) {
+            $key = 'week'.$w;
+            if (!empty($state[$key])) {
+                $uploads[$w] = $state[$key];
+            }
+        }
+        if (empty($uploads)) return;
+
+        $bornAt = optional($puppy->litter)->born_at ? Carbon::parse($puppy->litter->born_at) : null;
+
+        // Crée de nouvelles entrées; ne supprime rien
+        $maxWeek = max(array_keys($uploads));
+
+        foreach ($uploads as $week => $path) {
+            PuppyPhoto::create([
+                'puppy_id'   => $puppy->id,
+                'path'       => $path,
+                'week'       => $week,
+                'taken_at'   => $bornAt ? $bornAt->copy()->addDays($week * 7)->toDateString() : null,
+                'is_primary' => $week === $maxWeek,
+                'sort'       => $week,
+            ]);
+        }
+
+        // Définir la plus récente nouvellement ajoutée comme cover
+        PuppyPhoto::where('puppy_id', $puppy->id)
+            ->where('week', '!=', $maxWeek)
+            ->update(['is_primary' => false]);
+    }
+
 }

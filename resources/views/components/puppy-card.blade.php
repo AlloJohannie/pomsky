@@ -5,7 +5,6 @@
 ])
 
 @php
-  // Valeurs par défaut si rien n'est passé depuis la vue parente
   $pStatusLabel = $pStatusLabel ?? [
     'available'     => 'Disponible',
     'reserved'      => 'Réservé',
@@ -20,12 +19,15 @@
     'hold'          => 'bg-yellow-100 text-yellow-800',
     'not_available' => 'bg-neutral-100 text-neutral-700',
   ];
+  $cover = $puppy->cover_photo_url; // ⇦ primary → latest → logo
+  $latest = $puppy->getRelationValue('photos')?->first(); // if eager loaded in show
+  $weekLabel = fn($w) => is_null($w) ? null : ($w === 0 ? 'Naissance' : "Semaine $w");
 @endphp
 
 <div class="group overflow-hidden rounded-xl border border-neutral-200 bg-white">
   <div class="relative">
     <img
-      src="{{ $puppy->photo ? asset('storage/'.$puppy->photo) : '/images/about/12.png' }}"
+      src="{{ $cover }}"
       class="w-full aspect-[4/3] object-cover"
       alt="{{ $puppy->name ?: 'Chiot' }}"
     >
@@ -39,7 +41,14 @@
         {{ $pStatusLabel[$puppy->status] ?? $puppy->status }}
       </span>
     </div>
+
+    @if($latest && !is_null($latest->week))
+      <div class="absolute bottom-3 left-3 text-xs px-2 py-1 rounded bg-black/60 text-white">
+        {{ $weekLabel($latest->week) }}
+      </div>
+    @endif
   </div>
+
   <div class="p-3">
     <div class="font-medium truncate">{{ $puppy->name ?: 'Chiot' }}</div>
   </div>
