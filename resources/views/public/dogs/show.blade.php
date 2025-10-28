@@ -16,12 +16,13 @@
       ← Retour
     </a>
 
-    <div class="grid md:grid-cols-2 gap-y-8 mt-6">
-      <div>
-        <img src="{{ $img }}" alt="{{ $dog->name }}" class="w-full aspect-[1/1] object-cover rounded-2xl">
+    <div class="md:flex md:items-start md:gap-10 mt-6">
+      <div class="md:w-[520px] md:shrink-0">
+        <img src="{{ $img }}" alt="{{ $dog->name }}"
+            class="w-full aspect-[1/1] object-cover rounded-2xl">
       </div>
 
-      <div class="md:pl-8 lg:pl-10">
+      <div class="mt-6 md:mt-0">
         <div class="flex items-center gap-3">
           <h1 class="text-3xl md:text-4xl font-bold">{{ $dog->name }}</h1>
           <span class="px-2 py-1 rounded-full text-xs
