@@ -34,7 +34,7 @@
           <li>
             <span class="inline-flex items-center gap-2">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity=".0"/><path d="M4 8l8 5 8-5"/><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
-              <a class="underline" href="mailto:info@petitpomskyduquebec.ca">info@petitpomskyduquebec.ca</a>
+              <a class="underline" href="mailto:pomskyduquebec@hotmail.com">pomskyduquebec@hotmail.com</a>
             </span>
           </li>
           <li>
