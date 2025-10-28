@@ -6,6 +6,7 @@ use App\Filament\Resources\LitterResource;
 use App\Models\Litter;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Str;
+use Filament\Actions\DeleteAction;
 
 class EditLitter extends EditRecord
 {
@@ -36,5 +37,12 @@ class EditLitter extends EditRecord
         $data['slug'] = $slug;
 
         return $data;
+    }
+
+
+    // (optionnel) retour à l’index après sauvegarde
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
     }
 }

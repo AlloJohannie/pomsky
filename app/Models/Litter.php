@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Litter extends Model
 {
     protected $fillable = [
-        'code','born_at','ready_at','sire_id','dam_id','puppies_count','status','description','slug'
+        'code','born_at','ready_at','sire_id','dam_id','puppies_count','status','description','slug','size',
     ];
 
     public function sire()  { return $this->belongsTo(Dog::class, 'sire_id'); }

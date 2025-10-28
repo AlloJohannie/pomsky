@@ -25,6 +25,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\CreateAction;
+
 use Illuminate\Support\Str;
 
 class LitterResource extends Resource
@@ -109,13 +110,13 @@ class LitterResource extends Resource
                 TextColumn::make('size')
                     ->label('Format')
                     ->badge()
-                    ->formatStateUsing(fn (?string $v) => match ($v) {
+                    ->formatStateUsing(fn (?string $state) => match ($state) {
                         'standard'  => 'Standard',
                         'miniature' => 'Miniature',
                         'toy'       => 'Toy',
                         default     => '—',
                     })
-                    ->color(fn (?string $v) => match ($v) {
+                    ->color(fn (?string $state) => match ($state) {
                         'standard'  => 'success',
                         'miniature' => 'info',
                         'toy'       => 'warning',
@@ -143,6 +144,17 @@ class LitterResource extends Resource
                 TextColumn::make('created_at')->since()->label('Créé'),
             ])
             
+        ->recordActions([
+            EditAction::make()->label('Modifier'),
+            DeleteAction::make()
+                ->label('Supprimer')
+                ->requiresConfirmation()
+                ->modalHeading('Supprimer la portée')
+                ->modalDescription('Cette action supprimera définitivement la portée.'),
+        ])
+        ->bulkActions([
+            DeleteBulkAction::make()->label('Supprimer la sélection'),
+        ])
         ->emptyStateHeading('Aucune portée');
 
     }

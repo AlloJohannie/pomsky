@@ -26,6 +26,45 @@
       }
   }
 @endphp
+@php
+  // Libellés FR des statuts de portée
+  $lStatusLabel = [
+    'planned'   => 'Planifiée',
+    'pregnant'  => 'Gestante',
+    'born'      => 'Née',
+    'available' => 'Disponible',
+    'reserved'  => 'Réservée',
+    'closed'    => 'Fermée',
+  ];
+
+  // (optionnel) classes si tu veux harmoniser les couleurs
+  $lStatusClass = [
+    'planned'   => 'bg-yellow-100 text-yellow-800',
+    'pregnant'  => 'bg-yellow-100 text-yellow-800',
+    'born'      => 'bg-green-100 text-green-800',
+    'available' => 'bg-green-100 text-green-800',
+    'reserved'  => 'bg-blue-100 text-blue-800',
+    'closed'    => 'bg-neutral-200 text-neutral-800',
+  ];
+
+  // Libellés FR des statuts de chiot
+  $pStatusLabel = [
+    'available'     => 'Disponible',
+    'reserved'      => 'Réservé',
+    'adopted'       => 'Adopté',
+    'hold'          => 'En attente',
+    'not_available' => 'Non disponible',
+  ];
+
+  // (optionnel) classes pour les chiots
+  $pStatusClass = [
+    'available'     => 'bg-green-100 text-green-800',
+    'reserved'      => 'bg-blue-100 text-blue-800',
+    'adopted'       => 'bg-neutral-200 text-neutral-800',
+    'hold'          => 'bg-yellow-100 text-yellow-800',
+    'not_available' => 'bg-neutral-100 text-neutral-700',
+  ];
+@endphp
 
 <x-hero
   title="Nos portées"
@@ -109,7 +148,7 @@
                     <ul class="text-sm text-slate-700 space-y-1">
                       @php
                         $cents = $puppy->price_cents;
-                        $priceFormatted = !is_null($cents) ? number_format($cents / 100, 2, ',', ' ') . ' $' : null;
+                        $priceFormatted = !is_null($cents) ? number_format($cents , 2, ',', ' ') . ' $' : null;
                       @endphp
                       @if($puppy->color) <li><strong>Couleur :</strong> {{ $puppy->color }}</li> @endif
                       @if(!is_null($priceFormatted)) <li><strong>Prix :</strong> {{ $priceFormatted }}</li> @endif
