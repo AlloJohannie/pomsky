@@ -255,4 +255,40 @@
 
   </div>
 </section>
+{{-- Portées passées --}}
+@if(isset($closedLitters) && $closedLitters->isNotEmpty())
+  <div id="passees" class="pt-6">
+    <h2 class="text-3xl font-bold mb-5">Portées passées</h2>
+    <div class="grid md:grid-cols-2 gap-7.5">
+      @foreach($closedLitters as $litter)
+        <a href="{{ route('litters.show', $litter->slug) }}" class="group block">
+          <div class="bg-body-bg rounded-2xl overflow-hidden border border-neutral-200 group-hover:shadow-md group-hover:bg-white transition">
+            <div class="p-2 bg-white">
+              <div class="grid grid-cols-2 gap-2">
+                <img src="{{ dogPhotoOrLogo($litter->sire) }}" loading="lazy" class="w-full aspect-square object-cover rounded-xl" alt="">
+                <img src="{{ dogPhotoOrLogo($litter->dam) }}"  loading="lazy" class="w-full aspect-square object-cover rounded-xl" alt="">
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-2xl font-semibold group-hover:underline">{{ $litter->code }}</div>
+                  <div class="mt-1 text-sm text-slate-600">
+                    <div><strong>Père :</strong> {{ $litter->sire->name ?? '—' }}</div>
+                    <div><strong>Mère :</strong> {{ $litter->dam->name ?? '—' }}</div>
+                  </div>
+                </div>
+                <span class="shrink-0 rounded-full text-sm px-3 py-1 bg-neutral-200 text-neutral-800">Fermée</span>
+              </div>
+              <div class="mt-5">
+                <span class="inline-block rounded-2xl bg-dark text-white px-5 py-3 group-hover:text-primary transition">Voir la portée</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      @endforeach
+    </div>
+  </div>
+@endif
+
 @endsection

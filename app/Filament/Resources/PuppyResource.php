@@ -16,6 +16,8 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select as FormSelect;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Grouping\Group; // v4
 
 class PuppyResource extends Resource
 {
@@ -54,36 +56,43 @@ class PuppyResource extends Resource
                 TextInput::make('price_cents')->label('Prix')->numeric()->minValue(0)->step(1),
                 TextInput::make('color')->label('Couleur')->maxLength(100),
             ])->columns(2),
+                    SchemaSection::make('Photos par semaine')->schema(
+            collect(range(0,12))->map(function($w){
+                $label = $w===0 ? 'Photo naissance' : "Semaine $w";
+                return FileUpload::make('week'.$w)
+                    ->label($label)->image()->directory('puppies')->disk('public')->maxSize(8192)
+                    ->helperText('Optionnel')
+                    ->dehydrated(true); // pour que Create/EditPuppy les récupèrent
+            })->all()
+        )->columns(3),
         ]);
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                ImageColumn::make('cover')
-                    ->label('Photo')
-                    ->getStateUsing(fn (Puppy $r) => $r->cover_photo_url)
-                    ->square()->imageSize(64),
-                TextColumn::make('name')->label('Nom')->searchable()->sortable(),
-                TextColumn::make('sex')->label('Sexe')->badge(),
-                TextColumn::make('status')->label('Statut')->badge()
-                    ->colors([
-                        'success' => 'available',
-                        'warning' => 'hold',
-                        'info'    => 'reserved',
-                        'gray'    => 'not_available',
-                        'danger'  => 'adopted',
-                    ]),
-                TextColumn::make('price_cents')
-                    ->label('Prix')
-                    ->formatStateUsing(fn ($c) => $c !== null ? number_format($c / 100, 2) . ' $' : '—'),
-                TextColumn::make('litter.code')->label('Portée')->sortable()->searchable(),
-                TextColumn::make('created_at')->since()->label('Créé'),
-            ])
-            ->recordActions([EditAction::make(), DeleteAction::make()])
-            ->toolbarActions([DeleteBulkAction::make()]);
-    }
+public static function table(Table $table): Table
+{
+    return $table
+        ->columns([
+            ImageColumn::make('cover')
+                ->label('Photo')
+                ->getStateUsing(fn(\App\Models\Puppy $r) => $r->cover_photo_url)
+                ->square()->imageSize(64),
+            TextColumn::make('name')->label('Nom')->searchable()->sortable(),
+            TextColumn::make('sex')->label('Sexe')->badge(),
+            TextColumn::make('status')->label('Statut')->badge()->colors([
+                'success'=>'available','warning'=>'hold','info'=>'reserved','gray'=>'not_available','danger'=>'adopted',
+            ]),
+            TextColumn::make('price_cents')->label('Prix')
+                ->formatStateUsing(fn($c)=> $c!==null ? number_format($c/100,2).' $' : '—'),
+            TextColumn::make('litter.code')->label('Portée')->sortable()->searchable(),
+            TextColumn::make('created_at')->since()->label('Créé'),
+        ])
+        // ✅ Groupé par portée
+        ->groups([
+            Group::make('litter.code')->label('Portée')->collapsible(),
+        ])
+        ->recordActions([EditAction::make(), DeleteAction::make()])
+        ->toolbarActions([DeleteBulkAction::make()]);
+}
 
     public static function getPages(): array
     {
@@ -97,7 +106,7 @@ class PuppyResource extends Resource
     public static function getRelations(): array
     {
         return [
-            PhotosRelationManager::class,
+
         ];
     }
 }

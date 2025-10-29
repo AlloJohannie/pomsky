@@ -68,19 +68,6 @@ class PuppiesRelationManager extends RelationManager
             ->headerActions([
                 CreateAction::make()
                     ->label('Ajouter')
-                    ->visible(fn (): bool => $this->getOwnerRecord()->status !== 'closed')
-
-                    ->before(function () {
-                        if ($this->getOwnerRecord()->status === 'closed') {
-                            Notification::make()
-                                ->title('Cette portée est fermée.')
-                                ->body('Vous ne pouvez plus y ajouter de chiot.')
-                                ->danger()
-                                ->send();
-
-                            throw new Halt(); // annule proprement l’action
-                        }
-                    })
                     ->mutateDataUsing(function (array $data): array {
                         // slug auto si manquant
                         if (empty($data['slug'])) {

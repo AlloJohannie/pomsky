@@ -94,11 +94,11 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
           @foreach ($groups['standard'] as $dog)
             <a href="{{ route('dogs.show', $dog) }}"
-               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              class="group flex flex-col h-full bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
-                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4"> {{-- carré --}}
+                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
 
               <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
@@ -119,8 +119,9 @@
               </ul>
 
               @if($dog->description)
-                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+                <p class="mt-3 text-slate-700 line-clamp-4">{{ $dog->description }}</p>
               @endif
+              <div class="mt-auto"></div> 
             </a>
           @endforeach
         </div>
@@ -132,7 +133,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
           @foreach ($groups['miniature'] as $dog)
             <a href="{{ route('dogs.show', $dog) }}"
-               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              class="group flex flex-col h-full bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
@@ -157,8 +158,9 @@
               </ul>
 
               @if($dog->description)
-                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+                <p class="mt-3 text-slate-700 line-clamp-4">{{ $dog->description }}</p>
               @endif
+              <div class="mt-auto"></div> {{-- pousse le bas pour homogénéiser --}}
             </a>
           @endforeach
         </div>
@@ -170,7 +172,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
           @foreach ($groups['toy'] as $dog)
             <a href="{{ route('dogs.show', $dog) }}"
-               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+                class="group flex flex-col h-full bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
@@ -195,8 +197,9 @@
               </ul>
 
               @if($dog->description)
-                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
+                <p class="mt-3 text-slate-700 line-clamp-4">{{ $dog->description }}</p>
               @endif
+              <div class="mt-auto"></div> {{-- pousse le bas pour homogénéiser --}}
             </a>
           @endforeach
         </div>
@@ -208,7 +211,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7.5 mb-10">
           @foreach ($unsized as $dog)
             <a href="{{ route('dogs.show', $dog) }}"
-               class="block bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
+              class="group flex flex-col h-full bg-body-bg rounded-2xl p-5 hover:bg-white border border-transparent hover:border-neutral-200 transition">
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
@@ -232,10 +235,11 @@
                 @endif
               </ul>
 
-              @if($dog->description)
-                <p class="mt-3 text-slate-700 line-clamp-6">{{ $dog->description }}</p>
-              @endif
-            </a>
+            @if($dog->description)
+              <p class="mt-3 text-slate-700 line-clamp-4">{{ $dog->description }}</p>
+            @endif
+            <div class="mt-auto"></div> {{-- pousse le bas pour homogénéiser --}}
+          </a>
           @endforeach
         </div>
       @endif

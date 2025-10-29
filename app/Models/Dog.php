@@ -56,4 +56,8 @@ class Dog extends Model
     {
         return 'slug';
     }
+    
+public function photos() { return $this->hasMany(\App\Models\DogPhoto::class)->orderBy('sort'); }
+public function primaryPhoto() { return $this->hasOne(\App\Models\DogPhoto::class)->where('is_primary', true); }
+
 }

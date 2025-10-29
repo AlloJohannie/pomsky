@@ -18,8 +18,21 @@ class Litter extends Model
 
     public function puppies() { return $this->hasMany(Puppy::class)->orderBy('sort'); }
 
-    public function scopePublic($query)
-    {
-        return $query->where('status', '!=', 'closed');
+    // + cast & nouveaux scopes
+    protected $casts = ['is_active' => 'boolean', 'born_at'=>'date', 'ready_at'=>'date'];
+
+    public function scopeVisible($q) {         // 👈 remplace l’ancien "public()"
+        return $q->where('is_active', true);   // "fermée" (status=closed) affiche quand même si active
     }
+
+    // Garde l’existant mais NE FILTRE PLUS sur "closed"
+    public function scopePublic($q) { return $this->scopeVisible($q); } // pour compat ascendante
+
+    // Compte dérivé (si tu souhaites retirer la saisie manuelle)
+    public function getPuppiesCountAttribute(): int {
+        return (int) ($this->relationLoaded('puppies')
+            ? $this->puppies->count()
+            : $this->puppies()->count());
+    }
+
 }

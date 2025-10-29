@@ -1,4 +1,6 @@
 <x-filament::page>
+        @livewire(\App\Filament\Widgets\StatsBreeding::class)
+    @livewire(\App\Filament\Widgets\RecentLitters::class)
     @php
         $dogsCount        = \App\Models\Dog::count();
         $littersCount     = \App\Models\Litter::count();

@@ -43,44 +43,17 @@ class LitterResource extends Resource
     {
         return $schema->schema([
             ComponentsSection::make('Infos portée')->schema([
-                TextInput::make('code')
-                    ->label('Nom de la portée')                 // 👈 libellé FR
-                    // ->helperText('Ex.: P2025-01')
-                    ->required()->maxLength(50)
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug($state))),
-                FormSelect::make('size')
-                    ->label('Format')
-                    ->options([
-                        'standard'  => 'Standard',
-                        'miniature' => 'Miniature',
-                        'toy'       => 'Toy',
-                    ])
-                    ->native(false),
-                FormSelect::make('status')
-                    ->label('Statut')
-                    ->options([
-                        'planned'   => 'Planifiée',
-                        'pregnant'  => 'Gestante',
-                        'born'      => 'Née',
-                        'available' => 'Disponible',
-                        'reserved'  => 'Réservée',
-                        'closed'    => 'Fermée',
-                    ])
-                    ->required()
-                    ->native(false),
+                TextInput::make('code')->label('Nom de la portée')->required()->maxLength(50)
+                    ->live(onBlur:true)->afterStateUpdated(fn($s,$set)=>$set('slug', \Illuminate\Support\Str::slug($s))),
+                FormSelect::make('size')->label('Format')->options(['standard'=>'Standard','miniature'=>'Miniature','toy'=>'Toy'])->native(false),
+                FormSelect::make('status')->label('Statut')->required()->options([
+                    'planned'=>'Planifiée','pregnant'=>'Gestante','born'=>'Née','available'=>'Disponible','reserved'=>'Réservée','closed'=>'Fermée',
+                ])->native(false),
 
-                TextInput::make('puppies_count')
-                    ->label('Nb chiots')->numeric()->minValue(0)->maxValue(20),
+                // ✅ Activation / désactivation
+                \Filament\Forms\Components\Toggle::make('is_active')->label('Active')->default(true),
 
-                DatePicker::make('born_at')->label('Nés le'),
-                DatePicker::make('ready_at')->label('Prêts à partir'),
 
-                // slug auto & caché
-                TextInput::make('slug')
-                    ->hidden()
-                    ->dehydrated(true)
-                    ->unique(ignoreRecord: true),
             ])->columns(3),
 
             ComponentsSection::make('Parents')->schema([

@@ -19,7 +19,9 @@
     <div class="md:flex md:items-start md:gap-10 mt-6">
       <div class="md:w-[520px] md:shrink-0">
         <img src="{{ $img }}" alt="{{ $dog->name }}"
-            class="w-full aspect-[1/1] object-cover rounded-2xl">
+            class="w-full aspect-[1/1] object-cover rounded-2xl cursor-zoom-in"
+            data-lightbox-src="{{ $img }}"
+            data-lightbox-caption="{{ $dog->name }}">
       </div>
 
       <div class="mt-6 md:mt-0">

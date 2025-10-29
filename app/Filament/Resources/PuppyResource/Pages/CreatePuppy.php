@@ -80,42 +80,62 @@ class CreatePuppy extends CreateRecord
 
     private function syncWeeklyPhotos(\App\Models\Puppy $puppy, array $state): void
     {
-        // Récupère les chemins fournis par FileUpload pour week0..week12
-        $uploads = [];
+        $bornAt = optional($puppy->litter)->born_at
+            ? \Carbon\Carbon::parse($puppy->litter->born_at)
+            : null;
+
+        $weeksWithPhoto = [];
+
         for ($w = 0; $w <= 12; $w++) {
             $key = 'week'.$w;
-            if (!empty($state[$key])) {
-                // FileUpload (single) renvoie le chemin relatif sur le disque 'public'
-                $uploads[$w] = $state[$key];
+
+            // IMPORTANT : on regarde même si la clé existe avec null => suppression
+            if (! array_key_exists($key, $state)) {
+                continue;
+            }
+
+            $newPath = $state[$key] ?: null;
+
+            /** @var PuppyPhoto|null $existing */
+            $existing = $puppy->photos()->where('week', $w)->first();
+
+            if ($newPath) {
+                $weeksWithPhoto[] = $w;
+
+                if ($existing) {
+                    // Remplacer si différent
+                    if ($existing->path !== $newPath) {
+                        $existing->update([
+                            'path'       => $newPath,
+                            'taken_at'   => $bornAt ? $bornAt->copy()->addDays($w * 7)->toDateString() : $existing->taken_at,
+                            'sort'       => $w,
+                            'is_primary' => false, // on recalculera plus bas
+                        ]);
+                    }
+                } else {
+                    // Créer si absent
+                    $puppy->photos()->create([
+                        'path'       => $newPath,
+                        'week'       => $w,
+                        'taken_at'   => $bornAt ? $bornAt->copy()->addDays($w * 7)->toDateString() : null,
+                        'sort'       => $w,
+                        'is_primary' => false,
+                    ]);
+                }
+            } else {
+                // Champ vidé => supprimer la photo de cette semaine s'il y en a une
+                if ($existing) {
+                    $existing->delete();
+                }
             }
         }
 
-        if (empty($uploads)) {
-            return;
-        }
-
-        // Déterminer la date estimée de prise de vue à partir de born_at de la portée si possible
-        $bornAt = optional($puppy->litter)->born_at ? Carbon::parse($puppy->litter->born_at) : null;
-
-        // On marque "primary" la photo la plus récente (plus grande semaine)
-        $maxWeek = max(array_keys($uploads));
-
-        foreach ($uploads as $week => $path) {
-            PuppyPhoto::create([
-                'puppy_id'   => $puppy->id,
-                'path'       => $path,
-                'week'       => $week,
-                'taken_at'   => $bornAt ? $bornAt->copy()->addDays($week * 7)->toDateString() : null,
-                'is_primary' => $week === $maxWeek,
-                'sort'       => $week, // tri simple par semaine
-            ]);
-        }
-
-        // Si on vient d’ajouter une primary, on peut déclasser les autres
-        if (!empty($uploads)) {
-            PuppyPhoto::where('puppy_id', $puppy->id)
-                ->where('week', '!=', $maxWeek)
-                ->update(['is_primary' => false]);
+        // Définir la cover = semaine la plus élevée disponible
+        if (!empty($weeksWithPhoto)) {
+            $maxWeek = max($weeksWithPhoto);
+            $puppy->photos()->update(['is_primary' => false]);
+            $puppy->photos()->where('week', $maxWeek)->update(['is_primary' => true]);
         }
     }
+
 }

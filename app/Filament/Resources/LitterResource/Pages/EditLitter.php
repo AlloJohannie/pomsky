@@ -45,4 +45,18 @@ class EditLitter extends EditRecord
     {
         return static::getResource()::getUrl('index');
     }
+    
+    protected function afterSave(): void
+    {
+        $names = collect(preg_split('/\r\n|\r|\n/', (string)($this->form->getState()['puppy_names'] ?? '')))
+            ->map(fn($n)=>trim($n))->filter();
+
+        foreach ($names as $name) {
+            $this->record->puppies()->firstOrCreate(
+                ['slug' => \Illuminate\Support\Str::slug($name) ?: \Illuminate\Support\Str::random(6)],
+                ['name' => $name, 'status'=>'available']
+            );
+        }
+        $this->record->update(['puppies_count' => $this->record->puppies()->count()]);
+    }
 }

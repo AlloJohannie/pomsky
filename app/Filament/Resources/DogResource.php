@@ -79,17 +79,12 @@ class DogResource extends Resource
             ])->columns(2),
 
             ComponentsSection::make('Photo & Description')->schema([
-                FileUpload::make('photo')
-                    ->label('Photo')
-                    ->image()
-                    ->imageEditor()
-                    ->imageResizeMode('contain')
-                    ->imageResizeTargetWidth(1600)
-                    ->imageResizeTargetHeight(1600)
-                    ->directory('dogs')
-                    ->disk('public')
-                    ->maxSize(51200),
+                // Optionnel: conserver "photo" comme cover héritée
+                FileUpload::make('photo')->label('Photo (cover)')->image()->directory('dogs')->disk('public')->maxSize(51200),
                 Textarea::make('description')->rows(6)->maxLength(5000),
+            ]),
+            ComponentsSection::make('Galerie')->schema([
+                \Filament\Forms\Components\Placeholder::make('hint')->content('Ajoute plusieurs photos dans l’onglet "Galerie" de la fiche.'),
             ]),
         ]);
     }
@@ -167,6 +162,12 @@ class DogResource extends Resource
             'index'  => Pages\ListDogs::route('/'),
             'create' => Pages\CreateDog::route('/create'),
             'edit'   => Pages\EditDog::route('/{record}/edit'),
+        ];
+    }
+    public static function getRelations(): array
+    {
+        return [
+            \App\Filament\Resources\DogResource\RelationManagers\PhotosRelationManager::class,
         ];
     }
 }

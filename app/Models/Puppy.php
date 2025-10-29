@@ -18,8 +18,11 @@ class Puppy extends Model
 
     public function photos()
     {
-        // tri par date puis création (la plus récente d’abord)
-        return $this->hasMany(PuppyPhoto::class)->orderByDesc('taken_at')->orderByDesc('created_at');
+        // 👉 Tri par semaine croissante d’abord, puis date si égalité
+        return $this->hasMany(PuppyPhoto::class)
+            ->orderBy('week')               // 0,1,2...
+            ->orderBy('taken_at')
+            ->orderBy('created_at');
     }
 
     public function latestPhoto()
@@ -35,23 +38,22 @@ class Puppy extends Model
     // Cover = principale si définie, sinon la plus récente, sinon logo
     public function getCoverPhotoUrlAttribute(): ?string
     {
-        // try eagerloaded relation first to éviter requêtes
         $photo = $this->getRelationValue('primaryPhoto')
-              ?? $this->getRelationValue('latestPhoto');
-
-        // fallback requête si pas eagerloaded
-        if (! $photo) $photo = $this->primaryPhoto()->first();
-        if (! $photo) $photo = $this->latestPhoto()->first();
+            ?? $this->getRelationValue('latestPhoto')
+            ?? $this->primaryPhoto()->first()
+            ?? $this->latestPhoto()->first();
 
         if ($photo && $photo->path && file_exists(public_path('storage/'.$photo->path))) {
             return asset('storage/'.$photo->path);
         }
-        return asset('images/logo/logo_large.jpg');
+        return null; // 👈 pas d’image par défaut
     }
-
     // Slug & ordre auto (inchangé)
     protected static function booted()
     {
+        static::created(fn(Puppy $p) => optional($p->litter)->update(['puppies_count' => $p->litter->puppies()->count()]));
+        static::deleted(fn(Puppy $p) => optional($p->litter)->update(['puppies_count' => $p->litter->puppies()->count()]));
+
         static::creating(function (Puppy $puppy) {
             if (empty($puppy->slug)) {
                 $puppy->slug = static::makeUniqueSlug($puppy);
@@ -75,5 +77,16 @@ class Puppy extends Model
         $slug = $base; $i = 1;
         while (static::where('slug', $slug)->exists()) $slug = $base.'-'.$i++;
         return $slug;
+    }
+
+    protected function mutateFormDataBeforeFill(array $data): array
+    {
+        // Pré-remplit week0..week12 si une photo existe déjà
+        $photos = $this->record->photos()->get()->keyBy('week');
+        for ($w = 0; $w <= 12; $w++) {
+            $key = 'week'.$w;
+            $data[$key] = isset($photos[$w]) ? $photos[$w]->path : null; // FileUpload accepte le path sur 'public'
+        }
+        return $data;
     }
 }
