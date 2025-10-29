@@ -148,26 +148,33 @@
               <div class="p-5 space-y-3">
                 <div class="flex items-center justify-between">
                   <div class="font-semibold text-lg">{{ $puppy->name ?: 'Chiot' }}</div>
+                  {{-- Galerie (1 par semaine, triée) --}}
                   @if($photosByWeek->count())
-                  <div class="mt-2">
-                    <div class="flex flex-wrap gap-2">
-                      @foreach($photosByWeek as $ph)
-                        @php $full = asset('storage/'.$ph->path); @endphp
-                        <button type="button"
-                          class="relative w-20 h-20 rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50"
-                          data-lightbox-src="{{ $full }}"
-                          data-lightbox-caption="{{ $weekLabel($ph->week) }}">
-                          <img src="{{ $full }}" loading="lazy" class="w-full h-full object-cover" alt="">
-                          @if(!is_null($ph->week))
-                            <span class="absolute bottom-1 left-1 text-[10px] px-1.5 py-0.5 rounded bg-black/60 text-white">
-                              {{ $weekLabel($ph->week) }}
-                            </span>
-                          @endif
-                        </button>
-                      @endforeach
+                    <div class="mt-2">
+                      <div class="flex flex-wrap gap-2">
+                        @foreach($photosByWeek as $ph)
+                          @php $full = asset('storage/'.$ph->path); @endphp
+                          <button type="button"
+                            class="relative w-20 h-20 rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50"
+                            data-lightbox-src="{{ $full }}"
+                            data-lightbox-caption="{{ $weekLabel($ph->week) }}">
+                            <img src="{{ $full }}" loading="lazy" class="w-full h-full object-cover" alt="">
+                            @if(!is_null($ph->week))
+                              <span class="absolute bottom-1 left-1 text-[10px] px-1.5 py-0.5 rounded bg-black/60 text-white">
+                                {{ $weekLabel($ph->week) }}
+                              </span>
+                            @endif
+                            @if($ph->is_primary)
+                              <span class="absolute top-1 right-1 text-[10px] px-1.5 py-0.5 rounded bg-emerald-600/90 text-white">
+                                Cover
+                              </span>
+                            @endif
+                          </button>
+                        @endforeach
+                      </div>
                     </div>
-                  </div>
                   @endif
+
                 </div>
 
                 <ul class="text-sm text-slate-700 space-y-1">

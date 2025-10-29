@@ -11,10 +11,13 @@ import 'aos/dist/aos.css';
 
 // Initialise quand le DOM est prêt
 window.addEventListener('DOMContentLoaded', () => {
-  // AOS
-  if (!window.__aos_initialized__) {
-    AOS.init();
-    window.__aos_initialized__ = true;
+  try {
+    if (typeof AOS !== 'undefined' && !window.__aos_initialized__) {
+      AOS.init();
+      window.__aos_initialized__ = true;
+    }
+  } catch (e) {
+    // noop
   }
 
   // Activer le lien courant dans la topnav (#navbar)
