@@ -143,7 +143,7 @@
           <h3 class="text-xl font-semibold">Priorité & liste</h3>
           <p class="mt-2 text-slate-700">
             L’ordre est fixé par la date de paiement. Sans dépôt, aucune place n’est réservée.
-            En général, <strong>4 dépôts</strong> par portée ; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
+            En général, <strong>4 dépôts</strong> par portée pour le format standard et  trois dépôt par portée pour le format miniature et toy ; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-5">
@@ -277,9 +277,11 @@
       </div>
       <div class="bg-primary rounded-tr-2xl rounded-br-2xl lg:p-15 p-5 h-full flex justify-center flex-col">
         <h2 class="mb-2.5 md:text-4xl text-2.6xl">Prêt·e à réserver&nbsp;?</h2>
-        <p class="mb-9">
-          Planifiez une rencontre à domicile ou une présentation virtuelle Teams. On vous accompagne, pas à pas.
-        </p>
+<p class="mb-9">
+  Les rencontres à domicile ne sont pas offertes avant que les chiots aient 5&nbsp;semaines.  
+  Pour réserver, vous pouvez me joindre par téléphone, courriel ou Messenger.  
+  Vous serez ensuite les bienvenus à la maison lorsque la portée aura atteint 5&nbsp;semaines.
+</p>
         <div>
           <a href="{{ url('/contact') }}" class="py-3.5 lg:px-7.5 px-6.5 inline-flex text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
             Nous contacter

@@ -40,17 +40,17 @@
         <h2 class="mb-2.5 md:text-2.5xl text-1.5xl">Fondatrice & Histoire</h2>
         <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé à Saint-Philippe de La Prairie, en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quittée.</p>
         <br>
-        <p>Créer Passion familiale a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien.</p>
+        <p>Créer Passion familiale, petit pomsky du Québec a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien et est également un pilier dans les activités de zoothérapie</p>
         <br>
         <p>Lors des mises bas, je reste au chevet de ma chienne — 5 heures, 24 heures s’il le faut — pour l’accompagner avec douceur et respect. <strong>Dès la naissance</strong>, chaque chiot est pris en charge avec soin : nettoyage, tétée, confort et hygiène. J’applique un <strong>protocole sanitaire strict</strong> afin d’assurer une croissance harmonieuse. Mon objectif : des chiots <strong>équilibrés, bien socialisés et prêts</strong> à s’épanouir dans leur famille.</p>
         <br>
         <p>Au-delà de l’élevage, Passion familiale est aussi un <strong>espace de bien-être</strong> grâce à notre second pôle d’activité : la <strong>zoothérapie</strong>, proposée en Montérégie (milieux scolaires, organisationnels et en pratique privée). Mes chiens y apportent présence apaisante et réconfort.</p>
         <br>
-        <p>Avec un ami d’enfance, j’ai cofondé <strong>Yoganimo Inc.</strong> (région de Québec), qui offre des séances de <em>puppy yoga</em> favorisant la socialisation des chiots issus de plusieurs élevages québécois tout en créant des moments de bonheur pour les participants. J’organise également des <strong>séances de puppy yoga en Montérégie</strong> avec les chiots de mon élevage. J’accorde une grande importance à la <strong>socialisation précoce</strong>, aux <strong>expériences variées</strong> (bruits, textures, odeurs, voiture, neige, gazon, etc.).</p>
+        <p>Avec une amie d’enfance, j’ai cofondé <strong>Yoganimo Inc.</strong> (région de Québec), qui offre des séances de <em>puppy yoga</em> favorisant la socialisation des chiots issus de plusieurs élevages québécois tout en créant des moments de bonheur pour les participants. J’organise également des <strong>séances de puppy yoga en Montérégie</strong> avec les chiots de mon élevage. J’accorde une grande importance à la <strong>socialisation précoce</strong>, aux <strong>expériences variées</strong> (bruits, textures, odeurs, voiture, neige, gazon, etc.).</p>
         <br>
-        <p>Je dirige aussi une entreprise de <strong>gâteries 100 % naturelles</strong> pour chiens. Mes chiens sont nourris <em>au cru</em> ou <em>au cru déshydraté</em>, et reçoivent des récompenses de qualité (légumes déshydratés, fromage de yak, <em>bully sticks</em>). Le <strong>bien-être</strong> passe aussi par une <strong>alimentation saine</strong>.</p>
+        <p>Je dirige aussi une entreprise de <strong>gâteries 100 % naturelles</strong> pour chiens. Mes chiens sont nourris <em>au cru</em> ou <em>au cru déshydraté</em>, et reçoivent des récompenses de qualité (légumes déshydratés, fromage de yak, <em>bully sticks</em>). Le <strong>bien-être</strong> passe aussi par une <strong>alimentation saine</strong>. Il est primordial pour moi de nourrir mes chiens qu’avec des aliments de grande qualité</p>
         <br>
-        <p>Enfin, mon approche s’appuie sur des bases solides : une <strong>formation initiale de 415 heures en zoothérapie</strong> et de nombreux <strong>perfectionnements</strong>. J’ai développé des connaissances en hygiène, développement, santé canine et surtout en <strong>communication émotionnelle</strong>. Je repère les <strong>signaux de stress et d’apaisement</strong> pour intervenir avec justesse et bienveillance. <strong>La passion est guidée par la science</strong> — et inversement.</p>
+        <p>Enfin, mon approche s’appuie sur des bases solides : une <strong>formation initiale de 415 heures en zoothérapie</strong> et de nombreux <strong>perfectionnements</strong>. J’ai développé des connaissances en hygiène, développement, santé canine et surtout en <strong>communication émotionnelle</strong>. Je repère les <strong>signaux de stress et d’apaisement</strong> pour intervenir avec justesse et bienveillance. <strong>La passion est guidée par la science</strong> — et inversement. Outre les formations reliées au domaine canin, je possède de solides compétences en relation d’aide appuyée par un bac en orientation scolaire et une maitrise en orientation scolaire. Je suis également membre de deux ordres professionnels.</p>
       </article>
 
       <!-- 2. Compétences -->
@@ -103,8 +103,8 @@
           <div class="bg-white border border-neutral-200 rounded-2xl p-6">
             <ul class="list-disc pl-5 space-y-1">
               <li>Formation initiale <strong>415 h</strong> en zoothérapie</li>
-              <li>Perfectionnement & mentorat <strong>300 h</strong> (Audrey Desrosiers)</li>
-              <li><strong>60 h</strong> sur la zoothérapie et les petits animaux (Humanizoo)</li>
+              <li>Perfectionnement & mentorat <strong>100 h</strong> (Audrey Desrosiers)</li>
+              <li><strong>75 h</strong> sur la zoothérapie et les petits animaux (Humanizoo)</li>
               <li>Membre de 2 communautés de pratique (partage & réflexion clinique)</li>
               <li>Formations en comportement canin (signaux de stress & d’apaisement)</li>
               <li>Webinaires : accouchement, sevrage, élevage éthique</li>
@@ -130,19 +130,20 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
             <h4 class="font-semibold">Yoganimo Inc (Québec)</h4>
-            <p class="mt-2 text-slate-700">Séances de puppy yoga en partenariat avec la Ville de Québec, et interventions en milieu corporatif.</p>
+            <p class="mt-2 text-slate-700">Séances de puppy yoga en partenariat avec la Ville de Québec, et interventions en milieu corporatif dans la région de Qc et environ.</p>
             <span class="mt-3 text-sm text-slate-600">Socialisation bienveillante & moments de bonheur</span>
           </div>
 
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
             <h4 class="font-semibold">Passion familiale (Montérégie)</h4>
+            <p class="mt-2 text-slate-700">Élevage familiale  de pomsky de génération F3 et F4, uniquement, Format standard, miniature et micro/toy.</p>
             <p class="mt-2 text-slate-700">Puppy yoga avec les chiots de l’élevage (dès 6 semaines, dans le respect du rythme), en locaux loués et en entreprises.</p>
             <span class="mt-3 text-sm text-slate-600">Expériences précoces variées et encadrées</span>
           </div>
 
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
-            <h4 class="font-semibold">Yak N Snack</h4>
-            <p class="mt-2 text-slate-700">Gâteries naturelles 100 % pour chiens ; vente en ligne & réseau de partenaires (pensions, agilité, toilettages, zoothérapeutes).</p>
+            <h4 class="font-semibold">Les friandises "Yak N Snack"</h4>
+            <p class="mt-2 text-slate-700">Gâteries naturelles 100 % pour chiens ; vente en ligne & réseau de partenaires (pensions, agilité, centre de toilettages, zoothérapeutes).</p>
             <span class="mt-3 text-sm text-slate-600">Promouvoir une alimentation saine et naturelle</span>
           </div>
         </div>
@@ -153,9 +154,9 @@
         <h3 class="mb-2.5 md:text-2.5xl text-1.5xl">Activités de visibilité annuelle</h3>
         <p class="mb-5">Pour faire rayonner Passion familiale, Yoganimo et Yak N Snack :</p>
         <ul class="list-disc pl-5 space-y-2 md:mb-10 mb-5">
-          <li>Présenter les chiots Pomsky au public québécois</li>
-          <li>Faire découvrir les bienfaits du puppy yoga</li>
-          <li>Offrir des dégustations de gâteries naturelles</li>
+          <li>Présenter les chiots Pomsky au public québécois et en ontario</li>
+          <li>Faire découvrir les bienfaits du puppy yoga par des séances organisées dans des locaux louer pour l'occasion ou en entreprise</li>
+          <li>Offrir des dégustations de gâteries naturelles ( c'est plus des journées découvertes des produits chez mes partenaires)</li>
           <li>Échanger avec familles, professionnels et passionnés</li>
         </ul>
 

@@ -119,7 +119,10 @@
                         <h3 class="mb-2.5 lg:text-1.5xl text-xl">Tests de santé complets</h3>
                         <p class="mb-2.5">
                             <strong>Tester nos reproducteurs est fondamental.</strong> Les dépistages couvrent plus de <strong>225 maladies génétiques</strong>,
-                            assurant des lignées en santé et prévenant des frais vétérinaires à long terme.
+                            assurant des lignées en santé et prévenant des frais vétérinaires à long terme. Également, les tests Embark menés sur nos reproducteurs permet de connaître avec exactitude la génétique de tous nos chiens. Nous avons également, tous les tests génétiques des parents de nos chiens fournis par les éleveurs de qui nous avons fait l'acquisition de nos chiens.
+                        </p>
+                        <p class="mb-2.5">
+                            Nous pouvons vous montrer l'ADN de nos chiens et nous sommes fiers de la génétique de tous nos pomskys puisqu'il s'agit de chiens de grande qualité. Avec fierté, nous partageons deux générations et quelquefois trois générations de test embark, soit les parents de nos reproducteurs, nos reproducteurs ainsi que les bébés de nos reproducteurs que nous avons décidé de garder au sein de l'élevage afin de poursuivre la lignée génétique exceptionnelle. Par exemple, nous avons les tests embark des parents de Daisy (fourni par l'éleveur lors de l'achat). Nous avons testé Daisy à son arrivée avant de la reproduire et nous avons également testé son bébé Shakira qui poursuivra cette belle lignée.  Seul les tests embark, peuvent vous certifier avec exactitude l'ADN de votre animal. C'est la seule et unique façon de connaitre la génétique de votre compagnon.
                         </p>
                     </div>
                 </div>
@@ -267,7 +270,7 @@ Que ce soit en élevage ou en zoothérapie, nous accordons une attention particu
                         <h3 class="mb-2.5 lg:text-1.5xl text-xl">Faire connaître le Pomsky au Québec</h3>
                         <p class="mb-2.5">
 Faire connaître le Pomsky au Québec et propager le bonheur
-L’un de nos engagements les plus chers est de faire découvrir ce chien exceptionnel au plus grand nombre. Nous croyons que le Pomsky, avec son tempérament doux, son intelligence vive et son charme unique, mérite d’être connu et reconnu au Québec. Et surtout, nous avons à cœur de propager le bonheur dans les familles québécoises, en leur offrant un chiot équilibré, en santé, bien socialisé et prêt à vivre une vie remplie d’amour                        </p>
+L’un de nos engagements les plus chers est de faire découvrir ce chien exceptionnel au plus grand nombre. Nous croyons que le Pomsky, avec son tempérament doux, son intelligence vive et son charme unique, mérite d’être connu et reconnu au Québec. Et surtout, nous avons à cœur de propager le bonheur dans les familles québécoises, en leur offrant un chiot équilibré, en santé, bien socialisé et prêt à vivre une vie remplie d’amour.  Quand nous voyons qu''un client est  complètement comblé par un petit pomsky provenant de notre élevage, nous éprouvons une grande satisfaction. Apporter le bonheur dans les familles, n'est pas cela une grande source de satisfaction et de réussite!</p>
                     </div>
                 </div>
             </div>

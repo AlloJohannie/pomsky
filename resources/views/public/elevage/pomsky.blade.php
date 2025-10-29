@@ -67,7 +67,7 @@
       </div>
       <div>
         <p class="text-slate-700">
-          Le Pomsky est un <strong>designer dog</strong> — un croisement intentionnel et éthique entre deux races pures,
+          Le Pomsky est un <strong>designer dog</strong> — un croisement intentionnel entre deux races pures,
           avec tests génétiques et standards précis. Le mariage du <strong>Husky sibérien</strong> (majestueux, indépendant)
           et du <strong>Poméranien</strong> (vif, affectueux, compact) donne un chien au look exceptionnel, à la
           personnalité attachante et à l’énergie débordante, idéal pour la vie de famille : <strong>sociable</strong>,
@@ -87,16 +87,17 @@
       <div class="bg-white p-6 rounded-2xl">
         <h3 class="font-semibold text-xl">Standard</h3>
         <p class="mt-2 text-slate-700">
-          <strong>20 lb et plus</strong> (jusqu’à ~36 lb). Prestance proche du Husky tout en restant adapté à la vie familiale.
+          <strong>20 lb et plus</strong> (jusqu’à ~36 lb). Le pomsky standard vous suivra dans toutes vos activités. Idéale pour les sportifs qui aime les longues randonnées . Toutefois, ils ne nécessitent pas le même niveau d'activité physique qu'un husky.  Deux marches par jour ou encore le parc à chien sera suffisant pour combler son besoin d'activité. Ils n'ont certe pas le même besoin qu'un husky ce qui est beaucoup plus adapté pour des familles. Il est possible de sauter des journées sans activités physique mais il sera débordant d'énergie.
         </p>
       </div>
       <div class="bg-white p-6 rounded-2xl">
         <h3 class="font-semibold text-xl">Miniature</h3>
-        <p class="mt-2 text-slate-700"><strong>15 à 20 lb</strong>. Format compact, parfait maison ou condo.</p>
+        <p class="mt-2 text-slate-700"><strong>15 à 20 lb</strong>. Format compact, parfait maison ou condo. Il nécessite les mêmes besoin que le format standard puisque son gabarit est tout de même très proche du format standard. Petit chien aux allures nordiques, ils apprécient beaucoup l'hiver et les marches en fôret.</p>
       </div>
       <div class="bg-white p-6 rounded-2xl">
         <h3 class="font-semibold text-xl">Micro Toy</h3>
-        <p class="mt-2 text-slate-700"><strong>Moins de 15 lb</strong>. Petit gabarit conservant le look Pomsky.</p>
+        <p class="mt-2 text-slate-700"><strong>Moins de 15 lb</strong>. Petit gabarit conservant le look Pomsky. Il tolère beaucoup moins l'hiver et se gèle les pattes rapidement. Petit chien de maison. Plusieurs les entrainent sur pipipad. Ils ont moins besoin d'exercice que les 2 autres formats. Sauter une journée voire deux sans marche ne sera pas dramatique. Même si pour la santé pshysique et psychologique, je recommande fortement des balades extérieurs. Il n'aura pas de comportements destructeurs si on saute une journée sans exercice. Il s'agit de petits chiens avec beaucoup moins d'énergie que le format standard
+</p>
       </div>
     </div>
 
