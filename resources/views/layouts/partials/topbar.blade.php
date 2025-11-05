@@ -1,3 +1,8 @@
+<?php
+// =============================
+// resources/views/layouts/partials/topbar.blade.php (MÀJ)
+// =============================
+?>
 {{-- resources/views/partials/topbar.blade.php --}}
 <!-- Navbar (style + comportement du template, avec tes liens) -->
 <header class="bg-white sticky top-0 inset-x-0 z-20 transition-all duration-300">
@@ -25,6 +30,7 @@
           Passion familiale : Petit Pomsky du Québec
         </span>
       </a>
+
       <!-- Desktop nav (id=navbar pour l'état actif via landinger.js) -->
       <nav id="navbar" class="hidden lg:flex items-center justify-center gap-5">
         <!-- Accueil -->
@@ -72,7 +78,7 @@
           </div>
         </div>
 
-        <!-- Zoothérapie -->
+        <!-- Zoothérapie (MÀJ : nouvelles sous-pages) -->
         <div class="m-1 hs-dropdown [--trigger:hover] relative inline-flex transition-all duration-300">
           <button type="button"
                   class="hs-dropdown-toggle text-dark flex items-center py-2.5 font-medium"
@@ -84,41 +90,37 @@
                       before:absolute before:-top-4 before:start-0 before:w-full before:h-4
                       after:absolute after:-bottom-4 after:start-0 after:w-full after:h-4"
                role="menu">
-            <div class="p-5">
-              <a href="{{ url('/zootherapie/valeurs') }}" class="block font-medium text-dark py-1.25 hover:underline">Mission & Valeur</a>
+            <div class="p-5 grid grid-cols-1 gap-1.5">
+              <a href="{{ url('/zootherapie/valeurs') }}" class="block font-medium text-dark py-1.25 hover:underline">Mission & valeurs</a>
               <a href="{{ url('/zootherapie/services') }}" class="block font-medium text-dark py-1.25 hover:underline">Nos services</a>
-              <a href="{{ url('/zootherapie/tarifs') }}" class="block font-medium text-dark py-1.25 hover:underline">Nos tarifs</a>
+              <a href="{{ url('/zootherapie/tarifs') }}" class="block font-medium text-dark py-1.25 hover:underline">Tarifs</a>
               <a href="{{ url('/zootherapie/partenaires') }}" class="block font-medium text-dark py-1.25 hover:underline">Partenaires</a>
-              {{-- <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="block font-medium text-dark py-1.25 hover:underline">Pourquoi nous choisir</a> --}}
+              <hr class="my-1.5">
+              <a href="{{ url('/zootherapie/puppy-yoga') }}" class="block font-medium text-dark py-1.25 hover:underline">Puppy yoga & ocytocine</a>
+              <a href="{{ url('/zootherapie/team-building') }}" class="block font-medium text-dark py-1.25 hover:underline">Team building en entreprise</a>
+              <a href="{{ url('/zootherapie/francisation') }}" class="block font-medium text-dark py-1.25 hover:underline">Francisation & alphabétisation</a>
+              <a href="{{ url('/zootherapie/garderie') }}" class="block font-medium text-dark py-1.25 hover:underline">Ateliers en garderie</a>
+              <a href="{{ url('/zootherapie/ecole-specialisee') }}" class="block font-medium text-dark py-1.25 hover:underline">École spécialisée</a>
+              <a href="{{ url('/zootherapie/chsld') }}" class="block font-medium text-dark py-1.25 hover:underline">CHSLD & soins palliatifs</a>
             </div>
           </div>
         </div>
 
         <!-- Liens directs -->
         <a href="{{ url('/galerie') }}" class="text-dark font-medium py-2.5 hover:underline">Galerie</a>
-        {{-- <a href="{{ url('/a-propos') }}" class="text-dark font-medium py-2.5 hover:underline">À propos</a> --}}
         <a href="{{ url('/contact') }}" class="text-dark font-medium py-2.5 hover:underline">Contact</a>
       </nav>
 
-      <!-- Droite: CTA + burger mobile -->
+      <!-- Droite: burger mobile -->
       <div class="flex items-center md:gap-4 gap-2.5">
-        {{-- <a href="https://exemple-gateries.com" target="_blank" rel="noopener"
-           class="hidden lg:inline-flex items-center rounded-2xl bg-primary text-dark hover:text-primary hover:bg-dark px-7.5 py-3.5 font-medium transition-all duration-300">
-          Gâteries <i class="iconify tabler--external-link ms-1.5 size-4"></i>
-        </a> --}}
-
-<button type="button"
-  class="lg:hidden inline-flex justify-center items-center rounded-2xl md:size-13 size-11 p-3.5 bg-dark text-white focus:text-black focus:bg-primary transition-all duration-300"
-  aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileMenuOffcanvas"
-  data-hs-overlay="#mobileMenuOffcanvas">
-
-  <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
-    <path d="M4 6h16M4 12h16M4 18h16"
-          fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
-
+        <button type="button"
+          class="lg:hidden inline-flex justify-center items-center rounded-2xl md:size-13 size-11 p-3.5 bg-dark text-white focus:text-black focus:bg-primary transition-all duration-300"
+          aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileMenuOffcanvas"
+          data-hs-overlay="#mobileMenuOffcanvas">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -132,19 +134,16 @@
   <!-- Header offcanvas -->
   <div class="h-16 flex items-center justify-between px-4 border-b border-neutral-200 sticky top-0 bg-white">
     <a href="{{ route('home') }}" class="font-bold text-dark">Les Petits Pomsky du Québec</a>
-<button type="button"
-        class="bg-neutral-600/15 text-neutral-600 size-8 flex justify-center items-center rounded-full"
-        aria-label="Close"
-        data-hs-overlay="#mobileMenuOffcanvas">
-  <span class="sr-only">Close</span>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-       class="h-4 w-4" stroke="currentColor" stroke-width="2" fill="none"
-       stroke-linecap="round" stroke-linejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/>
-    <line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-</button>
-
+    <button type="button"
+            class="bg-neutral-600/15 text-neutral-600 size-8 flex justify-center items-center rounded-full"
+            aria-label="Close"
+            data-hs-overlay="#mobileMenuOffcanvas">
+      <span class="sr-only">Close</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
   </div>
 
   <!-- Corps offcanvas -->
@@ -180,32 +179,29 @@
         </div>
       </div>
 
-      <!-- Zoothérapie -->
+      <!-- Zoothérapie (MÀJ mobile) -->
       <div class="hs-accordion">
         <button class="hs-accordion-toggle w-full flex items-center justify-between py-2.5 font-medium text-dark">
           <span>Zoothérapie</span>
           <i class="iconify tabler--chevron-down size-4 hs-accordion-active:rotate-180 transition-all"></i>
         </button>
         <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height]">
-          <a href="{{ url('/zootherapie/valeurs') }}" class="block py-1.5">Valeurs</a>
+          <a href="{{ url('/zootherapie/valeurs') }}" class="block py-1.5">Mission & valeurs</a>
           <a href="{{ url('/zootherapie/services') }}" class="block py-1.5">Nos services</a>
-          <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5">Nos tarifs</a>
+          <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5">Tarifs</a>
           <a href="{{ url('/zootherapie/partenaires') }}" class="block py-1.5">Partenaires</a>
-          {{-- <a href="{{ url('/zootherapie/pourquoi-nous-choisir') }}" class="block py-1.5">Pourquoi nous choisir</a> --}}
+          <a href="{{ url('/zootherapie/puppy-yoga') }}" class="block py-1.5">Puppy yoga & ocytocine</a>
+          <a href="{{ url('/zootherapie/team-building') }}" class="block py-1.5">Team building en entreprise</a>
+          <a href="{{ url('/zootherapie/francisation') }}" class="block py-1.5">Francisation & alphabétisation</a>
+          <a href="{{ url('/zootherapie/garderie') }}" class="block py-1.5">Ateliers en garderie</a>
+          <a href="{{ url('/zootherapie/ecole-specialisee') }}" class="block py-1.5">École spécialisée</a>
+          <a href="{{ url('/zootherapie/chsld') }}" class="block py-1.5">CHSLD & soins palliatifs</a>
         </div>
       </div>
 
       <a href="{{ url('/galerie') }}" class="py-2.5 font-medium text-dark">Galerie</a>
-      {{-- <a href="{{ url('/a-propos') }}" class="py-2.5 font-medium text-dark">À propos</a> --}}
       <a href="{{ route('contact') }}" class="text-dark font-medium py-2.5 hover:underline">Contact</a>
-
-
-      <!-- CTA externe -->
-      {{-- <a href="https://exemple-gateries.com" target="_blank" rel="noopener"
-         class="py-2.5 font-semibold text-primary">Gâteries (lien externe)</a> --}}
     </div>
-
-    <!-- Bouton "Sign-in" style template (facultatif) -->
-    {{-- <a class="mt-3 w-full bg-primary text-center text-dark hover:text-primary hover:bg-dark rounded-lg px-7.5 py-3.5 font-medium transition-all duration-300">Connexion</a> --}}
   </div>
 </div>
+
