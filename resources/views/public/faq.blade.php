@@ -25,9 +25,6 @@
   <div class="container relative z-10">
     <div class="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-easing="ease-in-out">
       <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5 text-white drop-shadow">Foire aux questions</h1>
-      <p class="mb-2.5 text-white/90 drop-shadow">
-        Réponses issues de notre capsule d’information (sans ajout ni modification du contenu).
-      </p>
     </div>
   </div>
 </section>
