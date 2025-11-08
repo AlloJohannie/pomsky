@@ -39,7 +39,7 @@
         <a class="block px-3 py-1" href="/zootherapie/valeurs">Valeurs</a>
         <a class="block px-3 py-1" href="/zootherapie/services">Services</a>
         <a class="block px-3 py-1" href="/zootherapie/tarifs">Tarifs</a>
-        <a class="block px-3 py-1" href="/zootherapie/partenaires">Partenaires</a>
+        {{-- <a class="block px-3 py-1" href="/zootherapie/partenaires">Partenaires</a> --}}
       </div>
     </div>
 

@@ -45,13 +45,7 @@ Route::view('/elevage/prix', 'public.elevage.prix');
 Route::view('/zootherapie/valeurs', 'public.zootherapie.valeurs');
 Route::view('/zootherapie/services', 'public.zootherapie.services');
 Route::view('/zootherapie/tarifs', 'public.zootherapie.tarifs');
-Route::view('/zootherapie/partenaires', 'public.zootherapie.partenaires');
-Route::view('/zootherapie/puppy-yoga', 'public.zootherapie.puppy-yoga')->name('zootherapie.puppy-yoga');
-Route::view('/zootherapie/team-building', 'public.zootherapie.team-building')->name('zootherapie.team-building');
-Route::view('/zootherapie/francisation', 'public.zootherapie.francisation')->name('zootherapie.francisation');
-Route::view('/zootherapie/garderie', 'public.zootherapie.garderie')->name('zootherapie.garderie');
-Route::view('/zootherapie/ecole-specialisee', 'public.zootherapie.ecole-specialisee')->name('zootherapie.ecole-specialisee');
-Route::view('/zootherapie/chsld', 'public.zootherapie.chsld')->name('zootherapie.chsld');
+
 
 // Auth Breeze
 require __DIR__.'/auth.php';

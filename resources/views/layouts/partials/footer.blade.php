@@ -44,7 +44,8 @@
 
     <div class="text-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
       <div>© <script>document.write(new Date().getFullYear())</script> Passion familiale : Petit Pomsky du Québec.</div>
-      <div>Fait avec ❤️ pour les chiens & le bien-être.</div>
+      <div>Fait par <a href="https://assistancezootherapie.ca" class="underline hover:text-primary">Assistance Zoothérapie</a>.</div>
     </div>
+
   </div>
 </footer>

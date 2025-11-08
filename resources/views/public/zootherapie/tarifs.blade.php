@@ -56,7 +56,7 @@
     </div>
 
     <div class="mt-8">
-      <a href="{{ url('/zootherapie/partenaires') }}" class="underline font-medium">Voir nos partenaires</a>
+      {{-- <a href="{{ url('/zootherapie/partenaires') }}" class="underline font-medium">Voir nos partenaires</a> --}}
       <span class="mx-2">·</span>
       <a href="{{ url('/contact') }}" class="py-3.5 px-7.5 inline-flex bg-dark text-white rounded-2xl font-medium transition-all duration-300 hover:text-primary">Nous contacter</a>
     </div>

@@ -2,111 +2,77 @@
 
 @section('content')
 @php
-    // Photo du bandeau (assurez-vous que le fichier existe dans public/photos)
-    $bannerUrl = asset('photos/pomsky-adulte-famille-50.jpg');
+    $bannerUrl = asset('images/logo/bandeau.jpg');
+    $carteAffaire = asset('images/logo/carte_affaire.jpg');
 @endphp
 
-{{-- HERO / Bandeau --}}
-<section class="relative lg:py-25 md:py-22.5 py-17.5">
-    <div class="absolute inset-0 -z-10 bg-center bg-cover"
-         style="background-image:url('{{ $bannerUrl }}');"></div>
-    <div class="absolute inset-0 -z-0 bg-black/35"></div>
+{{-- HERO / Bandeau principal --}}
+<section class="relative py-20 md:py-28">
+  <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('{{ $bannerUrl }}');"></div>
+  <div class="absolute inset-0 bg-black/45 -z-0"></div>
 
-    <div class="container relative z-10 text-center max-w-3xl mx-auto">
-        <h1 class="lg:text-5.5xl md:text-4.6xl text-4xl mb-2.5 text-white drop-shadow">
-            Contact
-        </h1>
-        <p class="text-white/90 drop-shadow">
-            Écrivez-nous pour les prochaines portées, des infos sur la race ou la zoothérapie.
-        </p>
-    </div>
+  <div class="relative z-10 container text-center text-white drop-shadow">
+    <h1 class="lg:text-6xl md:text-5xl text-4xl font-semibold mb-3"><br></h1>
+    <p class="text-lg text-white/90 max-w-2xl mx-auto"> <br>
+      {{-- Écrivez-nous pour les prochaines portées, des infos sur la race ou sur nos services de zoothérapie. --}}
+    </p>
+  </div>
 </section>
 
-{{-- FORMULAIRE & COORDONNÉES --}}
-<section class="bg-white lg:pb-25 md:pb-22.5 pb-17.5">
-  <div class="container grid lg:grid-cols-2 gap-10 items-start">
+{{-- SECTION COORDONNÉES --}}
+<section class="bg-white py-16 md:py-20">
+  <div class="container max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="lg:text-5xl md:text-4xl text-3xl font-semibold mb-3 text-gray-900">Restons en contact</h2>
+    <div class="w-16 h-1 bg-[#0054A6] mx-auto rounded-full mb-8"></div>
 
-    {{-- Coordonnées --}}
-    <div data-aos="fade-right" data-aos-duration="500">
-      <div class="bg-body-bg rounded-2xl p-6 md:p-8">
-        <h2 class="text-2xl font-semibold">Nos coordonnées</h2>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li>
-            <span class="inline-flex items-center gap-2">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity=".0"/><path d="M4 8l8 5 8-5"/><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
-              <a class="underline" href="mailto:pomskyduquebec@hotmail.com">pomskyduquebec@hotmail.com</a>
-            </span>
-          </li>
-          <li>
-            <span class="inline-flex items-center gap-2">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0z"/><path d="M16.24 7.76a6 6 0 1 0 0 8.49"/></svg>
-              <a class="underline" href="#" target="_blank" rel="noopener">Instagram</a>
-            </span>
-          </li>
-        </ul>
+    <p class="text-gray-700 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">
+      Nous répondons habituellement en 24 à 48 h ouvrables.<br>
+      Vous pouvez nous joindre directement par les moyens suivants :
+    </p>
 
-        <div class="mt-6 text-slate-700">
-          <p class="text-sm">Nous répondons habituellement en 24–48h ouvrables.</p>
-        </div>
-      </div>
+    {{-- Liens de contact --}}
+    <div class="flex flex-col gap-5 items-center text-gray-800 text-lg">
+      <a href="mailto:pomskyduquebec@hotmail.com"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#0054A6]/10 transition w-fit">
+        <i class="iconify" data-icon="tabler:mail" style="font-size: 1.6rem;"></i>
+        <span class="font-medium">pomskyduquebec@hotmail.com</span>
+      </a>
 
-      {{-- Encadré FAQ (facultatif) --}}
-      <div class="mt-6 bg-white border border-neutral-200 rounded-2xl p-6">
-        <h3 class="font-semibold">Avant d’écrire</h3>
-        <ul class="list-disc ms-5 text-slate-700 space-y-1 mt-2">
-          <li>Indiquez votre ville et le meilleur moment pour vous joindre.</li>
-          <li>Pour une adoption : parlez-nous de votre milieu de vie.</li>
-          <li>Pour la zoothérapie : précisez le contexte (école, aînés, individuel).</li>
-        </ul>
-      </div>
+      <a href="https://www.facebook.com/pomskylover25" target="_blank" rel="noopener"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#0054A6]/10 transition w-fit">
+        <i class="iconify" data-icon="tabler:brand-facebook" style="font-size: 1.6rem; color:#0054A6"></i>
+        <span class="font-medium">Facebook : pomskylover25</span>
+      </a>
+
+      <a href="https://www.youtube.com/@AssistanceZootherapie" target="_blank" rel="noopener"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#0054A6]/10 transition w-fit">
+        <i class="iconify" data-icon="tabler:brand-youtube" style="font-size: 1.6rem; color:#d32f2f"></i>
+        <span class="font-medium">YouTube : @AssistanceZootherapie</span>
+      </a>
     </div>
 
-    {{-- Formulaire --}}
-    <div data-aos="fade-left" data-aos-duration="500">
-      <form action="{{ route('contact.send') }}" method="POST"
-            class="bg-white border border-neutral-200 rounded-2xl p-6 md:p-8">
-        @csrf
+    {{-- Carte d’affaire --}}
+    <div class="mt-14 flex justify-center">
+      <img src="{{ $carteAffaire }}" alt="Carte d'affaire Petit Pomsky du Québec"
+           class="rounded-2xl shadow-xl w-full max-w-md sm:max-w-lg border border-gray-200 transition-transform duration-300 hover:scale-[1.02]">
+    </div>
 
-        {{-- Honeypot anti-bot --}}
-        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-        <input type="hidden" name="hp_time" value="{{ time() }}">
-
-        @if(session('sent'))
-          <div class="mb-4 rounded-xl bg-primary/30 text-dark px-4 py-3">
-            Merci, votre message a été envoyé. Nous vous répondrons rapidement.
-          </div>
-        @endif
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <input id="name" name="name" value="{{ old('name') }}" type="text"
-                   class="w-full rounded-xl border-neutral-300" placeholder="Nom" required>
-            @error('name') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-          </div>
-
-          <div>
-            <input id="email" name="email" value="{{ old('email') }}" type="email"
-                   class="w-full rounded-xl border-neutral-300" placeholder="Courriel" required>
-            @error('email') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-          </div>
-
-          <div class="md:col-span-2">
-            <input id="phone" name="phone" value="{{ old('phone') }}" type="tel"
-                   class="w-full rounded-xl border-neutral-300" placeholder="Téléphone (optionnel)">
-            @error('phone') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-          </div>
-
-          <div class="md:col-span-2">
-            <textarea id="message" name="message" rows="5"
-                      class="w-full rounded-xl border-neutral-300" placeholder="Votre message" required>{{ old('message') }}</textarea>
-            @error('message') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-          </div>
-        </div>
-
-        <button class="mt-5 w-full rounded-2xl bg-dark text-white py-3 font-medium hover:text-primary transition"
-                type="submit">Envoyer</button>
-      </form>
+    {{-- Encadré conseils --}}
+    <div class="mt-12 max-w-xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-6 text-left text-gray-700 shadow-sm">
+      <h3 class="font-semibold text-lg mb-3 text-[#0054A6]">Avant d’écrire :</h3>
+      <ul class="list-disc ms-5 space-y-1 leading-relaxed">
+        <li>Indiquez votre ville et le meilleur moment pour vous joindre.</li>
+        <li>Pour une adoption : parlez-nous de votre milieu de vie.</li>
+        <li>Pour la zoothérapie : précisez le contexte (école, aînés, individuel).</li>
+      </ul>
     </div>
   </div>
+</section>
+
+{{-- SECTION VISUELLE DE FIN --}}
+<section class="bg-[#0054A6]/5 py-16 text-center" data-aos="fade-in" data-aos-duration="800">
+  <p class="text-xl text-gray-700 italic max-w-2xl mx-auto leading-relaxed">
+    “Chaque contact est une nouvelle rencontre, un pas vers une belle histoire humaine et canine.”
+  </p>
 </section>
 @endsection
