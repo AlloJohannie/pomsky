@@ -37,13 +37,14 @@
 <!-- HERO CLAIR ET CHALEUREUX -->
 <section class="bg-[#FAF9F6] py-16 lg:py-36 md:py-24">
   <div class="container">
+            <h1 class="text-[#002B5B] lg:text-6xl md:text-5.5xl text-4xl mb-5 font-bold leading-tight">
+          Bienvenue chez Passion familiale&nbsp;: Petit Pomsky du Québec
+        </h1>
     <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-32 gap-10 items-center">
       
       <!-- Texte -->
       <div data-aos="fade-right">
-        <h1 class="text-[#002B5B] lg:text-6xl md:text-5.5xl text-4xl mb-5 font-bold leading-tight">
-          Bienvenue chez Passion familiale&nbsp;: Petit Pomsky du Québec
-        </h1>
+
 
         <p class="text-gray-700 text-lg leading-relaxed max-w-xl">
           Éleveur éthique situé à Saint-Philippe de La Prairie, en Montérégie, nous élevons nos Pomskys avec amour et respect,
