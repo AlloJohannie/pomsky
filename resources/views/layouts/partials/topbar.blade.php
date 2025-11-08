@@ -13,9 +13,12 @@
 
     {{-- LOGO & TITRE --}}
     <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0 hover:opacity-90 transition">
-      @if($logoUrl)
-        <img src="{{ $logoUrl }}" alt="Logo" class="h-10 w-10 object-contain rounded-full shadow-sm">
-      @endif
+@if($logoUrl)
+  <img src="{{ $logoUrl }}" alt="Logo" 
+       class="object-contain max-h-10 w-auto lg:max-h-12 transition-all duration-300"
+       style="max-width: 60px;">
+@endif
+
       <span class="text-[#003E91] font-bold tracking-tight text-base sm:text-lg lg:text-xl">
         Passion familiale : Petit Pomsky du Québec
       </span>
