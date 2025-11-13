@@ -44,7 +44,7 @@ Route::view('/elevage/prix', 'public.elevage.prix');
 // Zoothérapie
 Route::view('/zootherapie/valeurs', 'public.zootherapie.valeurs');
 Route::view('/zootherapie/services', 'public.zootherapie.services');
-Route::view('/zootherapie/tarifs', 'public.zootherapie.tarifs');
+// Route::view('/zootherapie/tarifs', 'public.zootherapie.tarifs');
 
 
 // Auth Breeze

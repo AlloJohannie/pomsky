@@ -41,15 +41,15 @@
         ];
     @endphp
 
-    <div class="max-w-7xl mx-auto space-y-6">
+    {{-- <div class="max-w-7xl mx-auto space-y-6"> --}}
         {{-- Titre --}}
-        <div>
+        {{-- <div>
             <h1 class="text-2xl font-bold">Tableau de bord</h1>
             <p class="text-sm text-gray-500 mt-1">Résumé de ce qui est affiché sur le site public.</p>
-        </div>
+        </div> --}}
 
         {{-- Cartes KPI --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {{-- <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             @foreach ([
                 ['label' => 'Chiens', 'value' => $dogsCount],
                 ['label' => 'Portées (total)', 'value' => $littersCount],
@@ -67,5 +67,5 @@
             @endforeach
         </div>
 
-    </div>
+    </div> --}}
 </x-filament::page>

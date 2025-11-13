@@ -87,7 +87,7 @@
           <div class="p-3 space-y-1">
             <a href="{{ url('/zootherapie/valeurs') }}" class="block py-1.5 px-2 rounded hover:bg-[#0054A6]/10">Mission & valeurs</a>
             <a href="{{ url('/zootherapie/services') }}" class="block py-1.5 px-2 rounded hover:bg-[#0054A6]/10">Nos services</a>
-            <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5 px-2 rounded hover:bg-[#0054A6]/10">Tarifs</a>
+            {{-- <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5 px-2 rounded hover:bg-[#0054A6]/10">Tarifs</a> --}}
           </div>
         </div>
       </div>
@@ -161,7 +161,7 @@
       <div class="pl-3 space-y-1 text-sm">
         <a href="{{ url('/zootherapie/valeurs') }}" class="block py-1.5">Mission & valeurs</a>
         <a href="{{ url('/zootherapie/services') }}" class="block py-1.5">Nos services</a>
-        <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5">Tarifs</a>
+        {{-- <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5">Tarifs</a> --}}
       </div>
     </details>
 
