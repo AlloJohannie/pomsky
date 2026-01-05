@@ -277,7 +277,7 @@ L’un de nos engagements les plus chers est de faire découvrir ce chien except
 
             <div class="mt-10 text-center">
                 <a href="{{ url('contact') }}" class="py-3.5 md:px-7.5 px-6.5 inline-flex items-center text-center bg-dark font-medium rounded-2xl text-white transition-all duration-300 hover:text-primary">
-                    Poser une question / Planifier une visite
+                    Poser une question
                 </a>
             </div>
         </div>

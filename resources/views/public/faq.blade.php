@@ -43,6 +43,7 @@
         <a href="#meteo" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Hiver & été</a>
         <a href="#activites" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Activités & formats</a>
         <a href="#eleveur" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Reconnaître un éleveur sérieux</a>
+        <a href="#adn" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Vrai Pomsky & test ADN</a>
         <a href="#contrat" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Clause de non‑reproduction</a>
       </div>
     </div>
@@ -747,6 +748,119 @@
         </div>
       </div>
     </div>
+{{-- Vrai Pomsky & test ADN --}}
+<div id="adn" class="text-center md:mb-20 mb-15" data-aos="fade-up" data-aos-delay="195" data-aos-duration="500" data-aos-easing="ease-in-out">
+  <h2 class="lg:text-4xl md:text-4.6xl text-3.4xl md:mb-7.5 mb-2.5">Vrai Pomsky & test ADN</h2>
+
+  <div class="md:space-y-7.5 space-y-5 hs-accordion-group text-start max-w-3xl mx-auto">
+
+    {{-- #21 Vrai Pomsky --}}
+    <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
+      <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
+        <h3 class="md:text-1.5xl text-xl">Comment savoir si on me vend un « vrai Pomsky » ?</h3>
+        <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full flex items-center justify-center">
+          <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+        </div>
+      </button>
+
+      <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
+        <div class="prose prose-sm mt-5">
+          <h4>Une prise de sang ne suffit pas</h4>
+          <p>
+            Contrairement à une croyance populaire, une simple prise de sang ne permet pas de confirmer si un chien est un vrai Pomsky.
+            Elle peut donner des informations sur la santé (inflammation, carences, etc.), mais elle ne révèle pas l’ADN ni l’origine génétique.
+          </p>
+
+          <h4>Le test ADN Embark : la référence la plus fiable</h4>
+          <p>
+            Pour confirmer l’authenticité d’un Pomsky, le moyen le plus fiable est un test ADN comme <strong>Embark</strong>.
+            Il analyse l’ADN en profondeur et fournit des données précises sur les origines et certains risques héréditaires.
+          </p>
+
+          <h4>Ce que le test Embark peut révéler</h4>
+          <ul class="list-disc ms-5">
+            <li>Le pourcentage exact de <strong>Husky sibérien</strong> et de <strong>Poméranien</strong> dans l’ADN</li>
+            <li>La présence de races additionnelles (si le chien n’est pas un “pur” mélange conforme)</li>
+            <li>Des informations génétiques utiles (selon le type de rapport / options choisies)</li>
+          </ul>
+
+          <h4>Quelles races sont acceptées pour un Pomsky “authentique” ?</h4>
+          <p>
+            Selon les standards généralement cités par l’<strong>American Pomsky Kennel Club (APKC)</strong> et l’<strong>International Pomsky Association (IPA)</strong>,
+            les races attendues sont :
+          </p>
+
+          <div class="not-prose overflow-x-auto">
+            <table class="w-full text-sm border-separate border-spacing-0 rounded-xl overflow-hidden">
+              <thead>
+                <tr>
+                  <th class="text-left bg-white/70 px-4 py-3 border-b">Race</th>
+                  <th class="text-left bg-white/70 px-4 py-3 border-b">Statut</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white/50">
+                <tr>
+                  <td class="px-4 py-3 border-b">Husky sibérien</td>
+                  <td class="px-4 py-3 border-b">✅ Acceptée</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 border-b">Poméranien</td>
+                  <td class="px-4 py-3 border-b">✅ Acceptée</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 border-b">American Eskimo</td>
+                  <td class="px-4 py-3 border-b">✅ Tolérée dans certains cas</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 border-b">Samoyède</td>
+                  <td class="px-4 py-3 border-b">❌ Non reconnue</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 border-b">Shiba Inu</td>
+                  <td class="px-4 py-3 border-b">❌ Non reconnue</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 border-b">Alaskan Malamute</td>
+                  <td class="px-4 py-3 border-b">❌ Non reconnue</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 border-b">American Klee Kai</td>
+                  <td class="px-4 py-3 border-b">❌ Non reconnue</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-5">
+            Ces races “nordiques” sont parfois utilisées pour obtenir un look de mini-husky, mais elles ne sont généralement pas reconnues
+            comme faisant partie du standard du Pomsky.
+          </p>
+
+          <h4>En résumé</h4>
+          <ul class="list-disc ms-5">
+            <li>Une prise de sang ne confirme pas la race : pour l’origine, il faut un <strong>test ADN</strong>.</li>
+            <li>Un test comme <strong>Embark</strong> permet de vérifier les origines et d’avoir une meilleure visibilité génétique.</li>
+            <li>Les races attendues sont : <strong>Husky</strong>, <strong>Poméranien</strong>, et parfois <strong>American Eskimo</strong>.</li>
+          </ul>
+
+          <h4>Tempérament : pourquoi ça compte</h4>
+          <p>
+            Un Pomsky issu de lignées conformes tend à présenter des traits plus prévisibles : intelligence, curiosité, côté joueur et très attaché à sa famille.
+            Les mélanges “non conformes” peuvent donner un tempérament plus variable (niveau d’indépendance, énergie, facilité d’éducation, etc.).
+            Vérifier la lignée et l’ADN aide donc à confirmer non seulement l’apparence, mais aussi le type de compagnon que vous recherchez.
+          </p>
+
+          <p>
+            Avant l’achat, demandez toujours : <strong>les résultats ADN</strong>, la preuve de génétique des parents, et un <strong>contrat</strong>.
+            Investir dans une lignée sérieuse, c’est aussi investir dans la tranquillité d’esprit.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     {{-- Clause de non-reproduction --}}
     <div id="contrat" class="text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out">

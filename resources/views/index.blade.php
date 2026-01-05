@@ -47,34 +47,38 @@
 
 
         <p class="text-gray-700 text-lg leading-relaxed max-w-xl">
-          Éleveur éthique situé à Saint-Philippe de La Prairie, en Montérégie, nous élevons nos Pomskys avec amour et respect,
+          Éleveur éthique situé en Montérégie, nous élevons nos Pomskys avec amour et respect,
           directement dans notre maison. Les chiots y naissent, y sont sevrés et grandissent dans un environnement familial
           propice à leur équilibre et à leur socialisation.
         </p>
 
-        <div class="mt-8 bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm">
-          <h2 class="text-2xl font-semibold text-[#003E91] mb-4">Notre mission</h2>
-          <ul class="space-y-2 text-gray-700 text-lg leading-relaxed list-disc pl-5">
-            <li>Faire connaître le Pomsky au Québec</li>
-            <li>Apporter du bonheur dans votre foyer en vous offrant un chien équilibré et en santé</li>
-          </ul>
-          <p class="mt-4 text-gray-700 text-lg leading-relaxed">
-            Parce que l’élevage de Pomsky est une vraie passion. Vous offrir du bien-être avec nos chiens,
-            que ce soit en vous proposant un chiot équilibré, socialisé et en santé, ou en organisant pour vous
-            une séance de zoothérapie.
-          </p>
-        </div>
+<div class="mt-8 bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm">
+  <h2 class="text-2xl font-semibold text-[#003E91] mb-4">Nos missions</h2>
 
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="{{ url('/elevage/portees') }}" 
-             class="py-3.5 px-7 bg-[#003E91] text-white font-medium rounded-2xl hover:bg-[#0054A6] transition">
-            Découvrir nos chiots
-          </a>
-          <a href="{{ url('/zootherapie/services') }}" 
-             class="py-3.5 px-7 bg-white border border-[#003E91]/20 text-[#003E91] font-medium rounded-2xl hover:bg-[#003E91]/10 transition">
-            Zoothérapie
-          </a>
-        </div>
+  <ul class="space-y-2 text-gray-700 text-lg leading-relaxed list-disc pl-5">
+    <li>Faire découvrir le Pomsky au Québec.</li>
+    <li>Apporter du bonheur dans les foyers en offrant des chiens équilibrés, socialisés et en santé.</li>
+  </ul>
+
+  <p class="mt-4 text-gray-700 text-lg leading-relaxed">
+    Parce que l’élevage de Pomsky est une véritable passion, notre mission est de vous offrir du bien-être à travers nos chiens —
+    que ce soit en vous proposant un chiot socialisé, équilibré et en excellente santé, ou en organisant pour vous une séance de zoothérapie ou de puppy yoga.
+  </p>
+</div>
+
+
+<div class="mt-10 flex flex-wrap gap-4">
+  <a href="{{ url('/elevage/presentation') }}"
+     class="py-3.5 px-7 bg-[#003E91] text-white font-medium rounded-2xl hover:bg-[#0054A6] transition">
+    Élevage
+  </a>
+
+  <a href="{{ url('/zootherapie/services') }}"
+     class="py-3.5 px-7 bg-white border border-[#003E91]/20 text-[#003E91] font-medium rounded-2xl hover:bg-[#003E91]/10 transition">
+    Zoothérapie &amp; Puppy yoga
+  </a>
+</div>
+
       </div>
 
       <!-- Image -->
@@ -95,10 +99,11 @@
       Notre entreprise repose sur deux pôles d’activité complémentaires
     </h2>
 
-    <p class="mt-4 max-w-4xl mx-auto text-center text-gray-600">
-      Nous élevons des Pomskys avec bienveillance et offrons des services de zoothérapie professionnels afin de
-      créer des liens authentiques entre humains et animaux.
-    </p>
+<p class="mt-4 max-w-4xl mx-auto text-center text-gray-600">
+  Nous offrons 3 services : <strong>Élevage</strong>, <strong>Zoothérapie</strong> et <strong>Puppy yoga</strong>.
+  Notre entreprise repose sur deux pôles complémentaires : l’élevage et les services de mieux-être (zoothérapie + puppy yoga).
+</p>
+
 
     <div class="grid md:grid-cols-2 gap-6 mt-10 items-stretch">
       {{-- Carte 1 : Élevage --}}
@@ -115,10 +120,11 @@
           compagnon bien dans ses pattes.
         </p>
 
-        <a href="{{ url('/#portees') }}"
-           class="mt-auto inline-flex items-center gap-2 underline font-medium text-[#003E91] hover:text-[#0054A6] transition">
-          Découvrir nos portées <i class="iconify tabler--arrow-right"></i>
-        </a>
+<a href="{{ url('/elevage/presentation') }}"
+   class="mt-auto inline-flex items-center gap-2 underline font-medium text-[#003E91] hover:text-[#0054A6] transition">
+  En savoir plus sur l’élevage <i class="iconify tabler--arrow-right"></i>
+</a>
+
       </div>
 
       {{-- Carte 2 : Zoothérapie --}}
@@ -135,10 +141,11 @@
           apaisante de nos chiens.
         </p>
 
-        <a href="{{ url('/contact') }}"
-           class="mt-auto inline-flex items-center gap-2 underline font-medium text-[#003E91] hover:text-[#0054A6] transition">
-          Découvrir nos services <i class="iconify tabler--arrow-right"></i>
-        </a>
+<a href="{{ url('/zootherapie/services') }}"
+   class="mt-auto inline-flex items-center gap-2 underline font-medium text-[#003E91] hover:text-[#0054A6] transition">
+  Zoothérapie &amp; Puppy yoga <i class="iconify tabler--arrow-right"></i>
+</a>
+
       </div>
     </div>
   </div>

@@ -56,29 +56,25 @@
       </div>
 
       {{-- LE POMSKY --}}
-      <div class="relative group">
-        <button type="button"
-                class="flex items-center gap-1 py-2 hover:text-[#0054A6] focus:text-[#0054A6]"
-                aria-expanded="false" aria-haspopup="true">
-          Le Pomsky
-          <i class="iconify" data-icon="tabler:chevron-down" style="font-size: 1rem;"></i>
-        </button>
-        <div class="absolute left-0 top-full mt-2 bg-white border border-neutral-200 rounded-xl shadow-lg w-60 text-sm text-gray-700
-                    opacity-0 invisible translate-y-2 transition-all duration-200 ease-out
-                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-          <div class="p-3 space-y-1">
-            <a href="{{ url('/elevage/pomsky') }}" class="block py-1.5 px-2 rounded hover:bg-[#0054A6]/10">Le Pomsky – Né d’un rêve</a>
-            <a href="{{ route('faq') }}" class="block py-1.5 px-2 rounded hover:bg-[#0054A6]/10">FAQ</a>
-          </div>
-        </div>
-      </div>
+
+      <a href="{{ url('/elevage/pomsky') }}" class="relative group py-2 hover:text-[#0054A6]">
+  Le Pomsky
+  <span class="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-[#0054A6] transition-all"></span>
+</a>
+      {{-- FAQ --}}
+
+<a href="{{ route('faq') }}" class="relative group py-2 hover:text-[#0054A6]">
+  FAQ
+  <span class="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-[#0054A6] transition-all"></span>
+</a>
 
       {{-- ZOOTHÉRAPIE --}}
       <div class="relative group">
         <button type="button"
                 class="flex items-center gap-1 py-2 hover:text-[#0054A6] focus:text-[#0054A6]"
                 aria-expanded="false" aria-haspopup="true">
-          Zoothérapie
+          Zoothérapie &amp; Puppy yoga
+
           <i class="iconify" data-icon="tabler:chevron-down" style="font-size: 1rem;"></i>
         </button>
         <div class="absolute left-0 top-full mt-2 bg-white border border-neutral-200 rounded-xl shadow-lg w-72 text-sm text-gray-700

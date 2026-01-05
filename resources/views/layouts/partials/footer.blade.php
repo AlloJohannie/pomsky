@@ -21,13 +21,19 @@
       {{-- Navigation --}}
       <div>
         <h4 class="font-semibold mb-3 text-white">Navigation</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a class="hover:underline" href="{{ url('/#portees') }}">Portées</a></li>
-          <li><a class="hover:underline" href="{{ url('/#pomsky') }}">Le Pomsky</a></li>
-          <li><a class="hover:underline" href="{{ url('/#zootherapie') }}">Zoothérapie</a></li>
-          <li><a class="hover:underline" href="{{ url('/#galerie') }}">Galerie</a></li>
-          <li><a class="hover:underline" href="{{ url('/#faq') }}">FAQ</a></li>
-        </ul>
+<ul class="space-y-2 text-sm">
+  <li><a class="hover:underline" href="{{ route('home') }}">Accueil</a></li>
+  <li><a class="hover:underline" href="{{ url('/elevage/presentation') }}">Élevage</a></li>
+  <li><a class="hover:underline" href="{{ route('dogs.femelles') }}">Nos femelles</a></li>
+  <li><a class="hover:underline" href="{{ route('dogs.males') }}">Nos mâles</a></li>
+  <li><a class="hover:underline" href="{{ route('litters.index') }}">Portées</a></li>
+  <li><a class="hover:underline" href="{{ url('/elevage/pomsky') }}">Le Pomsky</a></li>
+  <li><a class="hover:underline" href="{{ route('faq') }}">FAQ</a></li>
+  <li><a class="hover:underline" href="{{ url('/zootherapie/services') }}">Zoothérapie &amp; Puppy yoga</a></li>
+  <li><a class="hover:underline" href="{{ url('/galerie') }}">Galerie</a></li>
+  <li><a class="hover:underline" href="{{ url('/contact') }}">Contact</a></li>
+</ul>
+
       </div>
 
       {{-- Contact --}}

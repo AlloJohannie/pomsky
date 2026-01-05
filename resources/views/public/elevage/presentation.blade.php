@@ -19,7 +19,7 @@
       <div class="text-center md:pb-12.5 pb-5">
         <div class="mb-7.5 flex gap-7.5 justify-center">
           <div class="bg-dark py-0.5 px-3.75 rounded-full font-medium text-sm text-primary">Présentation de la propriétaire</div>
-          <p>Saint-Philippe de La Prairie, Montérégie</p>
+          <p>Montérégie</p>
         </div>
 
         <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5">
@@ -38,7 +38,7 @@
       <!-- 1. Fondatrice & Histoire -->
       <article class="prose prose-neutral max-w-none md:mt-10 mt-7.5">
         <h2 class="mb-2.5 md:text-2.5xl text-1.5xl">Fondatrice & Histoire</h2>
-        <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé à Saint-Philippe de La Prairie, en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quittée.</p>
+        <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quittée.</p>
         <br>
         <p>Créer Passion familiale, petit pomsky du Québec a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien et est également un pilier dans les activités de zoothérapie</p>
         <br>

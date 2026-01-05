@@ -12,10 +12,12 @@
   <div class="absolute inset-0 bg-black/45 -z-0"></div>
 
   <div class="relative z-10 container text-center text-white drop-shadow">
-    <h1 class="lg:text-6xl md:text-5xl text-4xl font-semibold mb-3"><br></h1>
-    <p class="text-lg text-white/90 max-w-2xl mx-auto"> <br>
-      {{-- Écrivez-nous pour les prochaines portées, des infos sur la race ou sur nos services de zoothérapie. --}}
-    </p>
+
+<h1 class="lg:text-6xl md:text-5xl text-4xl font-semibold mb-3">Contact</h1>
+<p class="text-lg text-white/90 max-w-2xl mx-auto">
+  Pour l’élevage, la zoothérapie ou le puppy yoga, écrivez-nous ou planifiez un appel.
+</p>
+
   </div>
 </section>
 
@@ -26,6 +28,10 @@
     <div class="w-16 h-1 bg-[#0054A6] mx-auto rounded-full mb-8"></div>
 
     <p class="text-gray-700 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">
+
+
+  Pour l’élevage, la zoothérapie ou le puppy yoga, écrivez-nous ou planifiez un appel.
+
       Nous répondons habituellement en 24 à 48 h ouvrables.<br>
       Vous pouvez nous joindre directement par les moyens suivants :
     </p>
@@ -44,11 +50,11 @@
         <span class="font-medium">Facebook : pomskylover25</span>
       </a>
 
-      <a href="https://www.youtube.com/@AssistanceZootherapie" target="_blank" rel="noopener"
+      {{-- <a href="https://www.youtube.com/@AssistanceZootherapie" target="_blank" rel="noopener"
          class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#0054A6]/10 transition w-fit">
         <i class="iconify" data-icon="tabler:brand-youtube" style="font-size: 1.6rem; color:#d32f2f"></i>
         <span class="font-medium">YouTube : @AssistanceZootherapie</span>
-      </a>
+      </a> --}}
     </div>
 
     {{-- Carte d’affaire --}}
@@ -58,14 +64,15 @@
     </div>
 
     {{-- Encadré conseils --}}
-    <div class="mt-12 max-w-xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-6 text-left text-gray-700 shadow-sm">
-      <h3 class="font-semibold text-lg mb-3 text-[#0054A6]">Avant d’écrire :</h3>
-      <ul class="list-disc ms-5 space-y-1 leading-relaxed">
-        <li>Indiquez votre ville et le meilleur moment pour vous joindre.</li>
-        <li>Pour une adoption : parlez-nous de votre milieu de vie.</li>
-        <li>Pour la zoothérapie : précisez le contexte (école, aînés, individuel).</li>
-      </ul>
-    </div>
+<div class="mt-12 max-w-xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-6 text-left text-gray-700 shadow-sm">
+  <h3 class="font-semibold text-lg mb-3 text-[#0054A6]">Pour nous aider à bien vous répondre :</h3>
+  <ul class="list-disc ms-5 space-y-1 leading-relaxed">
+    <li>Indiquez votre disponibilité et la meilleure façon de vous joindre (appel ou courriel).</li>
+    <li><strong>Élevage :</strong> parlez-nous de votre milieu de vie (enfants, autres animaux, routine, expérience).</li>
+    <li><strong>Zoothérapie / Puppy yoga :</strong> précisez le contexte (école, aînés, entreprise, privé) et vos objectifs.</li>
+  </ul>
+</div>
+
   </div>
 </section>
 

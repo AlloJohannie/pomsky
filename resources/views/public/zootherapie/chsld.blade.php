@@ -30,7 +30,7 @@
       <li>Bien-être global : plaisir, réconfort, présence chaleureuse.</li>
     </ul>
 
-    <p class="mt-8"><a href="{{ url('/contact') }}" class="inline-flex bg-dark text-white rounded-2xl px-6 py-3 hover:text-primary">Planifier une visite</a></p>
+    {{-- <p class="mt-8"><a href="{{ url('/contact') }}" class="inline-flex bg-dark text-white rounded-2xl px-6 py-3 hover:text-primary">Planifier une visite</a></p> --}}
   </div>
 </section>
 @endsection
