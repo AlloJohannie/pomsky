@@ -195,7 +195,7 @@
 <!-- Citation Inspirante -->
 <section class="quote-section py-12 text-center">
     <p class="text-lg italic max-w-2xl mx-auto">
-        “Chaque rencontre entre humain et animal est une histoire de cœur et de confiance.”
+        “Chaque rencontre entre l'humain et l'animal est une histoire de cœur et de confiance.”
     </p>
 </section>
 
@@ -226,7 +226,7 @@
             Pour en savoir plus ou planifier un atelier, contactez-nous dès aujourd’hui.
         </p>
         <div class="text-xl mb-6">
-            <p><strong>Tyna Béreaul</strong></p>
+            <p><strong>Tyna Bériault</strong></p>
             <p><i class="iconify tabler--phone size-5 inline mr-2 contact-icon"></i>514-250-5995</p>
             <p><i class="iconify tabler--mail size-5 inline mr-2 contact-icon"></i>
                 <a href="mailto:pomskyduquebec@hotmail.com" class="text-blue-400 hover:underline">

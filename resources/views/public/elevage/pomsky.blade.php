@@ -89,7 +89,7 @@
       <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
         <h3 class="font-semibold text-xl mb-2 text-primary">Micro Toy</h3>
         <p class="text-slate-700 text-sm leading-relaxed">
-          <strong>Moins de 15 lb</strong>. Petit format conservant le look Pomsky ! Adapté à la vie intérieure, il reste actif mais sans exigence d’exercice intense. 
+          <strong>Moins de 15 lb</strong>. Petit format conservant le look Pomsky! Adapté à la vie intérieure, il reste actif, mais sans exigence d’exercice intense. 
           Parfait pour les familles cherchant un petit compagnon affectueux et calme.
         </p>
       </div>
@@ -125,7 +125,7 @@
   <div class="container max-w-screen-lg mx-auto text-center" data-aos="fade-up">
     <h2 class="text-3xl md:text-4xl font-semibold">Une beauté exceptionnelle à chaque étape</h2>
     <p class="text-slate-700 mt-3">
-      Bébé, il a l’allure d’un ourson en peluche ; adulte, il conserve la prestance du Husky en format réduit.
+      Bébé, il a l’allure d’un ourson en peluche; adulte, il conserve la prestance du Husky en format réduit.
       Rare et élégant, le Pomsky attire les regards et séduit par son intelligence expressive.
     </p>
 
@@ -181,7 +181,7 @@
     <h3 class="text-2xl font-semibold mb-2">Environnement & adaptation</h3>
     <p class="text-slate-700 leading-relaxed">
       Maison avec cour privilégiée, mais <strong>appartement possible</strong> avec des sorties quotidiennes. 
-      Ce qu’il aime : interagir, explorer et participer à la vie de famille.
+      Ce qu’il aime: interagir, explorer et participer à la vie de famille.
     </p>
   </div>
 </section>
@@ -219,8 +219,8 @@
     <div class="bg-white p-6 rounded-2xl shadow mt-8">
       <h3 class="text-lg font-semibold mb-2">Notre choix d’élevage</h3>
       <p>
-        Chez <strong>Passion familiale, petit Pomsky du Québec</strong>, nous travaillons principalement avec les générations 
-        <strong>F3 et F4</strong> pour assurer stabilité génétique, tempérament doux et beauté raffinée.
+        Chez <strong>Passion familiale, petit Pomsky du Québec Inc.</strong>, nous travaillons principalement avec les générations 
+        <strong>F3 et F4</strong> pour assurer une stabilité génétique, un tempérament doux et une beauté raffinée.
         Chaque chiot est accompagné d’un <strong>test ADN complet</strong> certifiant sa conformité.
       </p>
     </div>

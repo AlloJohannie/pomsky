@@ -30,7 +30,7 @@
             <div class="lg:mb-12.5 md:mb-10 mb-7.5 lg:mx-auto text-center lg:w-3/5" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600" data-aos-easing="ease-in-out">
                 <h1 class="lg:text-6xl md:text-5.5xl text-4xl mb-2.5">Nos valeurs</h1>
                 <p class="mb-2.5 text-neutral-700">
-                    Chez <em>Passion familiale, Petit Pomsky du Québec</em>, notre travail est guidé par des <strong>valeurs profondes</strong>,
+                    Chez <em>Passion familiale, Petit Pomsky du Québec Inc.</em>, notre travail est guidé par des <strong>valeurs profondes</strong>,
                     qui reflètent notre engagement envers les chiens, les familles adoptantes, les clients en zoothérapie, les écoles,
                     les entreprises et <strong>toutes les personnes que nous accompagnons</strong>, que ce soit dans le cadre du <strong>puppy yoga</strong> ou
                     d’activités de <strong>zoothérapie</strong>. Ces principes ne sont pas de simples mots : ils sont vécus, incarnés et appliqués au quotidien.
@@ -61,7 +61,7 @@
                         <h2 class="mb-2.5 lg:text-5.5xl md:text-4.6xl text-3.4xl">Respect du bien-être animal</h2>
                         <p class="text-base mb-2.5">
                             Le bien-être de nos chiens est au cœur de tout. Nous respectons leur rythme naturel, leur santé physique
-                            et émotionnelle, et nous refusons toute forme de surexploitation. Les chiennes ont des journées de repos
+                            et émotionnelle et nous refusons toute forme de surexploitation. Les chiennes ont des journées de repos
                             dédiées, nous limitons le nombre d’heures par jour qu’elles peuvent participer aux activités (puppy yoga,
                             zoothérapie) et elles bénéficient de temps de récupération entre chaque séance. Un animal bien dans son
                             corps et dans sa tête est un animal heureux — et c’est notre priorité.
@@ -269,8 +269,7 @@ Que ce soit en élevage ou en zoothérapie, nous accordons une attention particu
                         </div>
                         <h3 class="mb-2.5 lg:text-1.5xl text-xl">Faire connaître le Pomsky au Québec</h3>
                         <p class="mb-2.5">
-Faire connaître le Pomsky au Québec et propager le bonheur
-L’un de nos engagements les plus chers est de faire découvrir ce chien exceptionnel au plus grand nombre. Nous croyons que le Pomsky, avec son tempérament doux, son intelligence vive et son charme unique, mérite d’être connu et reconnu au Québec. Et surtout, nous avons à cœur de propager le bonheur dans les familles québécoises, en leur offrant un chiot équilibré, en santé, bien socialisé et prêt à vivre une vie remplie d’amour.  Quand nous voyons qu''un client est  complètement comblé par un petit pomsky provenant de notre élevage, nous éprouvons une grande satisfaction. Apporter le bonheur dans les familles, n'est pas cela une grande source de satisfaction et de réussite!</p>
+Faire connaître le Pomsky au Québec et propager le bonheur. L’un de nos engagements les plus chers est de faire découvrir ce chien exceptionnel au plus grand nombre. Nous croyons que le Pomsky, avec son tempérament doux, son intelligence vive et son charme unique, mérite d’être connu et reconnu au Québec. Et surtout, nous avons à cœur de propager le bonheur dans les familles québécoises, en leur offrant un chiot équilibré, en santé, bien socialisé et prêt à vivre une vie remplie d’amour.  Quand nous voyons qu'un client est  complètement comblé par un petit pomsky provenant de notre élevage, nous éprouvons une grande satisfaction. Apporter le bonheur dans les familles, n'est pas cela une grande source de satisfaction et de réussite!</p>
                     </div>
                 </div>
             </div>
