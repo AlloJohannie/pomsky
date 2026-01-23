@@ -98,7 +98,7 @@
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
-                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+                   class="w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl mb-4">
 
               <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
@@ -137,7 +137,7 @@
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
-                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+                   class="w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl mb-4">
 
               <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
@@ -176,7 +176,7 @@
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
-                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+                   class="w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl mb-4">
 
               <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
@@ -215,7 +215,7 @@
               <img src="{{ dogImageUrl($dog) }}"
                    alt="Photo de {{ $dog->name }}"
                    loading="lazy"
-                   class="w-full aspect-[1/1] object-cover rounded-xl mb-4">
+                   class="w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl mb-4">
 
               <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-semibold">{{ $dog->name }}</h3>
