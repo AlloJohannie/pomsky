@@ -233,7 +233,7 @@
     <h2 class="text-3xl md:text-4xl font-semibold mb-8">Quelques photos</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       @forelse($gallery as $g)
-        <img src="{{ asset($g) }}" alt="Pomsky" class="rounded-xl object-cover w-full h-44 shadow">
+        <img src="{{ asset($g) }}" alt="Pomsky" class="rounded-xl w-full aspect-square object-contain bg-[#FAF9F6] shadow">
       @empty
         <p class="col-span-full text-slate-600">Ajoutez des photos dans <code>public/photos</code>.</p>
       @endforelse
