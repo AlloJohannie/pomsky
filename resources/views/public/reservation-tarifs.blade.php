@@ -47,7 +47,7 @@
         <div class="bg-body-bg p-5 rounded-2xl">
           <h3 class="text-xl font-semibold">Discussion préalable</h3>
           <p class="mt-2 text-slate-700">
-            Mode de vie, expérience canine, environnement, disponibilité : nous validons les motivations et
+            Mode de vie, expérience canine, environnement, disponibilité: nous validons les motivations et
             l’adéquation du Pomsky avec votre foyer.
           </p>
         </div>
@@ -72,7 +72,7 @@
     <div class="md:mb-10 mb-7.5" data-aos="fade-up" data-aos-duration="500">
       <h2 class="md:text-4xl text-3.4xl mb-2.5">3. Inclusions</h2>
       <p class="text-slate-700">
-        <strong>Dossier de santé</strong> : vaccins, vermifuges, micropuces, tests génétiques, suivi vétérinaire, kit de départ.
+        <strong>Dossier de santé</strong>: vaccins, vermifuges, micropuce, tests génétiques, suivi vétérinaire et kit de départ.
       </p>
     </div>
 
@@ -82,7 +82,7 @@
       <div class="bg-primary p-6 rounded-2xl text-slate-900">
         <h3 class="text-2xl font-semibold">Une adoption encadrée et responsable</h3>
         <p class="mt-3">
-          Chez <strong>Passion Familiale – Petit Pomsky du Québec</strong>, chaque adoption est encadrée par
+          Chez <strong>Passion Familiale – Petit Pomsky du Québec Inc.</strong>, chaque adoption est encadrée par
           <strong>trois contrats officiels</strong>, rédigés pour assurer le bien-être du chiot et la tranquillité d’esprit de l’adoptant.
           L’éleveur et l’adoptant conservent les originaux qui officialisent la transaction.
         </p>
@@ -99,13 +99,13 @@
             <h4 class="font-semibold">Clause de non-revente & retour</h4>
             <p class="mt-2 text-slate-800">
               En cas d’impossibilité de garder le chien, aucune revente/cession sans accord de l’éleveur.
-              L’éleveur accompagne la recherche d’une nouvelle famille ; traçabilité et vérifications incluses.
+              L’éleveur accompagne la recherche d’une nouvelle famille; traçabilité et vérifications incluses.
             </p>
           </div>
           <div class="bg-white rounded-xl p-5">
             <h4 class="font-semibold">Bien-être du Pomsky</h4>
             <p class="mt-2 text-slate-800">
-              Exercice, stimulation, socialisation, soins vétérinaires et affection constante sont requis.
+              Exercices, stimulations, socialisation, soins vétérinaires et affection constante sont requis.
             </p>
           </div>
         </div>
@@ -113,8 +113,8 @@
         <div class="bg-white/80 rounded-xl p-5 mt-6">
           <h4 class="font-semibold">Cadre légal (NEQ)</h4>
           <p class="mt-2 text-slate-800">
-            Passion Familiale est enregistrée au <strong>Registre des entreprises du Québec (NEQ)</strong> :
-            crédibilité, contrats en bonne et due forme, transparence. Être un éleveur éthique, c’est aussi
+            Passion Familiale est enregistrée au <strong>Registre des entreprises du Québec (NEQ)</strong>:
+            crédibilité, contrats en bonne et due forme et transparence. Être un éleveur éthique, c’est aussi
             assurer un suivi post-adoption, offrir des garanties claires, être disponible et agir en toute légalité.
           </p>
         </div>
@@ -136,14 +136,14 @@
             <li>350&nbsp;$ — portées <strong>micro/toy</strong></li>
           </ul>
           <p class="mt-2 text-slate-700">
-            Dépôt <strong>non remboursable</strong> mais <strong>transférable</strong> à une autre portée (selon disponibilité).
+            Dépôt <strong>non remboursable</strong>, mais <strong>transférable</strong> à une autre portée (selon disponibilité).
           </p>
         </div>
         <div class="bg-white rounded-2xl p-5">
           <h3 class="text-xl font-semibold">Priorité & liste</h3>
           <p class="mt-2 text-slate-700">
             L’ordre est fixé par la date de paiement. Sans dépôt, aucune place n’est réservée.
-            En général, <strong>4 dépôts</strong> par portée pour le format standard et  trois dépôt par portée pour le format miniature et toy ; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
+            En général, <strong>4 dépôts</strong> par portée pour le format standard et 3 dépôts par portée pour le format miniature et toy; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-5">
@@ -159,7 +159,7 @@
         <h3 class="text-xl font-semibold">Pourquoi le dépôt est non remboursable ?</h3>
         <p class="mt-2 text-slate-700">
           Parce qu’une place officielle vous est réservée et que d’autres familles sont refusées.
-          Changement d’idée, déménagement ou adoption ailleurs : le dépôt demeure acquis.
+          Changement d’idée, déménagement ou adoption ailleurs: le dépôt demeure acquis.
           Il peut toutefois être transféré à une autre portée (sans devancer les réservations existantes).
         </p>
       </div>
@@ -171,14 +171,14 @@
         <div class="bg-white rounded-2xl p-5">
           <p class="text-slate-700">
             Dès la <strong>5<sup>e</sup> semaine</strong>, les chiots révèlent leurs traits physiques et leur tempérament.
-            Pour confirmer votre choix, un <strong>dépôt de 500&nbsp;$</strong> est requis ; le chiot est alors retiré des choix.
+            Pour confirmer votre choix, un <strong>dépôt de 500&nbsp;$</strong> est requis; le chiot est alors retiré des choix.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-5">
           <h3 class="text-xl font-semibold">Rencontre essentielle</h3>
           <ul class="mt-2 space-y-1 text-slate-700 list-disc ms-5">
-            <li>Observer le chiot, sa maman et sa fratrie ; voir les installations et le protocole d’hygiène.</li>
-            <li>Poser toutes vos questions ; valider l’adéquation tempérament/mode de vie.</li>
+            <li>Observer le chiot, sa maman et sa fratrie; voir les installations et le protocole d’hygiène.</li>
+            <li>Poser toutes vos questions; valider l’adéquation tempérament/mode de vie.</li>
           </ul>
         </div>
       </div>
