@@ -25,8 +25,8 @@
     <div class="lg:w-4/5 mx-auto" data-aos="fade-up" data-aos-duration="500">
       <h2 class="text-3xl md:text-4xl font-semibold">Notre mission</h2>
       <p class="mt-4 text-slate-700">
-        Offrir des services de zoothérapie professionnels, humains et adaptés, qui favorisent le développement personnel, le développement professionnel,
-        la gestion des émotions, la communication, et le plaisir de se connecter à soi et aux autres — grâce à la présence
+        Offrir des services de zoothérapie professionnels, humains et adaptés, qui favorisent le développement personnel professionnel,
+        la gestion des émotions, la communication et le plaisir de se connecter à soi et aux autres — grâce à la présence
         apaisante et intuitive de l’animal.
       </p>
     </div>
@@ -58,7 +58,7 @@
           <li class="flex gap-3">
             <i class="iconify tabler--user-heart size-5 mt-1"></i>
             <span><strong>Des clients en pratique privée</strong> (surtout de la 4<sup>e</sup> année du primaire à la 5<sup>e</sup> secondaire),
-            pour les aider à mieux vivre leurs émotions, leurs différences et leurs parcours. Nous les sensibilisons dès le 2e cycle du primaire, au développement professionnel et au choix de carrière en leur permettant d'explorer, leurs intérêt, leurs compétences, leur qualités professionnelles. Nous leur présentons divers métiers et soutenons leur reflexion afin de les informer sur les métiers non traditionnels. Dès le secondaire, nous utilisons les tests psychométriques afin d'avoir des données fidèles et valides qui reflètent leurs préférence. Finalement, pour le 2e cycle du secondaire, nous les accompagnons afin de faire un choix éclairé pour la poursuite des études. Nous jumelons donc nos connaissances et compétences en orientation scolaire et professionnelle avec celles de la zoothérapie dans nos interventions.</span>
+            pour les aider à mieux vivre leurs émotions, leurs différences et leurs parcours. Nous les sensibilisons dès le 2e cycle du primaire, au développement professionnel et au choix de carrière en leur permettant d'explorer: leurs intérêts, leurs compétences et leurs qualités professionnelles. Nous leur présentons divers métiers et soutenons leur reflexion afin de les informer sur les métiers non traditionnels. Dès le secondaire, nous utilisons les tests psychométriques afin d'avoir des données fidèles et valides qui reflètent leurs préférences. Finalement, pour le 2e cycle du secondaire, nous les accompagnons afin de faire un choix éclairé pour la poursuite des études. Nous jumelons donc nos connaissances et compétences en orientation scolaire et professionnelle avec celles de la zoothérapie dans nos interventions.</span>
           </li>
         </ul>
       </div>
@@ -73,15 +73,15 @@
         <ul class="mt-2 space-y-2 text-slate-700">
           <li class="flex gap-2">
             <i class="iconify tabler--circle-check size-5 mt-0.5"></i>
-            <span><strong>La zooanimation</strong>, pour créer des moments ludiques et relationnels.  (puppy yoga, team building en entreprise, centre pour personnes âgées)</span>
+            <span><strong>La zooanimation</strong>, pour créer des moments ludiques et relationnels (puppy yoga, team building en entreprise, centre pour personnes âgées).</span>
           </li>
           <li class="flex gap-2">
             <i class="iconify tabler--circle-check size-5 mt-0.5"></i>
-            <span><strong>La zoothérapie éducative</strong>, pour soutenir les apprentissages et les habiletés sociales.( milieu scolaire)</span>
+            <span><strong>La zoothérapie éducative</strong>, pour soutenir les apprentissages et les habiletés sociales (milieu scolaire).</span>
           </li>
           <li class="flex gap-2">
             <i class="iconify tabler--circle-check size-5 mt-0.5"></i>
-            <span><strong>L’intervention assistée par l’animal</strong>, pour accompagner des objectifs thérapeutiques précis ( intervention en pratique privée).</span>
+            <span><strong>L’intervention assistée par l’animal</strong>, pour accompagner des objectifs thérapeutiques précis (intervention en pratique privée).</span>
           </li>
         </ul>
 
@@ -110,7 +110,7 @@
       <p class="mt-4 text-slate-700">
         D’ici cinq ans, nous souhaitons être reconnus en Montérégie comme l’un des centres piliers en zoothérapie,
         spécialisé auprès des entreprises, des établissements scolaires et des jeunes en pratique privée. Nous aspirons à
-        propager le mieux-être, à normaliser l’usage thérapeutique de l’animal, et à faire rayonner la zoothérapie comme
+        propager le mieux-être, à normaliser l’usage thérapeutique de l’animal et à faire rayonner la zoothérapie comme
         une ressource précieuse, accessible et profondément humaine.
       </p>
       <p class="mt-4 text-slate-700">
@@ -128,7 +128,7 @@
     <div class="lg:w-4/5 mx-auto" data-aos="fade-up">
       <h2 class="text-3xl md:text-4xl font-semibold">Mission – Volet Puppy Yoga</h2>
       <p class="mt-4 text-slate-700">
-        Chez <strong>Passion familiale, petit pomsky du Québec</strong>, nous avons créé le <em>puppy yoga</em> comme une
+        Chez <strong>Passion familiale, petit pomsky du Québec Inc.</strong>, nous avons créé le <em>puppy yoga</em> comme une
         expérience unique, douce et joyeuse, où le bien-être humain et animal se rencontrent dans l’harmonie.
       </p>
 
@@ -151,7 +151,7 @@
       <p class="mt-4 text-slate-700">
         Chaque séance est pensée pour honorer le rythme des chiots, leur offrir des stimulations douces, et permettre aux
         participants de vivre une expérience sensorielle et affective inoubliable. Nous croyons que le puppy yoga est bien
-        plus qu’une activité : c’est un outil de mieux-être, un moyen de créer du lien, et une porte ouverte vers la joie simple et sincère.
+        plus qu’une activité: c’est un outil de mieux-être, un moyen de créer du lien, et une porte ouverte vers la joie simple et sincère.
       </p>
 
       <p class="mt-4 text-slate-700">
