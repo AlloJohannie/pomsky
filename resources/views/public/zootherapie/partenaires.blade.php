@@ -17,7 +17,7 @@
             Partenaires
         </h1>
         <p class="text-white/90 drop-shadow">
-            Réseau local : vétérinaires, éducateurs canins, fournisseurs responsables.
+            Réseau local: vétérinaires, éducateurs canins, fournisseurs responsables.
         </p>
     </div>
 </section>

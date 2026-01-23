@@ -14,9 +14,9 @@
 <div class="container lg:w-4/5 mx-auto prose max-w-none">
 <h2>Pourquoi maintenant ?</h2>
 <ul>
-<li>Bien-être mental et climat sain : réduire le stress, soutenir la santé des employés.</li>
-<li>Communication et collaboration renforcées : expériences partagées qui soudent les équipes.</li>
-<li>Fidélisation des talents : satisfaction accrue, réduction du turnover.</li>
+<li>Bien-être mental et climat sain: réduire le stress, soutenir la santé des employés.</li>
+<li>Communication et collaboration renforcées: expériences partagées qui soudent les équipes.</li>
+<li>Fidélisation des talents: satisfaction accrue, réduction du turnover.</li>
 </ul>
 
 

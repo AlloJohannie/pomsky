@@ -26,7 +26,7 @@
           Passion familiale — Petit Pomsky du Québec
         </h1>
         <p class="mb-2.5 text-slate-700">
-          Élevage éthique & Zoothérapie : l'engagement de Tyna, fondatrice passionnée, au service du bien-être animal et humain.
+          Élevage éthique & Zoothérapie: l'engagement de Tyna, fondatrice passionnée, au service du bien-être animal et humain.
         </p>
       </div>
 
@@ -42,15 +42,15 @@
         <br>
         <p>Créer Passion familiale, petit pomsky du Québec a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien et est également un pilier dans les activités de zoothérapie</p>
         <br>
-        <p>Lors des mises bas, je reste au chevet de ma chienne — 5 heures, 24 heures s’il le faut — pour l’accompagner avec douceur et respect. <strong>Dès la naissance</strong>, chaque chiot est pris en charge avec soin : nettoyage, tétée, confort et hygiène. J’applique un <strong>protocole sanitaire strict</strong> afin d’assurer une croissance harmonieuse. Mon objectif : des chiots <strong>équilibrés, bien socialisés et prêts</strong> à s’épanouir dans leur famille.</p>
+        <p>Lors des mises bas, je reste au chevet de ma chienne — 5 heures, 24 heures s’il le faut — pour l’accompagner avec douceur et respect. <strong>Dès la naissance</strong>, chaque chiot est pris en charge avec soin: nettoyage, tétée, confort et hygiène. J’applique un <strong>protocole sanitaire strict</strong> afin d’assurer une croissance harmonieuse. Mon objectif: des chiots <strong>équilibrés, bien socialisés et prêts</strong> à s’épanouir dans leur famille.</p>
         <br>
-        <p>Au-delà de l’élevage, Passion familiale est aussi un <strong>espace de bien-être</strong> grâce à notre second pôle d’activité : la <strong>zoothérapie</strong>, proposée en Montérégie (milieux scolaires, organisationnels, en CHSLD et en pratique privée). Mes chiens y apportent présence apaisante et réconfort.</p>
+        <p>Au-delà de l’élevage, Passion familiale est aussi un <strong>espace de bien-être</strong> grâce à notre second pôle d’activité: la <strong>zoothérapie</strong>, proposée en Montérégie (milieux scolaires, organisationnels, en CHSLD et en pratique privée). Mes chiens y apportent présence apaisante et réconfort.</p>
         <br>
         <p>Avec une amie d’enfance, j’ai cofondé <strong>Yoganimo Inc.</strong> (région de Québec), qui offre des séances de <em>puppy yoga</em> favorisant la socialisation des chiots issus de plusieurs élevages québécois tout en créant des moments de bonheur pour les participants. J’organise également des <strong>séances de puppy yoga en Montérégie</strong> avec les chiots de mon élevage. J’accorde une grande importance à la <strong>socialisation précoce</strong>, aux <strong>expériences variées</strong> (bruits, textures, odeurs, voiture, neige, gazon, etc.).</p>
         <br>
         <p>Je dirige aussi une entreprise de <strong>gâteries 100 % naturelles</strong> pour chiens. Mes chiens sont nourris <em>au cru</em> ou <em>au cru déshydraté</em>, et reçoivent des récompenses de qualité (légumes déshydratés, fromage de yak, <em>bully sticks</em>). Le <strong>bien-être</strong> passe aussi par une <strong>alimentation saine</strong>. Il est primordial pour moi de nourrir mes chiens qu’avec des aliments de grande qualité</p>
         <br>
-        <p>Enfin, mon approche s’appuie sur des bases solides : une <strong>formation initiale de 415 heures en zoothérapie</strong> et de nombreux <strong>perfectionnements</strong>. J’ai développé des connaissances en hygiène, développement, santé canine et surtout en <strong>communication émotionnelle</strong>. Je repère les <strong>signaux de stress et d’apaisement</strong> pour intervenir avec justesse et bienveillance. <strong>La passion est guidée par la science</strong> — et inversement. Outre les formations reliées au domaine canin, je possède de solides compétences en relation d’aide appuyée par un bac en orientation scolaire et une maitrise en orientation scolaire. Je suis également membre de deux ordres professionnels.</p>
+        <p>Enfin, mon approche s’appuie sur des bases solides: une <strong>formation initiale de 415 heures en zoothérapie</strong> et de nombreux <strong>perfectionnements</strong>. J’ai développé des connaissances en hygiène, développement, santé canine et surtout en <strong>communication émotionnelle</strong>. Je repère les <strong>signaux de stress et d’apaisement</strong> pour intervenir avec justesse et bienveillance. <strong>La passion est guidée par la science</strong> — et inversement. Outre les formations reliées au domaine canin, je possède de solides compétences en relation d’aide appuyée par un bac en orientation scolaire et une maitrise en orientation scolaire. Je suis également membre de deux ordres professionnels.</p>
       </article>
 
       <!-- 2. Compétences -->
@@ -79,7 +79,7 @@
               <li>25 ans et + en gestion RH et relation d’aide</li>
               <li>Nombreuses années en milieu éducatif (accompagnement & partenariats entreprises)</li>
               <li>Cadre dans le secteur de la santé (direction de 3 équipes RH)</li>
-              <li>Membre de : Ordre des CRHA & Ordre des conseillers d’orientation du Québec</li>
+              <li>Membre de: Ordre des CRHA & Ordre des conseillers d’orientation du Québec</li>
             </ul>
           </div>
 
@@ -107,7 +107,7 @@
               <li><strong>75 h</strong> sur la zoothérapie et les petits animaux (Humanizoo)</li>
               <li>Membre de 2 communautés de pratique (partage & réflexion clinique)</li>
               <li>Formations en comportement canin (signaux de stress & d’apaisement)</li>
-              <li>Webinaires : accouchement, sevrage, élevage éthique</li>
+              <li>Webinaires: accouchement, sevrage, élevage éthique</li>
             </ul>
           </div>
           <div class="bg-white border border-neutral-200 rounded-2xl p-6">
@@ -116,7 +116,7 @@
               <li>Hygiène animale</li>
               <li>Développement physique & psychologique</li>
               <li>Problèmes de santé courants</li>
-              <li>Interventions fondées scientifiquement : justesse, bienveillance, rigueur</li>
+              <li>Interventions fondées scientifiquement: justesse, bienveillance, rigueur</li>
             </ul>
           </div>
         </div>

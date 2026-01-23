@@ -211,7 +211,7 @@
         <ul class="list-disc list-inside text-left mx-auto inline-block text-gray-700 leading-relaxed mb-6">
             <li>Approche concrète et multisensorielle avec une grande variété d’animaux</li>
             <li>Adaptation aux besoins et au rythme de chaque groupe</li>
-            <li>Collaboration avec les intervenants : enseignants, éducateurs, soignants</li>
+            <li>Collaboration avec les intervenants: enseignants, éducateurs, soignants</li>
             <li>Visites à domicile ou en établissement</li>
             <li>Accompagnement bienveillant pour une intégration réussie</li>
         </ul>

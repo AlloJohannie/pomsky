@@ -52,7 +52,7 @@
     <img src="{{ $portraitUrl }}" alt="Pomsky" class="rounded-2xl shadow w-full h-auto object-cover mx-auto md:max-h-[420px] xl:max-w-[520px]">
     <div class="text-slate-700 leading-relaxed">
       <p>
-        Le <strong>Pomsky</strong> est un <strong>designer dog</strong> issu d’un croisement intentionnel entre deux races pures : le majestueux 
+        Le <strong>Pomsky</strong> est un <strong>designer dog</strong> issu d’un croisement intentionnel entre deux races pures: le majestueux 
         <strong>Husky sibérien</strong> et le <strong>Poméranien</strong>, vif et affectueux. Le résultat ? 
         Un chien au regard perçant, à la personnalité attachante et à l’énergie débordante.
       </p>
@@ -149,7 +149,7 @@
     <ul class="grid md:grid-cols-2 gap-2 text-slate-700">
       <li>• Sociable, affectueux, très joueur</li>
       <li>• Grande endurance, énergie débordante</li>
-      <li>• Apprend vite : propreté, assis, couché, reste, high-five</li>
+      <li>• Apprend vite: propreté, assis, couché, reste, high-five</li>
       <li>• Aime l’eau (rivière, lac, piscine)</li>
       <li>• Excellent en randonnée, fidèle au rappel</li>
       <li>• Doux avec les enfants et proche de son humain</li>
@@ -191,7 +191,7 @@
   <div class="container max-w-3xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl md:text-4xl font-semibold mb-3">Un compagnon idéal</h2>
     <p class="text-slate-700">
-      Beauté exceptionnelle, intelligence vive et tempérament loyal : le Pomsky est le compagnon parfait 
+      Beauté exceptionnelle, intelligence vive et tempérament loyal: le Pomsky est le compagnon parfait 
       pour ceux qui recherchent à la fois énergie et affection.
     </p>
   </div>
