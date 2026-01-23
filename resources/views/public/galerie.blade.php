@@ -10,10 +10,15 @@
         public_path('photos/*.webp'),
         public_path('photos/*.jfif'),
     ];
+
     $files = [];
     foreach ($patterns as $p) {
         $files = array_merge($files, glob($p) ?: []);
     }
+
+    // Enlever les doublons (même chemin)
+    $files = array_values(array_unique($files));
+
     natsort($files); // tri naturel par nom
     $gallery = array_map('basename', $files);
 @endphp
@@ -28,7 +33,7 @@
           src="{{ asset('photos/'.$file) }}"
           alt="Photo Pomsky"
           loading="lazy"
-          class="w-full aspect-[4/3] object-cover rounded-xl shadow-sm"
+          class="w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl shadow-sm"
         >
       @empty
         <p class="col-span-full text-center text-slate-600">

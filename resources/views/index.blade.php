@@ -13,6 +13,10 @@
   ];
   $files = [];
   foreach ($patterns as $p) { $files = array_merge($files, glob($p) ?: []); }
+
+  // Enlever les doublons
+  $files = array_values(array_unique($files));
+
   natsort($files);
   $gallery = $gallery ?? array_map('basename', $files);
 
@@ -41,7 +45,7 @@
           Bienvenue chez Passion familiale&nbsp;: Petit Pomsky du Québec
         </h1>
     <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-32 gap-10 items-center">
-      
+
       <!-- Texte -->
       <div data-aos="fade-right">
 
@@ -83,8 +87,8 @@
 
       <!-- Image -->
       <div data-aos="fade-left">
-        <img src="{{ asset('photos/proprietaire-portee.jpg') }}" 
-             alt="Pomsky dans les fleurs" 
+        <img src="{{ asset('photos/proprietaire-portee.jpg') }}"
+             alt="Pomsky dans les fleurs"
              class="rounded-2xl shadow-xl object-cover">
       </div>
     </div>
@@ -96,7 +100,7 @@
 <section class="py-16 md:py-20 bg-white">
   <div class="container">
     <h2 class="text-3xl md:text-4xl font-semibold text-center text-[#002B5B]">
-      Notre entreprise repose sur deux pôles d’activité complémentaires
+      Notre entreprise repose sur deux pôles d’activités complémentaires
     </h2>
 
 <p class="mt-4 max-w-4xl mx-auto text-center text-gray-600">
@@ -110,12 +114,12 @@
       <div class="bg-[#FAF9F6] rounded-2xl p-6 md:p-8 border border-neutral-200 flex flex-col shadow-sm hover:shadow-md transition">
         @if($imgElevage)
           <img src="{{ $imgElevage }}" alt="Chiots de notre élevage Pomsky"
-               loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
+               loading="lazy" class="mb-4 w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl">
         @endif
 
         <h3 class="text-2xl font-semibold text-[#003E91]">Élevage éthique de Pomsky</h3>
         <p class="mt-2 text-gray-700">
-          L’élevage éthique de Pomsky, accessible partout au Québec, en Ontario, en Nouvelle-Écosse et au
+          L’élevage éthique de Pomsky, passionné et responsable, desservant fièrement le Québec, l’Ontario, la Nouvelle-Écosse et le
           Nouveau-Brunswick. Peu importe la distance, nous accompagnons chaque famille dans l’adoption d’un
           compagnon bien dans ses pattes.
         </p>
@@ -131,13 +135,13 @@
       <div id="zootherapie" class="bg-[#FAF9F6] rounded-2xl p-6 md:p-8 border border-neutral-200 flex flex-col shadow-sm hover:shadow-md transition">
         @if($imgZt)
           <img src="{{ $imgZt }}" alt="Interventions de zoothérapie avec Pomsky"
-               loading="lazy" class="mb-4 w-full aspect-[16/9] object-cover rounded-xl">
+               loading="lazy" class="mb-4 w-full aspect-square object-contain bg-[#FAF9F6] rounded-xl">
         @endif
 
         <h3 class="text-2xl font-semibold text-[#003E91]">Services de zoothérapie</h3>
         <p class="mt-2 text-gray-700">
           Les services de zoothérapie, exclusivement offerts en Montérégie, dans les milieux scolaires,
-          organisationnels et en pratique privée, pour favoriser le mieux-être émotionnel grâce à la présence
+          organisationnels, en CHSLD et en pratique privée, pour favoriser le mieux-être émotionnel grâce à la présence
           apaisante de nos chiens.
         </p>
 
