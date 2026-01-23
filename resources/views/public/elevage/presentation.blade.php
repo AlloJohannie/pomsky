@@ -26,7 +26,7 @@
           Passion familiale — Petit Pomsky du Québec
         </h1>
         <p class="mb-2.5 text-slate-700">
-          Élevage éthique & interventions en zoothérapie portées par Tyna, fondatrice.
+          Élevage éthique & Zoothérapie : l'engagement de Tyna, fondatrice passionnée, au service du bien-être animal et humain.
         </p>
       </div>
 
@@ -38,13 +38,13 @@
       <!-- 1. Fondatrice & Histoire -->
       <article class="prose prose-neutral max-w-none md:mt-10 mt-7.5">
         <h2 class="mb-2.5 md:text-2.5xl text-1.5xl">Fondatrice & Histoire</h2>
-        <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quittée.</p>
+        <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quitté.</p>
         <br>
         <p>Créer Passion familiale, petit pomsky du Québec a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien et est également un pilier dans les activités de zoothérapie</p>
         <br>
         <p>Lors des mises bas, je reste au chevet de ma chienne — 5 heures, 24 heures s’il le faut — pour l’accompagner avec douceur et respect. <strong>Dès la naissance</strong>, chaque chiot est pris en charge avec soin : nettoyage, tétée, confort et hygiène. J’applique un <strong>protocole sanitaire strict</strong> afin d’assurer une croissance harmonieuse. Mon objectif : des chiots <strong>équilibrés, bien socialisés et prêts</strong> à s’épanouir dans leur famille.</p>
         <br>
-        <p>Au-delà de l’élevage, Passion familiale est aussi un <strong>espace de bien-être</strong> grâce à notre second pôle d’activité : la <strong>zoothérapie</strong>, proposée en Montérégie (milieux scolaires, organisationnels et en pratique privée). Mes chiens y apportent présence apaisante et réconfort.</p>
+        <p>Au-delà de l’élevage, Passion familiale est aussi un <strong>espace de bien-être</strong> grâce à notre second pôle d’activité : la <strong>zoothérapie</strong>, proposée en Montérégie (milieux scolaires, organisationnels, en CHSLD et en pratique privée). Mes chiens y apportent présence apaisante et réconfort.</p>
         <br>
         <p>Avec une amie d’enfance, j’ai cofondé <strong>Yoganimo Inc.</strong> (région de Québec), qui offre des séances de <em>puppy yoga</em> favorisant la socialisation des chiots issus de plusieurs élevages québécois tout en créant des moments de bonheur pour les participants. J’organise également des <strong>séances de puppy yoga en Montérégie</strong> avec les chiots de mon élevage. J’accorde une grande importance à la <strong>socialisation précoce</strong>, aux <strong>expériences variées</strong> (bruits, textures, odeurs, voiture, neige, gazon, etc.).</p>
         <br>
@@ -56,7 +56,7 @@
       <!-- 2. Compétences -->
       <div class="md:mt-12.5 mt-10">
         <h3 class="mb-2.5 md:text-2.5xl text-1.5xl">Mes compétences</h3>
-        <p class="mb-5">Une combinaison de passion, de formations spécialisées et de <strong>25+ ans</strong> d’expérience en relation d’aide, gestion RH et éducation.</p>
+        <p class="mb-5">Une combinaison de passion, de formations spécialisées et de <strong>25 ans et +</strong> d’expérience en relation d’aide, gestion RH et éducation.</p>
 
         <div class="grid md:grid-cols-3 gap-6">
           <!-- Parcours académique -->
@@ -76,7 +76,7 @@
           <div class="bg-body-bg p-6 rounded-2xl">
             <h4 class="font-semibold mb-2">Expérience professionnelle</h4>
             <ul class="list-disc pl-5 space-y-1">
-              <li>25+ ans en gestion RH et relation d’aide</li>
+              <li>25 ans et + en gestion RH et relation d’aide</li>
               <li>Nombreuses années en milieu éducatif (accompagnement & partenariats entreprises)</li>
               <li>Cadre dans le secteur de la santé (direction de 3 équipes RH)</li>
               <li>Membre de : Ordre des CRHA & Ordre des conseillers d’orientation du Québec</li>
@@ -129,21 +129,21 @@
 
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
-            <h4 class="font-semibold">Yoganimo Inc (Québec)</h4>
-            <p class="mt-2 text-slate-700">Séances de puppy yoga en partenariat avec la Ville de Québec, et interventions en milieu corporatif dans la région de Qc et environ.</p>
+            <h4 class="font-semibold">Yoganimo Inc. (Québec)</h4>
+            <p class="mt-2 text-slate-700">Séances de puppy yoga en partenariat avec la Ville de Québec, et interventions en milieu corporatif dans la région de Qc et les environs.</p>
             <span class="mt-3 text-sm text-slate-600">Socialisation bienveillante & moments de bonheur</span>
           </div>
 
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
-            <h4 class="font-semibold">Passion familiale (Montérégie)</h4>
-            <p class="mt-2 text-slate-700">Élevage familiale  de pomsky de génération F3 et F4, uniquement, Format standard, miniature et micro/toy.</p>
-            <p class="mt-2 text-slate-700">Puppy yoga avec les chiots de l’élevage (dès 6 semaines, dans le respect du rythme), en locaux loués et en entreprises.</p>
+            <h4 class="font-semibold">Passion familiale Inc. (Montérégie)</h4>
+            <p class="mt-2 text-slate-700">Élevage familial de pomsky de génération F3 et F4, uniquement, format standard, miniature et micro/toy.</p>
+            <p class="mt-2 text-slate-700">Puppy yoga avec les chiots de l’élevage (dès 6 semaines), en locaux loués et en entreprises.</p>
             <span class="mt-3 text-sm text-slate-600">Expériences précoces variées et encadrées</span>
           </div>
 
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
             <h4 class="font-semibold">Les friandises "Yak N Snack"</h4>
-            <p class="mt-2 text-slate-700">Gâteries naturelles 100 % pour chiens ; vente en ligne & réseau de partenaires (pensions, agilité, centre de toilettages, zoothérapeutes).</p>
+            <p class="mt-2 text-slate-700">Gâteries naturelles 100 % pour chiens; vente en ligne & réseau de partenaires pensions canine, centre d’agileté, centre de toilettage et zoothérapeutes.</p>
             <span class="mt-3 text-sm text-slate-600">Promouvoir une alimentation saine et naturelle</span>
           </div>
         </div>
@@ -152,13 +152,7 @@
       <!-- 5. Activités de visibilité -->
       <div class="md:mt-12.5 mt-10">
         <h3 class="mb-2.5 md:text-2.5xl text-1.5xl">Activités de visibilité annuelle</h3>
-        <p class="mb-5">Pour faire rayonner Passion familiale, Yoganimo et Yak N Snack :</p>
-        <ul class="list-disc pl-5 space-y-2 md:mb-10 mb-5">
-          <li>Présenter les chiots Pomsky au public québécois et en ontario</li>
-          <li>Faire découvrir les bienfaits du puppy yoga par des séances organisées dans des locaux louer pour l'occasion ou en entreprise</li>
-          <li>Offrir des dégustations de gâteries naturelles ( c'est plus des journées découvertes des produits chez mes partenaires)</li>
-          <li>Échanger avec familles, professionnels et passionnés</li>
-        </ul>
+
 
         <h4 class="font-semibold mb-2">Types d’activités</h4>
         <ul class="list-disc pl-5 space-y-2">
@@ -166,15 +160,17 @@
           <li>Marchés artisanaux & événements communautaires</li>
           <li>Portes ouvertes chez nos partenaires</li>
           <li>Présentations en milieux scolaire & corporatif</li>
-          <li>Démonstrations publiques de puppy yoga</li>
+          <li>Organisation de séances</li>
         </ul>
       </div>
 
       <!-- Citation / mise en avant -->
       <div class="bg-primary rounded-2xl md:p-12.5 p-5 my-10">
         <p class="text-black text-xl">
-          « Tout mon univers tourne autour du chien. Chaque projet, chaque geste, chaque décision est guidé par mon amour profond
-          et ma passion ultime pour eux. C’est bien plus qu’un métier — c’est une vocation. »
+          « Tout mon univers tourne autour du chien. Chaque projet, chaque
+          geste, chaque décision est guidé par mon amour profond et ma
+          passion ultime pour eux. C’est bien plus qu’un métier — c’est une
+          vocation. »
         </p>
       </div>
 
