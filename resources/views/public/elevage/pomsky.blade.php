@@ -24,6 +24,7 @@
   $genChart  = file_exists(public_path('images/element/terminology.png')) ? asset('images/element/terminology.png') : null;
   $eyesChart = file_exists(public_path('images/element/pomskylook.jpg')) ? asset('images/element/pomskylook.jpg') : null;
   $earsChart = file_exists(public_path('images/element/pomskylookears.jpg')) ? asset('images/element/pomskylookears.jpg') : null;
+  $muzzleChart = file_exists(public_path('images/element/pomskylookmuzzle.jpg')) ? asset('images/element/pomskylookmuzzle.jpg') : null;
 
   // === Nouvelle image : 3 types de Pomsky ===
   $typesImage = file_exists(public_path('images/element/3_types_de_pomsky.jpg')) ? asset('images/element/3_types_de_pomsky.jpg') : null;
@@ -129,16 +130,22 @@
       Rare et élégant, le Pomsky attire les regards et séduit par son intelligence expressive.
     </p>
 
-    @if($eyesChart || $earsChart)
-      <div class="mt-8 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+    @if($eyesChart || $earsChart || $muzzleChart)
+      <div class="mt-8 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         @if($eyesChart)
-          <img src="{{ $eyesChart }}" alt="Yeux du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain">
+          <img src="{{ $eyesChart }}" alt="Yeux du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
         @endif
+
         @if($earsChart)
-          <img src="{{ $earsChart }}" alt="Oreilles du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain">
+          <img src="{{ $earsChart }}" alt="Oreilles du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
+        @endif
+
+        @if($muzzleChart)
+          <img src="{{ $muzzleChart }}" alt="Muzzle du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
         @endif
       </div>
     @endif
+
   </div>
 </section>
 

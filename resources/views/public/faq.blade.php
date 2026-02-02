@@ -848,7 +848,7 @@
               <ul class="list-disc ms-5">
                 <li>Une prise de sang ne suffit pas : seul un <strong>test ADN</strong> peut confirmer si on vous vend un vrai Pomsky.</li>
                 <li>Un test comme <strong>Embark</strong> permet de vérifier les origines, l’ADN et d’obtenir une meilleure visibilité génétique.</li>
-                <li>Les races attendues sont : <strong>Husky sibérien</strong>, <strong>Poméranien</strong>, et parfois <strong>American Eskimo</strong>.</li>
+                <li>Les races attendues sont : <strong>Husky sibérien</strong>, <strong>Poméranien</strong> et <strong>American Eskimo</strong>.</li>
               </ul>
 
               <p>
