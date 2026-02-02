@@ -792,7 +792,7 @@
                 <li>L’identification de <strong>races non conformes</strong> : toute autre race présente dans l’ADN sera détectée</li>
               </ul>
 
-              {{-- ✅ Exemples de tests (images) --}}
+              {{-- ✅ Exemples de tests(images) --}}
               @php
                 $testCandidates = [
                   'images/element/test1.jpg',
