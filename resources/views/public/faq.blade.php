@@ -815,7 +815,7 @@
                     </tr>
                     <tr>
                       <td class="px-4 py-3 border-b">American Eskimo</td>
-                      <td class="px-4 py-3 border-b">Tolérée dans certains cas</td>
+                      <td class="px-4 py-3 border-b">Acceptée</td>
                     </tr>
                     <tr>
                       <td class="px-4 py-3 border-b">Samoyède</td>
