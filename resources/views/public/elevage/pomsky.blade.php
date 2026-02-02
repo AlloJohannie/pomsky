@@ -25,6 +25,8 @@
   $eyesChart = file_exists(public_path('images/element/pomskylook.jpg')) ? asset('images/element/pomskylook.jpg') : null;
   $earsChart = file_exists(public_path('images/element/pomskylookears.jpg')) ? asset('images/element/pomskylookears.jpg') : null;
   $muzzleChart = file_exists(public_path('images/element/pomskylookmuzzle.jpg')) ? asset('images/element/pomskylookmuzzle.jpg') : null;
+  $pelageImage = file_exists(public_path('images/element/pelage.jpg')) ? asset('images/element/pelage.jpg') : null;
+
 
   // === Nouvelle image : 3 types de Pomsky ===
   $typesImage = file_exists(public_path('images/element/3_types_de_pomsky.jpg')) ? asset('images/element/3_types_de_pomsky.jpg') : null;
@@ -130,21 +132,48 @@
       Rare et élégant, le Pomsky attire les regards et séduit par son intelligence expressive.
     </p>
 
-    @if($eyesChart || $earsChart || $muzzleChart)
-      <div class="mt-8 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        @if($eyesChart)
-          <img src="{{ $eyesChart }}" alt="Yeux du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-        @endif
-
-        @if($earsChart)
-          <img src="{{ $earsChart }}" alt="Oreilles du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-        @endif
-
-        @if($muzzleChart)
-          <img src="{{ $muzzleChart }}" alt="Muzzle du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-        @endif
-      </div>
+@if($eyesChart || $earsChart || $muzzleChart || $pelageImage)
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    @if($eyesChart)
+      <img src="{{ $eyesChart }}" alt="Yeux du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
     @endif
+
+    @if($earsChart)
+      <img src="{{ $earsChart }}" alt="Oreilles du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
+    @endif
+
+    @if($muzzleChart)
+      <img src="{{ $muzzleChart }}" alt="Museau du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
+    @endif
+
+    @if($pelageImage)
+      <img src="{{ $pelageImage }}" alt="Pelage du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
+    @endif
+  </div>
+
+  {{-- Liens standards APKC --}}
+  <div class="mt-6 max-w-4xl mx-auto text-center text-slate-700">
+    <p class="font-medium">
+      Pour plus d'informations sur les standards de la race, veuillez consulter le American Pomsky Kennel Club (APKC).
+      Tout se trouve dans les deux liens ci-dessous :
+    </p>
+
+    <div class="mt-3 flex flex-col items-center gap-2">
+      <a href="https://drive.google.com/file/d/1tuIhVj5XjEoAa_MQqCX3_jKarf9F-wp4/view?pli=1"
+         target="_blank" rel="noopener"
+         class="underline hover:text-primary break-all">
+        https://drive.google.com/file/d/1tuIhVj5XjEoAa_MQqCX3_jKarf9F-wp4/view?pli=1
+      </a>
+
+      <a href="https://americanpomskykennelclub.org/apkc-colors"
+         target="_blank" rel="noopener"
+         class="underline hover:text-primary break-all">
+        https://americanpomskykennelclub.org/apkc-colors
+      </a>
+    </div>
+  </div>
+@endif
+
 
   </div>
 </section>
