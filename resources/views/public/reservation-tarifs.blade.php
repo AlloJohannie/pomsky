@@ -143,7 +143,7 @@
           <h3 class="text-xl font-semibold">Priorité & liste</h3>
           <p class="mt-2 text-slate-700">
             L’ordre est fixé par la date de paiement. Sans dépôt, aucune place n’est réservée.
-            En général, <strong>4 dépôts</strong> par portée pour le format standard et 3 dépôts par portée pour le format miniature et toy; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
+            En général, <strong>4 dépôts</strong> par portée pour le format standard et <strong>3 dépôts</strong> par portée pour le format miniature et toy; s’il y a plus de chiots, les derniers sont affichés sur Facebook.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-5">

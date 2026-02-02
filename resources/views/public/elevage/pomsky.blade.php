@@ -75,7 +75,7 @@
       <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
         <h3 class="font-semibold text-xl mb-2 text-primary">Standard</h3>
         <p class="text-slate-700 text-sm leading-relaxed">
-          <strong>20 lb et plus</strong> (jusqu’à ~36 lb). Énergique et endurant, le Pomsky standard aime les longues marches et les activités extérieures. 
+          <strong>20 lb et plus</strong> (jusqu’à ~38 lb). Énergique et endurant, le Pomsky standard aime les longues marches et les activités extérieures. 
           Adapté aux familles actives, il s’épanouit avec deux sorties quotidiennes et de la stimulation mentale.
         </p>
       </div>
