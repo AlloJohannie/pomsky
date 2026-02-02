@@ -49,7 +49,7 @@
                         <h2 class="mb-2.5 lg:text-5.5xl md:text-4.6xl text-3.4xl">Respect du bien-être animal</h2>
                         <p class="text-base mb-2.5">
                             Le bien-être de nos chiens est au cœur de tout. Nous respectons leur rythme naturel, leur santé physique
-                            et émotionnelle et nous refusons toute forme de surexploitation. Les chiennes ont des journées de repos
+                            et émotionnelle et nous refusons toute forme de surexploitation. Nous ne pratiquons jamais d’accouplements successifs ; un seul accouplement par année est préconisé afin de permettre à chaque chienne de récupérer pleinement de sa mise bas et de profiter d’une vie de chien équilibrée et heureuse. Les chiennes ont des journées de repos
                             dédiées, nous limitons le nombre d’heures par jour qu’elles peuvent participer aux activités (puppy yoga,
                             zoothérapie) et elles bénéficient de temps de récupération entre chaque séance. Un animal bien dans son
                             corps et dans sa tête est un animal heureux — et c’est notre priorité.
