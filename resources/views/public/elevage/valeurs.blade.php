@@ -129,6 +129,8 @@
                         <ul class="space-y-1 text-sm">
                             <li><a href="https://americanpomskykennelclub.org/history" class="underline hover:no-underline" target="_blank" rel="noopener">APKC – History</a></li>
                             <li><a href="https://pomskyownersassociation.com/" class="underline hover:no-underline" target="_blank" rel="noopener">Pomsky Owners Association</a></li>
+
+                            <li><a href="https://www.facebook.com/InternationalPomskyAssociation/" class="underline hover:no-underline" target="_blank" rel="noopener">International Pomsky Association</a></li>
                         </ul>
                     </div>
                 </div>
