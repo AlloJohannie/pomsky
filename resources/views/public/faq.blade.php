@@ -654,12 +654,11 @@
                 <li>Chiots trop jeunes ou trop nombreux</li>
                 <li>Refus de montrer les parents ou le lieu d’élevage</li>
                 <li>Transaction dans un stationnement et non à la résidence de l’éleveur</li>
-                <li>Longues oreilles difformes : ça prend des S</li>
               </ul>
               <p>En résumé: un bon éleveur est passionné, transparent et soucieux du bien-être de ses chiens. Il vous aide à accueillir un Pomsky équilibré, en bonne santé et bien socialisé.</p>
               <p><strong>En rappel, lorsqu’on désire se procurer un pomsky</strong></p>
               <ol class="list-decimal ms-5">
-                <li><strong>Regarder les parents et leur génétique.</strong><br>Un chiot est toujours beau. Le restera-t-il?<br>Est-ce que les parents ont de longue oreille difforme. La beauté des parents est un facteur à ne pas négliger car il donne un aperçu de l’apparence qu’aura votre chiot adulte. Achetez sans avoir vu les parents est une grave erreur.</li>
+                <li><strong>Regarder les parents et leur génétique.</strong><br>Un chiot est toujours beau. Le restera-t-il?<br>Est-ce que les parents ont de longues oreilles difformes. La beauté des parents est un facteur à ne pas négliger car il donne un aperçu de l’apparence qu’aura votre chiot adulte. Achetez sans avoir vu les parents est une grave erreur.</li>
                 <li><strong>Demandez les test embark.</strong> Votre devez connaître l’ADN de votre chien. Es-il vraiment un pomsky? Il y a malheureusement beaucoup de fraude à Montréal et de faux pomsky en circulation. Renseignez-vous …..<br>American Pomsky Kennel club, International Pomsky association. <br>Vous verrez ce qui est accepté comme génétique. Plusieurs personnes mélangent avec des races non autorisées. Assurez-vous d’avoir un vrai au prix que ça coûte. <br>Seul husky, pomeranien et American esquimau sont des races approuvées</li>
                 <li><strong>L’éleveur doit accepter de vous montrer l’environnement où le chien est élevé.</strong><br>Éviter les transactions dans un stationnement de commerce.<br>Un éleveur éthique vous fera venir chez lui, une fois le dépôt donné.<br>Vous aurez l’occasion de voir où le chiot grandi, l’interaction avec la fratrie, les parents du chiot.<br>Vous aurez l’occasion de voir votre chiot dans son quotidien et ainsi évaluer comment il interagit avec son entourage. Est-il équilibré ?</li>
                 <li><strong>Assurez-vous d’avoir un contrat.</strong> Ensuite, si le chien a un problème, vous avez une preuve de transaction. Le contrat est signé par les 2 parties, vous et l’éleveur</li>
