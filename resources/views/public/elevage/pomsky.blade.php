@@ -110,7 +110,7 @@
     <h2 class="text-3xl md:text-4xl font-semibold mb-3">Origine et reconnaissance</h2>
     <p>
       Les premiers Pomskys sont nés en <strong>2012</strong> aux États-Unis (Arizona) grâce à l’insémination artificielle. 
-      Le <em>Pomsky Club of America</em> encadre depuis leur standard et leur éthique d’élevage. 
+      Le <em>American pomsky kennel club ( APKC)</em> régit les standards de la race  et il encadre les élevage éthique.
       Bien qu’encore non reconnu par le CKC/LOF, le Pomsky est rigoureusement suivi par des associations comme l’<strong>IPA</strong> et l’<strong>APKC</strong>.
     </p>
     <p class="mt-3">

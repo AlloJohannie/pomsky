@@ -165,6 +165,8 @@
                 <li>Réduction du stress et de l’anxiété</li>
                 <li>Amélioration de l’humeur et du lien social</li>
                 <li>Expérience bénéfique pour humains et chiots</li>
+                <li>Organisation de groupes privés</li>
+                <li>Séance en entreprise</li>
             </ul>
         </div>
     </div>
