@@ -685,7 +685,7 @@
           <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
             <div class="prose prose-sm mt-5">
               <p>Au Québec, le prix d’un Pomsky varie selon sa taille: les formats toy  sont généralement plus chers que les standards, en raison de leur rareté et de leur apparence très recherchée.</p>
-              <p>Le pelage est l’un des éléments et qui rend le Pomsky si unique et populaire. Il peut ressembler à celui d’un Husky miniature ou à un Spitz élégant et influencent fortement le prix et la demande.</p>
+              <p>Le pelage est l’un des éléments qui rend le Pomsky si unique et populaire. Il peut ressembler à celui d’un Husky miniature ou à un Spitz élégant et influencent fortement le prix et la demande.</p>
               <p>La couleur du pelage et des yeux influence souvent le prix d’un Pomsky, surtout au Québec où les acheteurs recherchent des traits esthétiques bien précis.</p>
               <p>Plus le Pomsky a une apparence “mini husky” avec pelage contrasté et yeux bleus, vairons ou deux couleurs, plus son prix augmente. Ces traits sont rares, demandent plusieurs générations de sélection, et sont donc valorisés par les éleveurs.</p>
               <p>Tout dépend des lignées génétiques. </p>
