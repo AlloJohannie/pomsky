@@ -231,7 +231,7 @@
           <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
             <div class="prose prose-sm mt-5">
               <p><strong>ABSOLUMENT PAS!!</strong></p>
-              <p>Tout est une question de génétique. Est-ce que le chiot provient d’une lignée où les critères de beauté sont conformes aux normes de l’APKC et de l’IPA. Bien que tous les chiots soient « mignons », la question à se poser est sera-til encore beau une fois adulte? Si les reproducteurs ont de longues oreilles difformes ne respectant pas les standards de la race, votre chiot sera identique à l’âge adulte.</p>
+              <p>Tout est une question de génétique. Est-ce que le chiot provient d’une lignée où les critères de beauté sont conformes aux normes de l’APKC et de l’IPA. Bien que tous les chiots soient<br>« mignons », la question à se poser est sera-til encore beau une fois adulte? Si les reproducteurs ont de longues oreilles difformes ne respectant pas les standards de la race, votre chiot sera identique à l’âge adulte.</p>
               <ul class="list-disc ms-5">
                 <li>Regardez les 2 reproducteurs. Est-ce que les caractéristiques physiques respectent ce qui est attendu d’un pomsky</li>
                 <li>Regardez les tests embark. Assurez-vous qu’ils sont conformes aux standards APKC et IPA</li>
