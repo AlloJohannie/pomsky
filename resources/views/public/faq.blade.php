@@ -772,8 +772,6 @@
           <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
             <div class="prose prose-sm mt-5">
 
-              <h4>Le test Embark : la référence pour identifier un vrai Pomsky</h4>
-
               <h4>Une prise de sang ne suffit pas</h4>
               <p>
                 Contrairement à une croyance populaire, une simple prise de sang ne permet pas de confirmer si un chien est un vrai Pomsky.
@@ -794,7 +792,45 @@
                 <li>L’identification de <strong>races non conformes</strong> : toute autre race présente dans l’ADN sera détectée</li>
               </ul>
 
-              <h4>Quelles races sont acceptées pour un Pomsky authentique ?</h4>
+              {{-- ✅ Exemples de tests (images) --}}
+              @php
+                $testCandidates = [
+                  'images/element/test1.jpg',
+                  'images/element/test2.jpg',
+                  'images/element/test3.jpg',
+                ];
+
+                $testImages = collect($testCandidates)
+                  ->map(function($rel) {
+                    $abs = public_path($rel);
+                    return file_exists($abs) ? asset($rel) : null;
+                  })
+                  ->filter()
+                  ->values();
+              @endphp
+
+              @if($testImages->count())
+                <div class="not-prose mt-6">
+                  <p class="text-slate-700 font-medium mb-3">Exemples de résultats Embark</p>
+
+                  <div class="grid sm:grid-cols-3 gap-4">
+                    @foreach($testImages as $src)
+                      <figure class="bg-white rounded-2xl shadow-md overflow-hidden">
+                        <div class="aspect-[9/16] w-full bg-white flex items-center justify-center">
+                          <img
+                            src="{{ $src }}"
+                            alt="Exemple de résultat Embark"
+                            class="w-full h-full object-contain p-3"
+                            loading="lazy"
+                          >
+                        </div>
+                      </figure>
+                    @endforeach
+                  </div>
+                </div>
+              @endif
+
+              <h4 class="mt-6">Quelles races sont acceptées pour un Pomsky authentique ?</h4>
               <p>
                 Selon les standards de l’<strong>American Pomsky Kennel Club (APKC)</strong> et de l’<strong>International Pomsky Association (IPA)</strong> :
               </p>
@@ -878,6 +914,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
