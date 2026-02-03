@@ -283,7 +283,7 @@
           <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
             <div class="prose prose-sm mt-5">
               <p>Le Pomsky n’a pas le même niveau d’énergie qu’un Husky, mais il reste un chien actif et stimulant.</p>
-              <p><strong>Husky sibérien:</strong> C’est une race de travail conçue pour tirer des traîneaux sur de longues distances. Il possède une endurance exceptionnelle et a besoin de plusieurs heures d’exercice intense par jour. Sans stimulation suffisante, il peut devenir destructeur ou fugueur. <strong>Pomsky:</strong> Bien qu’il hérite de l’énergie du Husky, le Pomsky est plus petit, plus adaptable et a un niveau d’activité modéré à élevé. Il a besoin d’environ 60 minutes d’exercice quotidien, réparties idéalement entre:</p>
+              <p><strong>Husky sibérien:</strong> C’est une race de travail conçue pour tirer des traîneaux sur de longues distances. Il possède une endurance exceptionnelle et a besoin de plusieurs heures d’exercice intense par jour. Sans stimulation suffisante, il peut devenir destructeur ou fugueur. <br><strong>Pomsky:</strong> Bien qu’il hérite de l’énergie du Husky, le Pomsky est plus petit, plus adaptable et a un niveau d’activité modéré à élevé. Il a besoin d’environ 60 minutes d’exercice quotidien, réparties idéalement entre:</p>
               <ul class="list-disc ms-5">
                 <li>Une sortie au parc à chiens d’environ 30 minutes pour courir et socialiser</li>
                 <li>Une ou deux marches en laisse</li>
@@ -355,7 +355,7 @@
           </button>
           <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
             <div class="prose prose-sm mt-5">
-              <p>Oui, pouvez laisser votre Pomsky en cage (ou en enclos) pour de courtes périodes, mais cela doit être fait avec bienveillance, dans un cadre éducatif et sécurisant.</p>
+              <p>Oui, vous pouvez laisser votre Pomsky en cage (ou en enclos) pour de courtes périodes, mais cela doit être fait avec bienveillance, dans un cadre éducatif et sécurisant.</p>
               <p>La cage n’est pas une punition: c’est un espace de repos et de sécurité pour le chiot. Lorsqu’elle est bien introduite, elle devient un refuge apaisant où le Pomsky peut se détendre, dormir ou se retirer.</p>
               <p><strong>Bonnes pratiques:</strong></p>
               <ul class="list-disc ms-5">

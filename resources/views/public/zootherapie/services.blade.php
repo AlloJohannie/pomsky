@@ -61,11 +61,9 @@
 </section>
 
 <!-- Section 1 - Francisation et Alphabétisation -->
-<section class="bg-gray-50 lg:py-25 md:py-22.5 py-17.5">
+<section class="bg-white lg:py-25 md:py-22.5 py-17.5">
     <div class="container grid md:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <img src="{{ asset('photos/pomsky-chiot-fleurs-31.jpg') }}" alt="Pomsky doux" class="rounded-2xl">
-        </div>
+
         <div data-aos="fade-left">
             <h2 class="lg:text-5xl md:text-4xl text-3xl mb-2 font-semibold text-gray-900">Francisation et alphabétisation</h2>
             <div class="divider-line"></div>
@@ -79,13 +77,20 @@
                 <li>Communication fonctionnelle et confiance en soi</li>
             </ul>
         </div>
+        <div data-aos="fade-right">
+            <img src="{{ asset('photos/pomsky-chiot-fleurs-31.jpg') }}" alt="Pomsky doux" class="rounded-2xl">
+        </div>
     </div>
 </section>
 
 <!-- Section 2 - CHSLD et soins palliatifs -->
-<section class="bg-white lg:py-25 md:py-22.5 py-17.5">
+<section class="bg-gray-50 lg:py-25 md:py-22.5 py-17.5">
     <div class="container grid md:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
+
+        <div data-aos="fade-left">
+            <img src="{{ asset('photos/pomsky-adulte-neige-54.jpg') }}" alt="Pomsky calme" class="rounded-2xl">
+        </div>
+                <div data-aos="fade-right">
             <h2 class="lg:text-5xl md:text-4xl text-3xl mb-2 font-semibold text-gray-900">CHSLD et soins palliatifs</h2>
             <div class="divider-line"></div>
             <p class="mb-3">
@@ -98,18 +103,13 @@
                 <li>Reconnaissance et expression des émotions</li>
             </ul>
         </div>
-        <div data-aos="fade-left">
-            <img src="{{ asset('photos/pomsky-adulte-neige-54.jpg') }}" alt="Pomsky calme" class="rounded-2xl">
-        </div>
     </div>
 </section>
 
 <!-- Section 3 - Écoles spécialisées -->
-<section class="bg-gray-50 lg:py-25 md:py-22.5 py-17.5">
+<section class="bg-white lg:py-25 md:py-22.5 py-17.5">
     <div class="container grid md:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-            <img src="{{ asset('photos/pomsky-chiot-cuir-43.jpg') }}" alt="Pomsky curieux" class="rounded-2xl">
-        </div>
+
         <div data-aos="fade-left">
             <h2 class="lg:text-5xl md:text-4xl text-3xl mb-2 font-semibold text-gray-900">Écoles spécialisées</h2>
             <div class="divider-line"></div>
@@ -121,6 +121,42 @@
                 <li>Parcours sensoriel et motricité avec l’animal</li>
                 <li>Créations artistiques et valorisation des réussites</li>
                 <li>Communication verbale et non verbale</li>
+            </ul>
+        </div>
+                <div data-aos="fade-right">
+            <img src="{{ asset('photos/pomsky-chiot-cuir-43.jpg') }}" alt="Pomsky curieux" class="rounded-2xl">
+        </div>
+    </div>
+</section>
+<!-- Section X - Transition primaire vers secondaire -->
+<section class="bg-gray-50 lg:py-25 md:py-22.5 py-17.5">
+    <div class="container grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+            <img src="{{ asset('photos/pomsky-chiot-fleurs-31.jpg') }}" alt="Transition primaire secondaire - Zoothérapie" class="rounded-2xl">
+        </div>
+
+        <div data-aos="fade-left">
+            <h2 class="lg:text-5xl md:text-4xl text-3xl mb-2 font-semibold text-gray-900">
+                Transition du primaire vers le secondaire
+            </h2>
+            <div class="divider-line"></div>
+
+            <p class="mb-3">
+                Le passage vers le secondaire représente souvent une période de déstabilisation, durant laquelle les jeunes doivent composer avec de nouveaux défis.
+                Notre programme de zoothérapie offre un soutien sécurisant qui facilite l’intégration et renforce l’autonomie des jeunes, particulièrement ceux à risque,
+                durant cette transition importante.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Objectifs</h3>
+            <ul class="list-disc list-inside mb-3">
+                <li>Développer des stratégies efficaces de gestion du stress</li>
+                <li>Améliorer la connaissance de soi et favoriser la création de liens avec les pairs</li>
+                <li>Encourager la demande d’aide et l’engagement actif dans leur transition de vie et leurs apprentissages</li>
+                <li>Approfondir la connaissance de soi : explorer ses intérêts, ses qualités, ses compétences et ses passions</li>
+                <li>Commencer à réfléchir à son avenir scolaire et professionnel</li>
+                <li>Se familiariser avec différents métiers ainsi qu’avec les parcours du secteur professionnel, collégial et universitaire</li>
+                <li>Obtenir de l'information sur le système scolaire québecois et les divers programmes</li>
+                <li>Se familiariser avec ses préférences à l'aide d'outils psychométriques</li>
             </ul>
         </div>
     </div>
