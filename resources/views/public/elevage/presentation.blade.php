@@ -8,6 +8,10 @@
     public_path('photos/pomsky-chiot-studio-30.jpg'),
   ])->first(fn($p) => file_exists($p));
   $banner = $banner ? asset(str_replace(public_path().DIRECTORY_SEPARATOR, '', $banner)) : '/images/blog/6.png';
+    $bergerBlanc = file_exists(public_path('photos/proprietairebergerblanc.jpg'))
+    ? asset('photos/proprietairebergerblanc.jpg')
+    : null;
+
 @endphp
 
 <!-- Détails (format blog) -->
@@ -41,6 +45,20 @@
         <p><strong>Je m’appelle Tyna</strong>, fondatrice de <em>Passion familiale, Petit Pomsky du Québec</em>, un élevage éthique situé en Montérégie. Depuis l’enfance, les chiens occupent une place centrale dans ma vie. Je rêvais de devenir vétérinaire — une vocation du cœur — mais ma trajectoire m’a menée ailleurs. L’amour des chiens, lui, ne m’a jamais quitté.</p>
         <br>
         <p>Créer Passion familiale, petit pomsky du Québec a été ma façon de vivre pleinement cette passion. <strong>Les chiots naissent à la maison</strong>, y sont sevrés et socialisés dans un environnement familial, calme et stimulant. Une <strong>Berger Blanc Suisse</strong> douce et protectrice participe à leur équilibre au quotidien et est également un pilier dans les activités de zoothérapie</p>
+        @if($bergerBlanc)
+  <figure class="not-prose my-7">
+    <img
+      src="{{ $bergerBlanc }}"
+      alt="Berger Blanc Suisse de l’élevage"
+      class="rounded-2xl w-full h-auto object-cover shadow"
+      loading="lazy"
+    >
+    <figcaption class="text-sm text-slate-600 mt-2 text-center">
+      Notre Berger Blanc Suisse — douce, protectrice et présente au quotidien.
+    </figcaption>
+  </figure>
+@endif
+
         <br>
         <p>Lors des mises bas, je reste au chevet de ma chienne — 5 heures, 24 heures s’il le faut — pour l’accompagner avec douceur et respect. <strong>Dès la naissance</strong>, chaque chiot est pris en charge avec soin: nettoyage, tétée, confort et hygiène. J’applique un <strong>protocole sanitaire strict</strong> afin d’assurer une croissance harmonieuse. Mon objectif: des chiots <strong>équilibrés, bien socialisés et prêts</strong> à s’épanouir dans leur famille.</p>
         <br>
