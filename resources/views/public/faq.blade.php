@@ -45,6 +45,7 @@
         <a href="#eleveur" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Reconnaître un éleveur sérieux</a>
         <a href="#adn" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Vrai Pomsky & test ADN</a>
         <a href="#contrat" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Clause de non-reproduction</a>
+        <a href="#chiot-sport" class="p-4 rounded-xl bg-body-bg hover:bg-primary/10 transition">Chiot & sport</a>
       </div>
       </div>
     </div>
@@ -604,6 +605,76 @@
             </div>
           </div>
         </div>
+        {{-- #19 Chiot & sport --}}
+<div id="chiot-sport" class="hs-accordion bg-body-bg p-5 rounded-2xl scroll-mt-28">
+  <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
+    <h3 class="md:text-1.5xl text-xl">Chiot et sport : l’exercice à quel âge ?</h3>
+    <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full flex items-center justify-center">
+      <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+    </div>
+  </button>
+
+  <div class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300">
+    <div class="prose prose-sm mt-5">
+      <p>
+        Lorsque vous accueillez enfin vos chiots de 9 semaines, veuillez garder cette image à l'esprit.
+        Leurs os ne se touchent même pas encore. Ils marchent si joliment avec de grosses pattes souples
+        et des mouvements bancals parce que leurs articulations sont entièrement constituées de cartilages,
+        de muscles, de tendons et de ligaments recouverts de peau. Rien n'est encore bien ajusté ou n'a
+        encore de véritable prise.
+      </p>
+
+      <p>
+        Lorsque vous les faites courir de manière excessive ou que vous ne limitez pas leur exercice pour
+        les empêcher d'en faire trop pendant cette période, vous ne leur donnez pas la chance de grandir
+        correctement. Chaque grand saut ou course bondissante et excitée provoque des impacts entre les os.
+        En quantités raisonnables, ce n'est pas problématique et c'est une usure normale qui s’opèrera.
+      </p>
+
+      <p>
+        Mais lorsque vous laissez le chiot sauter du canapé ou du lit, l’emmenez faire de longues promenades,
+        vous endommagez cette articulation en formation. Lorsque vous laissez le chiot se déplacer sur des
+        carreaux glissants, vous endommagez l'articulation.
+      </p>
+
+      <p>
+        Vous n'avez la chance de les faire grandir qu'une seule fois. Un corps bien construit est quelque chose
+        qui vient d'un excellent élevage et d'une bonne éducation. LES DEUX, pas seulement un.
+      </p>
+
+      <p>
+        Une fois adulte, vous aurez le reste de votre vie à passer à jouer et à vous engager dans des exercices
+        à fort impact. Alors gardez-le au calme tant qu’il est encore petit et offrez-lui le cadeau qui ne peut
+        être offert qu'une seule fois.
+      </p>
+
+      @php
+        $osImgPath = public_path('photos/os_pomsky.jpg');
+        $tableauImgPath = public_path('photos/tableau.jpg');
+        $osImg = file_exists($osImgPath) ? asset('photos/os_pomsky.jpg') : null;
+        $tableauImg = file_exists($tableauImgPath) ? asset('photos/tableau.jpg') : null;
+      @endphp
+
+      @if($osImg || $tableauImg)
+        <div class="not-prose mt-6 grid md:grid-cols-2 gap-4">
+          @if($osImg)
+            <figure class="bg-white rounded-2xl shadow-md overflow-hidden border border-neutral-200">
+              <img src="{{ $osImg }}" alt="Chiot - développement des articulations" class="w-full h-auto object-contain" loading="lazy">
+            </figure>
+          @endif
+
+          @if($tableauImg)
+            <figure class="bg-white rounded-2xl shadow-md overflow-hidden border border-neutral-200">
+              <img src="{{ $tableauImg }}" alt="Tableau exercice chiot selon l'âge" class="w-full h-auto object-contain" loading="lazy">
+            </figure>
+          @endif
+        </div>
+      @endif
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
 
