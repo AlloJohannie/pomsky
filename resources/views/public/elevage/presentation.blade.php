@@ -148,12 +148,12 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
             <h4 class="font-semibold">Yoganimo Inc. (Québec)</h4>
-            <p class="mt-2 text-slate-700">Séances de puppy yoga en partenariat avec la Ville de Québec, et interventions en milieu corporatif dans la région de Qc et les environs.</p>
+            <p class="mt-2 text-slate-700">Séances de puppy yoga en partenariat avec Loisir Brio Charlesbourg-Nord, Ville de Québec , et intervention en milieu corporatif dans la région de Qc et les environs.</p>
             <span class="mt-3 text-sm text-slate-600">Socialisation bienveillante & moments de bonheur</span>
           </div>
 
           <div class="bg-body-bg p-6 rounded-2xl flex flex-col">
-            <h4 class="font-semibold">Passion familiale Inc. (Montérégie)</h4>
+            <h4 class="font-semibold">Passion familiale, petit pomsky du Québec Inc . (Montérégie)</h4>
             <p class="mt-2 text-slate-700">Élevage familial de pomsky de génération F3 et F4 uniquement, format standard, miniature et micro/toy.</p>
             <p class="mt-2 text-slate-700">Puppy yoga avec les chiots de l’élevage (dès 6 semaines), en locaux loués et en entreprises.</p>
             <span class="mt-3 text-sm text-slate-600">Expériences précoces variées et encadrées</span>

@@ -706,7 +706,7 @@
       <div class="md:space-y-7.5 space-y-5 hs-accordion-group text-start max-w-3xl mx-auto">
         <div class="hs-accordion bg-body-bg p-5 rounded-2xl">
           <button class="hs-accordion-toggle w-full flex justify-between items-center gap-2.5 text-start">
-            <h3 class="md:text-1.5xl text-xl">À quel fréquence, les chiennes sont-elles accouplées</h3>
+            <h3 class="md:text-1.5xl text-xl">À quelle fréquence, les chiennes sont-elles accouplées</h3>
             <div class="bg-white hs-accordion-active:bg-primary size-7.5 rounded-full flex items-center justify-center">
               <svg class="h-5 w-5 block hs-accordion-active:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
               <svg class="h-5 w-5 hidden hs-accordion-active:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
@@ -719,7 +719,7 @@
               <p>Si une chienne venait à avoir deux portées consécutives sans période de repos suffisante, cela relèverait d’un accident exceptionnel et en aucun cas d’un choix délibéré. Une telle situation serait contraire à nos valeurs et à notre philosophie d’élevage.</p>
               <p>Nous croyons fermement que le corps d’une chienne doit avoir le temps de se régénérer, de retrouver son équilibre, et de vivre pleinement sa vie — faite de jeux, de liberté et de tendresse. La récupération entre chaque portée est essentielle, tant pour sa santé physique que pour son bien-être émotionnel.</p>
               <p>Notre engagement est clair: refuser toute forme de surexploitation et offrir à chaque animal une vie heureuse, respectée et aimée.</p>
-              <p>C’est pourquoi nous ne faisons qu’une seule portée par an et par chienne, et nous limitons le nombre total de portées au cours de sa vie. Une fois ce nombre atteint, elle profite d’une retraite paisible, entourée d’affection, loin de toute contrainte, pour simplement vivre sa vie de chien dans le bonheur et la sérénité.</p>
+              <p>C’est pourquoi nous ne faisons qu’une seule portée par an par chienne et nous limitons le nombre total de portées au cours de sa vie. Une fois ce nombre atteint, elle profite d’une retraite paisible, entourée d’affection, loin de toute contrainte, pour simplement vivre sa vie de chien dans le bonheur et la sérénité.</p>
             </div>
           </div>
         </div>
