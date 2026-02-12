@@ -204,7 +204,6 @@
       <li>• Sociable, affectueux, très joueur</li>
       <li>• Grande endurance, énergie débordante</li>
       <li>• Apprend vite: propreté, assis, couché, reste, high-five</li>
-      <li>• Aime l’eau (rivière, lac, piscine)</li>
       <li>• Excellent en randonnée, fidèle au rappel</li>
       <li>• Doux avec les enfants et proche de son humain</li>
       <li>• Bonne cohabitation avec les autres animaux s’il est socialisé tôt</li>
