@@ -26,6 +26,10 @@
   $earsChart = file_exists(public_path('images/element/pomskylookears.jpg')) ? asset('images/element/pomskylookears.jpg') : null;
   $muzzleChart = file_exists(public_path('images/element/pomskylookmuzzle.jpg')) ? asset('images/element/pomskylookmuzzle.jpg') : null;
   $pelageImage = file_exists(public_path('images/element/pelage.jpg')) ? asset('images/element/pelage.jpg') : null;
+  $idealPomskyImage = file_exists(public_path('images/element/pomsky_ideal.png')) 
+    ? asset('images/element/pomsky_ideal.png') 
+    : null;
+
 
 
   // === Nouvelle image : 3 types de Pomsky ===
@@ -132,23 +136,37 @@
       Rare et élégant, le Pomsky attire les regards et séduit par son intelligence expressive.
     </p>
 
-@if($eyesChart || $earsChart || $muzzleChart || $pelageImage)
-  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-    @if($eyesChart)
-      <img src="{{ $eyesChart }}" alt="Yeux du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-    @endif
+@if($eyesChart || $earsChart || $muzzleChart || $pelageImage || $idealPomskyImage)
+<div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
 
-    @if($earsChart)
-      <img src="{{ $earsChart }}" alt="Oreilles du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-    @endif
+@if($eyesChart)
+  <img src="{{ $eyesChart }}" alt="Yeux du Pomsky"
+       class="rounded-2xl shadow-md w-full h-auto object-contain bg-white lg:col-span-2">
+@endif
 
-    @if($muzzleChart)
-      <img src="{{ $muzzleChart }}" alt="Museau du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-    @endif
 
-    @if($pelageImage)
-      <img src="{{ $pelageImage }}" alt="Pelage du Pomsky" class="rounded-2xl shadow-md w-full h-auto object-contain bg-white">
-    @endif
+@if($earsChart)
+  <img src="{{ $earsChart }}" alt="Oreilles du Pomsky"
+       class="rounded-2xl shadow-md w-full h-auto object-contain bg-white lg:col-span-2">
+@endif
+
+@if($muzzleChart)
+  <img src="{{ $muzzleChart }}" alt="Museau du Pomsky"
+       class="rounded-2xl shadow-md w-full h-auto object-contain bg-white lg:col-span-2">
+@endif
+
+@if($pelageImage)
+  <img src="{{ $pelageImage }}" alt="Pelage du Pomsky"
+       class="rounded-2xl shadow-md w-full h-auto object-contain bg-white lg:col-span-3">
+@endif
+
+@if($idealPomskyImage)
+  <img src="{{ $idealPomskyImage }}"
+       alt="Pomsky idéal"
+       class="rounded-2xl shadow-md w-full h-auto object-contain bg-white lg:col-span-3">
+@endif
+
+
   </div>
 
   {{-- Liens standards APKC --}}

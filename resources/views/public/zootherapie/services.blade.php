@@ -203,7 +203,20 @@
                 <li>Expérience bénéfique pour humains et chiots</li>
                 <li>Organisation de groupes privés</li>
                 <li>Séance en entreprise</li>
+                <li>Séances publiques organisées de façon ponctuelle pour socialiser nos chiots</li>
+                <li>Séances sur mesure destinées aux entreprises, aux organismes et aux écoles (sur demande)</li>
             </ul>
+            {{-- Note importante + visuels --}}
+            <div class="mt-6 bg-white/70 border border-gray-200 rounded-2xl p-6">
+                <p class="font-semibold italic text-gray-800 text-center">
+                    *Veuillez noter que nos séances de Puppy Yoga sont offertes sur une base ponctuelle*
+                </p>
+
+                <p class="mt-4 text-gray-700 leading-relaxed text-center">
+                    Il est possible d’organiser ce type d’activités lorsque nous avons des portées de chiots,
+                    en nombre suffisant, pour la tenue d’une telle activité.
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -218,15 +231,74 @@
                 Offrez à vos équipes une pause unique grâce au <strong>team building assisté par les animaux</strong>.
                 Des chiots viennent créer des moments de détente, de tendresse et de cohésion inoubliables.
             </p>
-            <ul class="list-disc list-inside mb-3">
-                <li>Réduction immédiate du stress</li>
-                <li>Renforcement des liens humains</li>
-                <li>Activité originale et mémorable</li>
-            </ul>
+<ul class="list-disc list-inside mb-3">
+    <li>Réduction immédiate du stress</li>
+    <li>Renforcement des liens humains</li>
+    <li>Activité originale et mémorable</li>
+</ul>
+
+<div class="mt-6 bg-white/70 border border-gray-200 rounded-2xl p-6">
+    <h3 class="text-xl font-semibold text-gray-900 mb-3">Types d’activités possibles :</h3>
+
+    <ul class="space-y-2 text-gray-700">
+        <li class="flex gap-3">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Journées bien-être en entreprise</span>
+        </li>
+        <li class="flex gap-3">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Présence animale dans le cadre de la semaine du suicide</span>
+        </li>
+        <li class="flex gap-3">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Présence animale dans le cadre de la semaine de la santé mentale</span>
+        </li>
+        <li class="flex gap-3">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Activités de reconnaissance pour les employés</span>
+        </li>
+        <li class="flex gap-3">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Organisation d’Espace bien-être animal / Espace Détente (présence libre en entreprise ou en organisme)</span>
+        </li>
+        <li class="flex gap-3">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>Ateliers thématiques (gestion du stress et anxiété au travail, cohésion d’équipe et communication, gestion des émotions et prévention des conflits, leadership)</span>
+        </li>
+    </ul>
+</div>
+
         </div>
         <div data-aos="fade-left">
             <img src="{{ asset('photos/pomsky-puppy-famille-24.jpg') }}" alt="Team building Pomsky" class="rounded-2xl">
         </div>
+    </div>
+</section>
+<!-- Section 7 - Services offerts aux universités / cégeps / commissions scolaires / organismes -->
+<section class="bg-gray-50 lg:py-25 md:py-22.5 py-17.5">
+    <div class="container grid md:grid-cols-2 gap-10 items-center">
+
+        <div data-aos="fade-left">
+            <img src="{{ asset('photos/pomsky-adulte-neige-54.jpg') }}" alt="Services en milieu universitaire et communautaire" class="rounded-2xl">
+        </div>
+
+        <div data-aos="fade-right">
+            <h2 class="lg:text-5xl md:text-4xl text-3xl mb-2 font-semibold text-gray-900">
+                Services offerts aux universités, aux cégeps, aux commissions scolaires et aux organismes communautaires
+            </h2>
+            <div class="divider-line"></div>
+
+            <p class="mb-3">
+                Des interventions flexibles et accessibles pour soutenir le bien-être, la motivation et la santé mentale,
+                adaptées à la réalité du milieu étudiant, scolaire et communautaire.
+            </p>
+
+            <ul class="list-disc list-inside mb-3">
+                <li>Pause câlins et moment anti-stress avec animaux</li>
+                <li>Organisation d’activités de bien-être (événements, kiosques, espaces détente, présence ponctuelle)</li>
+            </ul>
+        </div>
+
     </div>
 </section>
 
