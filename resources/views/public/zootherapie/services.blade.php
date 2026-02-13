@@ -279,7 +279,7 @@
     <div class="container grid md:grid-cols-2 gap-10 items-center">
 
         <div data-aos="fade-left">
-            <img src="{{ asset('photos/pomsky-adulte-neige-54.jpg') }}" alt="Services en milieu universitaire et communautaire" class="rounded-2xl">
+            <img src="{{ asset('photos/pomsky-chiot-panier-45.jpg') }}" alt="Services en milieu universitaire et communautaire" class="rounded-2xl">
         </div>
 
         <div data-aos="fade-right">
