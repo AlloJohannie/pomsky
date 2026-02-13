@@ -138,7 +138,10 @@
     <a href="{{ route('home') }}" class="py-2.5 font-medium">Accueil</a>
 
     <details class="group">
-      <summary class="py-2.5 font-medium cursor-pointer flex items-center justify-between">Élevage <i class="iconify" data-icon="tabler:chevron-down"></i></summary>
+      <summary class="py-2.5 font-medium cursor-pointer flex items-center justify-between">
+        Élevage
+        <i class="iconify" data-icon="tabler:chevron-down"></i>
+      </summary>
       <div class="pl-3 space-y-1 text-sm">
         <a href="{{ url('/elevage/presentation') }}" class="block py-1.5">Présentation</a>
         <a href="{{ url('/elevage/valeurs') }}" class="block py-1.5">Valeurs & mission</a>
@@ -149,20 +152,22 @@
       </div>
     </details>
 
-    <details class="group">
-      <summary class="py-2.5 font-medium cursor-pointer flex items-center justify-between">Le Pomsky <i class="iconify" data-icon="tabler:chevron-down"></i></summary>
-      <div class="pl-3 space-y-1 text-sm">
-        <a href="{{ url('/elevage/pomsky') }}" class="block py-1.5">Le Pomsky – Né d’un rêve</a>
-        <a href="{{ route('faq') }}" class="block py-1.5">FAQ</a>
-      </div>
-    </details>
+    <a href="{{ url('/elevage/pomsky') }}" class="py-2.5 font-medium">
+      Le Pomsky
+    </a>
+
+    <a href="{{ route('faq') }}" class="py-2.5 font-medium">
+      FAQ
+    </a>
 
     <details class="group">
-      <summary class="py-2.5 font-medium cursor-pointer flex items-center justify-between">Zoothérapie <i class="iconify" data-icon="tabler:chevron-down"></i></summary>
+      <summary class="py-2.5 font-medium cursor-pointer flex items-center justify-between">
+        Zoothérapie & Puppy yoga
+        <i class="iconify" data-icon="tabler:chevron-down"></i>
+      </summary>
       <div class="pl-3 space-y-1 text-sm">
         <a href="{{ url('/zootherapie/valeurs') }}" class="block py-1.5">Mission & valeurs</a>
         <a href="{{ url('/zootherapie/services') }}" class="block py-1.5">Nos services</a>
-        {{-- <a href="{{ url('/zootherapie/tarifs') }}" class="block py-1.5">Tarifs</a> --}}
       </div>
     </details>
 
