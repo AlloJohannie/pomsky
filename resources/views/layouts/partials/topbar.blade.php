@@ -12,17 +12,22 @@
     @endphp
 
     {{-- LOGO & TITRE --}}
-    <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0 hover:opacity-90 transition">
-@if($logoUrl)
-  <img src="{{ $logoUrl }}" alt="Logo" 
-       class="object-contain max-h-10 w-auto lg:max-h-12 transition-all duration-300"
-       style="max-width: 60px;">
-@endif
+{{-- LOGO & TITRE --}}
+<a href="{{ route('home') }}" class="flex items-center gap-2 min-w-0 hover:opacity-90 transition">
+  @if($logoUrl)
+    <img
+      src="{{ $logoUrl }}"
+      alt="Logo"
+      class="object-contain max-h-10 w-auto lg:max-h-12 transition-all duration-300 shrink-0"
+      style="max-width: 60px;"
+    >
+  @endif
 
-      <span class="text-[#003E91] font-bold tracking-tight text-base sm:text-lg lg:text-xl">
-        Passion familiale : Petit Pomsky du Québec Inc.
-      </span>
-    </a>
+<span class="hidden sm:block text-[#003E91] font-bold tracking-tight sm:text-lg lg:text-xl">
+  Passion familiale : Petit Pomsky du Québec Inc.
+</span>
+</a>
+
 
     {{-- NAVIGATION DESKTOP --}}
     <nav id="navbar" class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-gray-800">
@@ -101,7 +106,7 @@
 
     {{-- MENU MOBILE --}}
     <button type="button"
-      class="lg:hidden inline-flex justify-center items-center rounded-xl size-11 bg-[#0054A6] text-white hover:bg-[#003E91] transition"
+      class="lg:hidden shrink-0 inline-flex justify-center items-center rounded-xl size-11 bg-[#0054A6] text-white hover:bg-[#003E91] transition"
       aria-label="Menu"
       data-hs-overlay="#mobileMenuOffcanvas">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
