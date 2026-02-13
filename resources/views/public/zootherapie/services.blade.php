@@ -48,7 +48,7 @@
 <section class="py-17.5 lg:py-25 md:py-22.5 bg-white border-b border-gray-200">
     <div class="container text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="600">
         <div class="flex flex-col items-center justify-center mb-8">
-            <img src="{{ asset('images/logo/logo_large.jpg') }}" alt="Logo Petit Pomsky du Québec" class="w-40 mb-5 drop-shadow-md">
+            <img src="{{ asset('images/logo/logo_large.jpg') }}" alt="Logo Petit Pomsky du Québec Inc." class="w-40 mb-5 drop-shadow-md">
             <h1 class="lg:text-6xl md:text-5xl text-4xl mb-5 font-semibold text-gray-900">Nos services de zoothérapie</h1>
             <div class="divider-line mx-auto"></div>
         </div>

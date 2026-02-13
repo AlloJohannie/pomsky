@@ -59,7 +59,7 @@
 
     {{-- Carte d’affaire --}}
     <div class="mt-14 flex justify-center">
-      <img src="{{ $carteAffaire }}" alt="Carte d'affaire Petit Pomsky du Québec"
+      <img src="{{ $carteAffaire }}" alt="Carte d'affaire Petit Pomsky du Québec Inc."
            class="rounded-2xl shadow-xl w-full max-w-md sm:max-w-lg border border-gray-200 transition-transform duration-300 hover:scale-[1.02]">
     </div>
 

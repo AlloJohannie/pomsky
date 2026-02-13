@@ -42,7 +42,7 @@
 <section class="bg-[#FAF9F6] py-16 lg:py-36 md:py-24">
   <div class="container">
             <h1 class="text-[#002B5B] lg:text-6xl md:text-5.5xl text-4xl mb-5 font-bold leading-tight">
-          Bienvenue chez Passion familiale&nbsp;: Petit Pomsky du Québec
+          Bienvenue chez Passion familiale&nbsp;: Petit Pomsky du Québec Inc.
         </h1>
     <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-32 gap-10 items-center">
 

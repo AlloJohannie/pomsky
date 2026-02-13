@@ -1,4 +1,4 @@
-@extends('layouts.landing', ['title' => 'Nos valeurs – Petit Pomsky du Québec'])
+@extends('layouts.landing', ['title' => 'Nos valeurs – Petit Pomsky du Québec Inc.'])
 
 @section('content')
 @php

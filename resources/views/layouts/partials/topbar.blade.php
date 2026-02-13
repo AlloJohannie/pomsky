@@ -20,7 +20,7 @@
 @endif
 
       <span class="text-[#003E91] font-bold tracking-tight text-base sm:text-lg lg:text-xl">
-        Passion familiale : Petit Pomsky du Québec
+        Passion familiale : Petit Pomsky du Québec Inc.
       </span>
     </a>
 
