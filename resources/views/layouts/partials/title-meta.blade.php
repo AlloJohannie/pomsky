@@ -22,6 +22,7 @@ pomsky canada,
 <meta name="author" content="Petit Pomsky du Québec Inc." />
 
 <meta name="robots" content="index, follow" />
+<link rel="canonical" href="{{ url()->current() }}">
 
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta property="og:type" content="website">
