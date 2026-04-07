@@ -39,4 +39,6 @@ pomsky canada,
 <meta name="twitter:image" content="{{ asset('images/logo/logo_large.jpg') }}">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ asset('images/logo/logo_blanc.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-192.png') }}">
+<link rel="icon" type="image/png" sizes="512x512" href="{{ asset('favicon-512.png') }}">
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
