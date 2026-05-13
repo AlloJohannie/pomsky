@@ -43,7 +43,8 @@ class LitterResource extends Resource
     {
         return $schema->schema([
             ComponentsSection::make('Infos portée')->schema([
-                TextInput::make('code')->label('Nom de la portée')->required()->maxLength(50)
+                TextInput::make('code')->label('Nom de la portée')->required()->maxLength(50)->unique(ignoreRecord: true)->validationMessages(['unique' => 'Le nom de la portée existe déjà.',
+    ])
                     ->live(onBlur:true)->afterStateUpdated(fn($s,$set)=>$set('slug', \Illuminate\Support\Str::slug($s))),
                 FormSelect::make('size')->label('Format')->options(['standard'=>'Standard','miniature'=>'Miniature','toy'=>'Toy'])->native(false),
                 FormSelect::make('status')->label('Statut')->required()->options([
