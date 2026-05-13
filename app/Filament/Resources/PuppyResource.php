@@ -56,15 +56,6 @@ class PuppyResource extends Resource
                 TextInput::make('price_cents')->label('Prix')->numeric()->minValue(0)->step(1),
                 TextInput::make('color')->label('Couleur')->maxLength(100),
             ])->columns(2),
-                    SchemaSection::make('Photos par semaine')->schema(
-            collect(range(0,12))->map(function($w){
-                $label = $w===0 ? 'Photo naissance' : "Semaine $w";
-                return FileUpload::make('week'.$w)
-                    ->label($label)->image()->directory('puppies')->disk('public')->maxSize(8192)
-                    ->helperText('Optionnel')
-                    ->dehydrated(true); // pour que Create/EditPuppy les récupèrent
-            })->all()
-        )->columns(3),
         ]);
     }
 
@@ -106,7 +97,7 @@ public static function table(Table $table): Table
     public static function getRelations(): array
     {
         return [
-
+            \App\Filament\Resources\PuppyResource\RelationManagers\PhotosRelationManager::class,
         ];
     }
 }

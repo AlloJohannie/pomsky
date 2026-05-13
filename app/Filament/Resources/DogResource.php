@@ -93,7 +93,7 @@ class DogResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('photo')
+                ImageColumn::make('cover_photo_url')
                     ->label('Photo')
                     ->disk('public')
                     ->square()

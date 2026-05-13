@@ -12,6 +12,7 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Actions\CreateAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\DeleteAction;
+use Filament\Forms\Components\Select as FormSelect;
 
 class PhotosRelationManager extends RelationManager
 {
@@ -21,9 +22,34 @@ class PhotosRelationManager extends RelationManager
     public function form(Schema $schema): Schema
     {
         return $schema->schema([
-            FileUpload::make('path')->label('Photo')->image()->directory('dogs')->disk('public')->maxSize(20480)->required(),
-            Toggle::make('is_primary')->label('Photo principale')->default(false),
-        ])->columns(1);
+            FormSelect::make('week')
+                ->label('Semaine')
+                ->options(
+                    collect(range(0, 12))->mapWithKeys(
+                        fn ($w) => [
+                            $w => $w === 0
+                                ? 'Naissance'
+                                : "Semaine $w"
+                        ]
+                    )->all()
+                )
+                ->required()
+                ->native(false),
+
+            FileUpload::make('path')
+                ->label('Photo')
+                ->image()
+                ->directory('puppies')
+                ->disk('public')
+                ->required()
+                ->imageEditor(),
+
+            \Filament\Forms\Components\Toggle::make('is_primary')
+                ->label('Photo principale'),
+
+            \Filament\Forms\Components\DatePicker::make('taken_at')
+                ->label('Date'),
+        ])->columns(2);
     }
 
     public function table(Table $table): Table

@@ -16,12 +16,8 @@ use Filament\Forms\Components\Textarea;
 // Tables
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-
-// Actions (v4)
-use Illuminate\Support\Str;
 use Filament\Actions\CreateAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
 
 class PuppiesRelationManager extends RelationManager
 {
@@ -54,7 +50,7 @@ class PuppiesRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                ImageColumn::make('photo')
+                ImageColumn::make('cover_photo_url')
                     ->label('Photo')
                     ->disk('public')
                     ->square()
@@ -79,8 +75,14 @@ class PuppiesRelationManager extends RelationManager
             ])
 
             ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
+                Action::make('open')
+                    ->label('Ouvrir')
+                    ->icon('heroicon-m-pencil-square')
+                    ->url(fn ($record) =>
+                        \App\Filament\Resources\PuppyResource::getUrl('edit', [
+                            'record' => $record,
+                        ])
+                    ),
             ])
             ->reorderable('sort');
     }
